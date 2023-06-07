@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('daily_activities', function (Blueprint $table) {
             $table->id();
+            // TABEL
+            $table->biginteger('user_id');
+            $table->string('activity');
+            $table->string('has_done')->nullable();
+            $table->string('file')->nullable();
+
+            // END TABEL
             $table->timestamps();
         });
     }
