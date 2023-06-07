@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('user_registers', function (Blueprint $table) {
             $table->id();
-            //
             $table->biginteger('user_id');
-            $table->string('nisn')->nullable();
-            $table->string('nim')->nullable();
+            $table->string('nisn_nim')->nullable();
             $table->string('school');
             $table->string('department');
             $table->string('name');
@@ -30,8 +28,6 @@ return new class extends Migration
             $table->string('file');
             $table->string('sertificate')->nullable();
             $table->string('status');
-
-            //
             $table->timestamps();
         });
     }

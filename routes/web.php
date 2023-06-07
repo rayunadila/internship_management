@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controller\UserRegister;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::get('/', function () {
 Auth::routes();
 
 // Dashboard
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // User Register
 
@@ -62,11 +63,3 @@ Route::group(['controller' => RoleController::class, 'prefix' => 'role', 'as' =>
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
 });
-
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/', [PageController::class, 'dashboard'])->name('dashboard');
-//     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-//     Route::resource('roles', RoleController::class);
-//     Route::resource('users', UserController::class);
-// });

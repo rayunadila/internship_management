@@ -1,23 +1,132 @@
 @extends('layouts.app')
 
+@section('css_after')
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
+                        <i class="ri-focus-2-line"></i>
+                    </div>
+                    <p class="text-secondary">Total Sales</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>$18 378</b></h4>
+                        <div id="iq-chart-box1"></div>
+                        <span class="text-primary"><b> +14% <i class="ri-arrow-up-fill"></i></b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
+                        <i class="ri-pantone-line"></i>
+                    </div>
+                    <p class="text-secondary">Sales Today</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>$190</b></h4>
+                        <div id="iq-chart-box2"></div>
+                        <span class="text-danger"><b> -6% <i class="ri-arrow-down-fill"></i></b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
+                        <i class="ri-database-2-line"></i>
+                    </div>
+                    <p class="text-secondary">Total Classon</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>45</b></h4>
+                        <div id="iq-chart-box3"></div>
+                        <span class="text-success"><b> +0.36% <i class="ri-arrow-up-fill"></i></b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
+                        <i class="ri-pie-chart-2-line"></i>
+                    </div>
+                    <p class="text-secondary">Total Profit</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>60</b></h4>
+                        <div id="iq-chart-box4"></div>
+                        <span class="text-warning"><b> +0.45% <i class="ri-arrow-up-fill"></i></b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
+                        {{-- Ikak Logo --}}
+                        <i class="ri-file-line"></i>
+                    </div>
+                    <p class="text-secondary">Pengajuan PKL</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>Buat Pengajuan</b></h4>
+                    </div>
+                    <a class="text-primary" href=""><i class="ri-arrow-right-fill"></i> Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
+                        <i class="ri-pantone-line"></i>
+                    </div>
+                    <p class="text-secondary">Sales Today</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>$190</b></h4>
+                        <div id="iq-chart-box2"></div>
+                        <span class="text-danger"><b> -6% <i class="ri-arrow-down-fill"></i></b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
+                        <i class="ri-database-2-line"></i>
+                    </div>
+                    <p class="text-secondary">Total Classon</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>45</b></h4>
+                        <div id="iq-chart-box3"></div>
+                        <span class="text-success"><b> +0.36% <i class="ri-arrow-up-fill"></i></b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-3">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-body iq-box-relative">
+                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
+                        <i class="ri-pie-chart-2-line"></i>
+                    </div>
+                    <p class="text-secondary">Total Profit</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4><b>60</b></h4>
+                        <div id="iq-chart-box4"></div>
+                        <span class="text-warning"><b> +0.45% <i class="ri-arrow-up-fill"></i></b></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endsection
+
+@section('js_after')
 @endsection

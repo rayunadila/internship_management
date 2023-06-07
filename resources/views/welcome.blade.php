@@ -9,7 +9,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>SI INNA</title>
 
     <!-- Additional CSS Files -->
@@ -42,7 +42,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="/" class="logo">
                             Lava
                         </a>
                         <!-- ***** Logo End ***** -->
@@ -55,7 +55,7 @@
                             <li class="submenu">
                                 <a href="javascript:;">Panduan</a>
                                 <ul>
-                                    <li><a href="{{ route('login') }}" class="menu-item">Panduan Pengajuan PKL</a></li>
+                                    <li><a href="" class="menu-item">Panduan Pengajuan PKL</a></li>
                                     <li><a href="" class="menu-item">Panduan Peserta PKL</a></li>
                                     <li><a href="" class="menu-item">FAQ's</a></li>
                                     <li><a href="" class="menu-item">Blog</a></li>
@@ -65,7 +65,9 @@
 
                             <li class="scroll-to-section"><a href="#" class="menu-item">Buat Pengajuan</a>
                             </li>
-                             <li> <a href="{{ route('login') }}" class="menu-item"> Masuk</a> </li>
+                            <div class="text-end mt-1">
+                                <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+                            </div>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -384,6 +386,7 @@
     <!-- Global Init -->
     <script src="{{ asset('landing_pages/assets/js/custom.js') }}"></script>
 
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

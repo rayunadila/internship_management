@@ -13,60 +13,33 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class UserRegisterController extends Controller
 {
-    // public function index()
-    // {
-    //     // Confirm Delete Alert
-    //     $title = 'Hapus Data!';
-    //     $text = "Apakah yakin ingin menghapus data?";
-    //     confirmDelete($title, $text);
+    public function index()
+    {
+        // Confirm Delete Alert
+        $title = 'Hapus Data!';
+        $text = "Apakah yakin ingin menghapus data?";
+        confirmDelete($title, $text);
 
-    //     return view('user.index');
-    // }
+        return view('user_registers.index');
+    }
 
-    // public function datatable()
-    // {
-    //     $model = UserRegister::query();
-    //     return DataTables::of($model)
-    //         ->editColumn('created_at', function ($data) {
-    //             $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
-    //             return $formatedDate;
-    //         })
-    //         ->editColumn('date', function ($data) {
-    //             $formatedDate = Carbon::createFromFormat('Y-m-d', $data->date)->translatedFormat('d F Y');
-    //             return $formatedDate;
-    //         })
-    //         ->editColumn('status', function ($data) {
-    //             if (UserRegister::STATUS_NOT_READY) {
-    //                 $badge = "<span class='badge bg-warning'>" . UserRegister::STATUS_NOT_READY .  "</span>";
-    //             } elseif (UserRegister::STATUS_ON_PROGRESS) {
-    //                 $badge = "<span class='badge bg-primary'>" . UserRegister::STATUS_ON_PROGRESS .  "</span>";
-    //             } elseif (UserRegister::STATUS_DONE) {
-    //                 $badge = "<span class='badge bg-success'>" . UserRegister::STATUS_DONE .  "</span>";
-    //             } else {
-    //                 $badge = "<span class='badge bg-danger'>Tidak Ada Status</span>";
-    //             }
+    public function datatable()
+    {
+        $model = UserRegister::query();
+        return DataTables::of($model)
+            ->addColumn('action', function ($data) {
+                $url_show = route('user_register.show', Crypt::encrypt($data->id));
+                $url_edit = route('user_register.edit', Crypt::encrypt($data->id));
+                $url_delete = route('user_register.destroy', Crypt::encrypt($data->id));
 
-    //             return $badge;
-    //         })
-    //         ->addColumn('user_register', function ($data) {
-    //             return $data->user_register->name;
-    //         })
-    //         ->addColumn('action', function ($data) {
-    //             $url_show = route('user_register.show', Crypt::encrypt($data->id));
-    //             $url_edit = route('user_register.edit', Crypt::encrypt($data->id));
-    //             $url_delete = route('user_register.destroy', Crypt::encrypt($data->id));
-
-    //             $btn = "<button type = 'button' class = 'btn app-btn-secondary btn-sm dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>Aksi<i class = 'mdi mdi-chevron-down'></i></button>";
-    //             $btn .= "<div class='dropdown-menu'>";
-    //             $btn .= "<a href='$url_show' class = 'btn btn-light text-nowrap dropdown-item'><i class='fas fa-show mr-2'></i> Lihat</a>" . "<div class='dropdown-divider'></div>";
-    //             $btn .= "<a href='$url_edit' class = 'btn btn-light text-nowrap dropdown-item'><i class='fas fa-edit mr-2'></i> Edit</a>" . "<div class='dropdown-divider'></div>";
-    //             $btn .= "<a href='$url_delete' class = 'btn btn-light text-nowrap dropdown-item' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>" . "<div class='dropdown-divider'></div>";
-    //             $btn .= "</div>";
-    //             return $btn;
-    //         })
-    //         ->rawColumns(['status', 'action'])
-    //         ->toJson();
-    // }
+                $btn = "<div class='btn-group'>";
+                $btn .= "<a href='$url_show' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Lihat</a>";
+                $btn .= "<a href='$url_edit' class = 'btn btn-outline-info btn-sm text-nowrap'><i class='fas fa-edit mr-2'></i> Edit</a>";
+                $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
+                $btn .= "</div>";
+            })
+            ->toJson();
+    }
 
     // public function create()
     // {

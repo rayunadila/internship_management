@@ -15,15 +15,10 @@
     <div id="sidebar-scrollbar">
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
-                <li class="active">
-                    <a href="#dashboard" class="iq-waves-effect" data-toggle="collapse" aria-expanded="true"><span
+                <li class="">
+                    <a href="{{ route('home') }}" class="iq-waves-effect"><span
                             class="ripple rippleEffect"></span><i
-                            class="las la-home iq-arrow-left"></i><span>Beranda</span><i
-                            class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                    <ul id="dashboard" class="iq-submenu collapse show" data-parent="#iq-sidebar-toggle">
-                        <li class="active"><a href="index.html"><i class="las la-laptop-code"></i>Account
-                                Beranda</a></li>
-                    </ul>
+                            class="las la-home iq-arrow-left"></i><span>Beranda</span></a>
                 </li>
 
 
@@ -42,7 +37,8 @@
                             class="lab la-wpforms iq-arrow-left"></i><span>Kelola Pengajuan </span><i
                             class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                     <ul id="forms" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li><a href="form-layout.html"><i class="las la-book"></i>Data Pengajuan </a></li>
+                        <li><a href="{{ route('user_register.index') }}"><i class="las la-book"></i>Data Pengajuan </a>
+                        </li>
                         <li><a href="form-validation.html"><i class="las la-edit"></i>Tambah Surat Balasan</a></li>
                 </li>
             </ul>
