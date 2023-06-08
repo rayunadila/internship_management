@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AttendancesController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserRegisterController;
+use App\Models\DailyActivity;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +61,30 @@ Route::group(['controller' => RoleController::class, 'prefix' => 'role', 'as' =>
     Route::get('/create', 'create')->name('create');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::delete('/destroy/{id}', 'destroy')->name('destroy');
+});
+
+// Daily Activity
+Route::group(['controller' => DailyActivityController::class, 'prefix' => 'daily_activity', 'as' => 'daily_activity.'], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/datatable', 'datatable')->name('datatable');
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{id}', 'update')->name('update');
+    Route::delete('/destroy/{id}', 'destroy')->name('destroy');
+});
+
+
+// Attendance
+
+Route::group(['controller' => AttendancesController::class, 'prefix' => 'attendance', 'as' => 'attendance.'], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/datatable', 'datatable')->name('datatable');
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');

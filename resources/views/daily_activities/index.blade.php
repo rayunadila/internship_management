@@ -9,10 +9,10 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Data Presensi</h4>
+                        <h4 class="card-title">Data Pengajuan</h4>
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-sm bg-primary" href="{{ route('attendance.create') }}"><i
+                        <a class="btn btn-sm bg-primary" href="{{ route('user_register.create') }}"><i
                                 class="ri-add-fill"><span class="pl-1">Tambah
                                     Data</span></i>
                         </a>
@@ -25,10 +25,11 @@
                             <tr>
                                 <th>No</th>
                                 <th>Aksi</th>
-                                <th>Tanggal</th>
-                                <th>Lokasi</th>
-                                <th>Status</th>
-
+                                <th>Nama Lengkap</th>
+                                <th>NIM/NISN</th>
+                                <th>Asal</th>
+                                <th>Tanggal Mulai PKL</th>
+                                <th>Tanggal Selesai PKL</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,7 +52,7 @@
         function getDatatable() {
             data_table = $("#data-table").DataTable({
                 ajax: {
-                    url: "{{ route('attendance.datatable') }}",
+                    url: "{{ route('user_register.datatable') }}",
                 },
                 serverSide: true,
                 destroy: true,
@@ -71,12 +72,24 @@
                         data: 'action'
                     },
                     {
-                        name: 'latitude',
-                        data: 'latitude'
+                        name: 'name',
+                        data: 'name'
                     },
                     {
-                        name: 'longtitude',
-                        data: 'longtitude'
+                        name: 'nisn_nim',
+                        data: 'nisn_nim'
+                    },
+                    {
+                        name: 'school',
+                        data: 'school'
+                    },
+                    {
+                        name: 'date_start',
+                        data: 'date_start'
+                    },
+                    {
+                        name: 'date_end',
+                        data: 'date_end'
                     },
                 ],
             });

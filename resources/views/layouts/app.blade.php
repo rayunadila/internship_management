@@ -80,7 +80,7 @@
                             <div class="iq-sub-dropdown iq-user-dropdown">
                                 <div class="iq-card shadow-none m-0">
                                     <div class="iq-card-body p-0 ">
-                                        <div class="bg-primary p-3">
+                                        <div class="bg-primary p-3">b
                                             <h5 class="mb-0 text-white line-height">{{ Auth::user()->name }}</h5>
                                         </div>
                                         <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">

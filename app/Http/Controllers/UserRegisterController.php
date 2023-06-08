@@ -41,11 +41,12 @@ class UserRegisterController extends Controller
             ->toJson();
     }
 
-    // public function create()
-    // {
-    //     $user_registers = UserRegister::all();
-    //     return view('user_registers.create', compact('user_registers'));
-    // }
+    public function create()
+    {
+        $user_registers = UserRegister::all();
+        return view('user_registers.add', compact('user_registers'));
+    }
+
 
     // public function edit($id)
     // {
