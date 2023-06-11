@@ -78,7 +78,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4><b>Buat Pengajuan</b></h4>
                     </div>
-                    <a class="text-primary" href="{{ route('user_register.index') }}"> <i class="ri-arrow-right-fill"></i>
+                    <a class="text-primary" href="{{ route('apprentince.index') }}"> <i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
                 </div>
             </div>

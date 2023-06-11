@@ -19,7 +19,7 @@ class ApprentinceController extends Controller
         $text = "Apakah yakin ingin menghapus data?";
         confirmDelete($title, $text);
 
-        return view('user_registers.index');
+        return view('apprentinces.index');
     }
 
     public function datatable()
@@ -27,9 +27,9 @@ class ApprentinceController extends Controller
         $model = Apprentince::query();
         return DataTables::of($model)
             ->addColumn('action', function ($data) {
-                $url_show = route('user_register.show', Crypt::encrypt($data->id));
-                $url_edit = route('user_register.edit', Crypt::encrypt($data->id));
-                $url_delete = route('user_register.destroy', Crypt::encrypt($data->id));
+                $url_show = route('apprentince.show', Crypt::encrypt($data->id));
+                $url_edit = route('apprentince.edit', Crypt::encrypt($data->id));
+                $url_delete = route('apprentince.destroy', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
                 $btn .= "<a href='$url_show' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Lihat</a>";
@@ -42,8 +42,8 @@ class ApprentinceController extends Controller
 
     public function create()
     {
-        $user_registers = Apprentince::all();
-        return view('user_registers.add', compact('user_registers'));
+        $apprentinces = Apprentince::all();
+        return view('apprentinces.add', compact('apprentinces'));
     }
 
 
@@ -51,9 +51,9 @@ class ApprentinceController extends Controller
     {
         $id = Crypt::decrypt($id);
         $data = Apprentince::find($id);
-        $user_registers = Apprentince::all();
+        $apprentinces = Apprentince::all();
 
-        return view('user_registers.edit', compact('data', 'user_registers'));
+        return view('apprentinces.edit', compact('data', 'apprentinces'));
     }
 
     public function show($id)
@@ -66,7 +66,7 @@ class ApprentinceController extends Controller
             DB::beginTransaction();
 
             $request->validate([
-                'user_register_id' => 'required',
+                'apprentince_id' => 'required',
                 'title' => 'required',
                 'date' => 'required',
                 'agenda' => 'required',
@@ -76,7 +76,7 @@ class ApprentinceController extends Controller
             $input = $request->all();
 
             // Decrypt Meeting Room Id
-            $input['user_register_id'] = Crypt::decrypt($request->user_register_id);
+            $input['apprentince_id'] = Crypt::decrypt($request->apprentince_id);
             // Create Status
             $input['status'] = Apprentince::STATUS_NOT_CONFIRMED;
 
@@ -87,7 +87,7 @@ class ApprentinceController extends Controller
 
             // Alert & Redirect
             Alert::toast('Data Berhasil Disimpan', 'success');
-            return redirect()->route('user_register.index');
+            return redirect()->route('apprentince.index');
         } catch (\Exception $e) {
             // If Data Error
             DB::rollBack();
@@ -104,7 +104,7 @@ class ApprentinceController extends Controller
             DB::beginTransaction();
 
             $request->validate([
-                'user_register_id' => 'required',
+                'apprentince_id' => 'required',
                 'title' => 'required',
                 'date' => 'required',
                 'agenda' => 'required',
@@ -112,21 +112,21 @@ class ApprentinceController extends Controller
 
             // Update Data
             $id = Crypt::decrypt($id);
-            $user_register = Apprentince::find($id);
+            $apprentince = Apprentince::find($id);
 
             $input = $request->all();
 
             // Decrypt
-            $input['user_register_id'] = Crypt::decrypt($request->user_register_id);
+            $input['apprentince_id'] = Crypt::decrypt($request->apprentince_id);
 
-            $user_register->update($input);
+            $apprentince->update($input);
 
             // Save Data
             DB::commit();
 
             // Alert & Redirect
             Alert::toast('Data Berhasil Diperbarui', 'success');
-            return redirect()->route('user_register.index');
+            return redirect()->route('apprentince.index');
         } catch (\Exception $e) {
             // If Data Error
             DB::rollBack();
@@ -143,17 +143,17 @@ class ApprentinceController extends Controller
             DB::beginTransaction();
 
             $id = Crypt::decrypt($id);
-            $user_register = Apprentince::find($id);
+            $apprentince = Apprentince::find($id);
 
             // Delete Data
-            $user_register->delete();
+            $apprentince->delete();
 
             // Save Data
             DB::commit();
 
             // Alert & Redirect
             Alert::toast('Data Berhasil Dihapus', 'success');
-            return redirect()->route('user_register.index');
+            return redirect()->route('apprentince.index');
         } catch (\Exception $e) {
             // If Data Error
             DB::rollBack();

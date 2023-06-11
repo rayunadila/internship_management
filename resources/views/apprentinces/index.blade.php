@@ -12,8 +12,8 @@
                         <h4 class="card-title">Data Pengajuan</h4>
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-sm bg-primary" href="{{ route('user_register.create') }}"><i
-                                class="ri-add-fill"><span class="pl-1">Tambah
+                        <a class="btn btn-sm bg-primary" href="{{ route('apprentince.create') }}"><i class="ri-add-fill"><span
+                                    class="pl-1">Tambah
                                     Data</span></i>
                         </a>
                     </div>
@@ -53,7 +53,7 @@
         function getDatatable() {
             data_table = $("#data-table").DataTable({
                 ajax: {
-                    url: "{{ route('user_register.datatable') }}",
+                    url: "{{ route('apprentince.datatable') }}",
                 },
                 serverSide: true,
                 destroy: true,
