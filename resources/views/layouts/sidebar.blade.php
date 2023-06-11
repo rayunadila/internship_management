@@ -36,7 +36,7 @@
                             class="lab la-wpforms iq-arrow-left"></i><span>Kelola Pengajuan </span><i
                             class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                     <ul id="forms" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li><a href="{{ route('user_register.index') }}"><i class="las la-book"></i>Data Pengajuan PKL
+                        <li><a href="{{ route('apprentince.index') }}"><i class="las la-book"></i>Data Pengajuan PKL
                             </a>
                         </li>
                         <li><a href="form-validation.html"><i class="las la-edit"></i>Konfirmasi PKL</a></li>

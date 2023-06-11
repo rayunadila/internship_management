@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserRegisterController;
-use App\Models\DailyActivity;
+use App\Http\Controllers\ApprentinceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +31,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // User Register
 
-Route::group(['controller' => UserRegisterController::class, 'prefix' => 'user_register', 'as' => 'user_register.'], function () {
+Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprentince', 'as' => 'apprentince.'], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
     Route::get('/edit/{id}', 'edit')->name('edit');

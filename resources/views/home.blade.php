@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="row">
-        {{-- <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="col-sm-6 col-md-6 col-lg-3">
             <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                 <div class="iq-card-body iq-box-relative">
                     <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
 
         <div class="col-sm-6 col-md-6 col-lg-3">

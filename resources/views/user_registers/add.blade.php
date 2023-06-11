@@ -4,15 +4,7 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12 col-lg-12">
-
-            {{--  --}}
-            <div class="iq-card">
-                <div class="iq-card-header d-flex justify-content-between">
-                    <div class="iq-header-title">
-                        <h4 class="card-title">Tambah Pengajuan PKL</h4>
-                    </div>
-                </div>
-                <div class="iq-card-body">
+            {{-- <div class="iq-card-body">
                     <p>Lengkapilah data-data dibawah ini.</p>
                     <form action="{{ route('user_register.store') }}" method="POST">
                         @csrf
@@ -29,7 +21,7 @@
                                 placeholder="NIM/NISN" required>
                         </div>
 
-                        {{-- jenis kelamin --}}
+
                         <div class="form-group">
                             <label for="gender">Jenis Kelamin</label>
                             <input type="option" name="gender" class="form-control" id="gender"
@@ -84,13 +76,36 @@
                                 placeholder="Tanggal Selesai PKL"required>
                         </div>
 
+                        <label for="file">File Pengajuan PKL</label>
+                        <input type="file" class="form-control" id="file" value="{{ old('file') }}"
+                            placeholder="Pilih File..."required>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn iq-bg-danger">Cancel</button>
+                    </form>
+                </div> --}}
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Tambah Data Siswa/Mahasiswa</h4>
+                    </div>
+                    <div class="text-end">
+                        <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Form</button>
+                    </div>
+                </div>
+                <div class="iq-card-body">
+                    <form>
                         <div class="form-group">
-                            <label for="file">File Pengajuan PKL</label>
-                            <input type="file" class="form-control" id="file" value="{{ old('file') }}"
-                                placeholder="Pilih File..."required>
+                            <label for="email">Email address:</label>
+                            <input type="email" class="form-control" id="email1">
                         </div>
-
-
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="checkbox mb-3">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="submit" class="btn iq-bg-danger">Cancel</button>
                     </form>
