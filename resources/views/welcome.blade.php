@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1>Simple App that we <em>CREATE</em></h1>
+                        <h1>Selamat Datang di Aplikasi <br> <em>SI INNA</em></h1>
                         <p>Lava <a href="#">HTML landing page</a> template is provided by <a
                                 href="#">TemplateMo</a>.
                             You can modify and use it for your commercial websites for free of charge. This template is

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Apprentince;
+use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -42,8 +43,8 @@ class ApprentinceController extends Controller
 
     public function create()
     {
-        $apprentinces = Apprentince::all();
-        return view('apprentinces.add', compact('apprentinces'));
+        $users = User::where('name', '!=', 'admin')->get();
+        return view('apprentinces.add', compact('users'));
     }
 
 
