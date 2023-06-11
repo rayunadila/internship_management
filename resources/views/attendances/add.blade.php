@@ -71,15 +71,18 @@
                             <input type="email" class="form-control" id="exampleInputEmail3" value="markTech@gmail.com"
                                 placeholder="Enter Email">
                         </div>
+                        
                         <div class="form-group">
                             <label for="exampleInputurl">Url Input</label>
                             <input type="url" class="form-control" id="exampleInputurl" value="https://getbootstrap.com"
                                 placeholder="Enter Url">
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputphone">Teliphone Input</label>
                             <input type="tel" class="form-control" id="exampleInputphone" value="1-(555)-555-5555">
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputNumber1">Number Input</label>
                             <input type="number" class="form-control" id="exampleInputNumber1" value="2356">

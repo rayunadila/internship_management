@@ -27,9 +27,10 @@
                                 <th>Aksi</th>
                                 <th>Nama Lengkap</th>
                                 <th>NIM/NISN</th>
-                                <th>Asal</th>
+                                <th>Asal Instansi</th>
                                 <th>Tanggal Mulai PKL</th>
                                 <th>Tanggal Selesai PKL</th>
+                                <th>Diinputkan Pada</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -90,6 +91,10 @@
                     {
                         name: 'date_end',
                         data: 'date_end'
+                    },
+                    {
+                        name: 'created_at',
+                        data: 'created_at'
                     },
                 ],
             });
