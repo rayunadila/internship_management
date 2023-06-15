@@ -61,7 +61,7 @@
                         </div>
                         <div class="iq-navbar-logo d-flex justify-content-between ml-3">
                             <a href="index.html" class="header-logo">
-                                <img src="images/logo.png" class="img-fluid rounded" alt="">
+                                <img src="{{ asset('images/LOGO S.png') }}" class="img-fluid rounded" alt="">
                                 <span>SI INNA</span>
                             </a>
                         </div>

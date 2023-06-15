@@ -24,6 +24,9 @@ class UserSeeder extends Seeder
 
         $role = Role::create(['name' => 'Admin']);
 
+        // Role Mahasiswa
+        Role::create(['name' => 'Mahasiswa']);
+
         $permissions = Permission::pluck('id', 'id')->all();
 
         $role->syncPermissions($permissions);

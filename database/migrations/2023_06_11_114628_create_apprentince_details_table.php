@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('apprentince_details', function (Blueprint $table) {
             $table->id();
             $table->biginteger('user_id')->unsigned();
-            $table->biginteger('apprentiance_id')->unsigned();
+            $table->biginteger('apprentince_id')->unsigned();
             $table->string('nisn_nim')->nullable();
             $table->string('name');
             $table->string('department');
