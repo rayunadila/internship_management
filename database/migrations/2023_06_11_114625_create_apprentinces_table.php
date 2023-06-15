@@ -12,6 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('school');
             $table->string('file');
+            $table->date('date_start');
+            $table->date('date_end');
             $table->string('status');
             $table->timestamps();
         });

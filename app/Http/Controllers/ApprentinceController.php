@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Apprentince;
+use App\Models\ApprentinceDetail;
 use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
 
 class ApprentinceController extends Controller
 {
@@ -80,30 +82,34 @@ class ApprentinceController extends Controller
                 'date_start' => 'required',
                 'date_end' => 'required',
                 'sertificate',
-
-
             ]);
-
-            // Create Data
-            $input = $request->all();
-
-            // Decrypt Meeting Room Id
-            $input['apprentince_id'] = Crypt::decrypt($request->apprentince_id);
-            // Create Status
-            $input['status'] = Apprentince::STATUS_NOT_CONFIRMED;
-
-            Apprentince::create($input);
 
             // Save file
             if ($file = $request->file('file')) {
                 $destinationPath = 'assets/pengajuan/';
                 $fileName = "Pengajuan" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
                 $file->move($destinationPath, $fileName);
-                $input['file'] = $fileName;
             }
 
-            //create
-            Apprentince::create($input);
+            // Create Apprentince
+            $apprentince = Apprentince::create([
+                'school' => $request->school,
+                'file' => $fileName,
+                'status' => Apprentince::STATUS_NOT_CONFIRMED
+            ]);
+
+            // Create Apprentince Detail
+            $apprentince_detail = $request->input('name', []);
+
+            for ($i  = 0; $i < count($apprentince_detail); $i++) {
+                if ($apprentince_detail[$i] != "") {
+                    ApprentinceDetail::create([
+                        'user_id' => Auth::user()->id,
+                        'apprentince_id' => $apprentince->id,
+                        ''
+                    ]);
+                }
+            }
 
             // Save Data
             DB::commit();

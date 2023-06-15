@@ -16,14 +16,7 @@ class Apprentince extends Model
     const STATUS_APPROVED = "Disetujui";
     const STATUS_REJECTED = "Ditolak";
 
-    const STATUS_CHOICE = [
-        self::STATUS_NOT_CONFIRMED => self::STATUS_NOT_CONFIRMED,
-        self::STATUS_APPROVED => self::STATUS_APPROVED,
-        self::STATUS_REJECTED => self::STATUS_REJECTED,
-    ];
-
     // Gender
-
     const GENDER_MAN = "Laki-laki";
     const GENDER_WOMAN = "Perempuan";
 

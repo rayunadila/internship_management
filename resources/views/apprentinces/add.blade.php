@@ -57,7 +57,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="department">Jurusan </label>
-                                            <input type="text" name="department" class="form-control" id="department"
+                                            <input type="text" name="department[]" class="form-control" id="department"
                                                 value="{{ old('department') }}" placeholder="Jurusan" required>
                                             @error('department')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -67,7 +67,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Nama Lengkap </label>
-                                            <input type="text" name="name" class="form-control" id="name"
+                                            <input type="text" name="name[]" class="form-control" id="name"
                                                 value="{{ old('name') }}" placeholder="Nama Lengkap" required>
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -77,7 +77,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="nisn_nim">NISN/NIM</label>
-                                            <input type="number" class="form-control" id="nisn_nim"
+                                            <input type="number" class="form-control" id="nisn_nim" name="nisn_nim[]"
                                                 value="{{ old('nisn_nim') }}" placeholder="NIM/NISN" required>
                                             @error('nisn_nim')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -87,7 +87,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="birth_date">Tanggal Lahir</label>
-                                            <input type="date" name="birth_date" class="form-control" id="birth_date"
+                                            <input type="date" name="birth_date[]" class="form-control" id="birth_date"
                                                 value="{{ old('birth_date') }}" placeholder="Tanggal Lahir" required>
                                             @error('birth_date')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -97,7 +97,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="birth_place">Tempat Lahir</label>
-                                            <input type="text" name="birth_place" class="form-control" id="birth_place"
+                                            <input type="text" name="birth_place[]" class="form-control" id="birth_place"
                                                 value="{{ old('birth_place') }}" placeholder="Tanggal Lahir" required>
                                             @error('birth_place')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -107,7 +107,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="gender">Jenis Kelamin</label>
-                                            <select class="form-control" name="gender" id="gender">
+                                            <select class="form-control" name="gender[]" id="gender">
                                                 <option value="" selected>Jenis Kelamin</option>
                                                 @foreach (App\Models\Apprentince::GENDER_CHOICE as $key => $value)
                                                     <option value="{{ $key }}">{{ $value }}</option>
@@ -121,7 +121,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="phone_number">No. Handphone</label>
-                                            <input type="number" name="phone_number" class="form-control"
+                                            <input type="number" name="phone_number[]" class="form-control"
                                                 id="phone_number" value="{{ old('phone_number') }}"
                                                 placeholder=" No. Handphone" required>
                                             @error('name')
@@ -132,7 +132,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="address">Alamat</label>
-                                            <textarea class="form-control" name="address" id="address" rows="1" placeholder="Alamat" required>{{ old('address') }}</textarea>
+                                            <textarea class="form-control" name="address[]" id="address" rows="1" placeholder="Alamat" required>{{ old('address') }}</textarea>
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -141,7 +141,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="date_start">Tanggal Mulai PKL</label>
-                                            <input type="date" class="form-control" id="date_start"
+                                            <input type="date" class="form-control" id="date_start[]"
                                                 value="{{ old('date_start') }}" placeholder="Tanggal Mulai PKL"required>
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -151,7 +151,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="file">Tanggal Selesai PKL</label>
-                                            <input type="date" class="form-control" id="date_end"
+                                            <input type="date" class="form-control" id="date_end[]"
                                                 value="{{ old('date_end') }}" placeholder="Tanggal Selesai PKL"required>
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
