@@ -155,15 +155,17 @@
                                 <hr>
                                 <div class="col-md-12 mt-2">
                                     <div class="form-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label for="file"></label>
+                                            <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="file" value="{{ old ('file') }}" name="file">
                                             <label class="custom-file-label" for="customFile">File Pengajuan PKL</label>
-                                            @error('name')
+                                            @error('file')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-12">
                                     <a href="{{ route('apprentince.index') }}" class="btn iq-bg-danger mr-2">Kembali</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>
@@ -186,7 +188,7 @@
 
         });
     </script>
-    
+
     <script>
         $(() => {
             initForm();

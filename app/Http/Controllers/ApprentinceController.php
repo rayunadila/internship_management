@@ -67,10 +67,21 @@ class ApprentinceController extends Controller
             DB::beginTransaction();
 
             $request->validate([
+                'user_id' => 'required',
                 'apprentince_id' => 'required',
-                'title' => 'required',
-                'date' => 'required',
-                'agenda' => 'required',
+                'nisn_nim' => 'required',
+                'name' => 'required',
+                'department' => 'required',
+                'gender' => 'required',
+                'birth_date' => 'required',
+                'birth_place' => 'required',
+                'address' => 'required',
+                'phone_number' => 'required',
+                'date_start' => 'required',
+                'date_end' => 'required',
+                'sertificate',
+
+
             ]);
 
             // Create Data
@@ -81,6 +92,17 @@ class ApprentinceController extends Controller
             // Create Status
             $input['status'] = Apprentince::STATUS_NOT_CONFIRMED;
 
+            Apprentince::create($input);
+
+            // Save file
+            if ($file = $request->file('file')) {
+                $destinationPath = 'assets/pengajuan/';
+                $fileName = "Pengajuan" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $fileName);
+                $input['file'] = $fileName;
+            }
+
+            //create
             Apprentince::create($input);
 
             // Save Data
