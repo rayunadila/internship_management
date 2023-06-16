@@ -40,16 +40,16 @@
                     <div class="row m-0">
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
-                                <h1 class="mb-0 text-center">Sign in</h1>
+                                <h1 class="mb-0 text-center">Masuk</h1>
                                 <p class="text-center text-dark">Enter your email address and password to access admin
                                     panel.</p>
                                 <form action="{{ route('login') }}" method="POST" class="mt-4">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control mb-0" id="exampleInputEmail1"
-                                            placeholder="Enter email" name="email" value="{{ old('email') }}">
-                                        @error('email')
+                                        <label for="exampleInputEmail1">Nama Lengkap</label>
+                                        <input type="text" class="form-control mb-0" id="exampleInputEmail1"
+                                            placeholder="Enter name" name="name" value="{{ old('name') }}">
+                                        @error('name')
                                         <span class="text-danger"> {{ $message }}
                                         </span>
                                         @enderror

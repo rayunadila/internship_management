@@ -69,8 +69,6 @@ class ApprentinceController extends Controller
             DB::beginTransaction();
 
             $request->validate([
-                'user_id' => 'required',
-                'apprentince_id' => 'required',
                 'nisn_nim' => 'required',
                 'name' => 'required',
                 'department' => 'required',
@@ -81,33 +79,42 @@ class ApprentinceController extends Controller
                 'phone_number' => 'required',
                 'date_start' => 'required',
                 'date_end' => 'required',
-                'sertificate',
             ]);
+
+            $input = $request->all();
 
             // Save file
             if ($file = $request->file('file')) {
                 $destinationPath = 'assets/pengajuan/';
                 $fileName = "Pengajuan" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
                 $file->move($destinationPath, $fileName);
+                $input['file'] = $fileName;
             }
 
+            $input['user_id'] = Auth::user()->id;
+            $input['status'] = Apprentince::STATUS_NOT_CONFIRMED;
+
             // Create Apprentince
-            $apprentince = Apprentince::create([
-                'school' => $request->school,
-                'file' => $fileName,
-                'status' => Apprentince::STATUS_NOT_CONFIRMED
-            ]);
+            $apprentince = Apprentince::create($input);
 
             // Create Apprentince Detail
-            $apprentince_detail = $request->input('name', []);
+            if ($request->department_detail) {
+                $apprentince_detail = $request->input('department_detail', []);
 
-            for ($i  = 0; $i < count($apprentince_detail); $i++) {
-                if ($apprentince_detail[$i] != "") {
-                    ApprentinceDetail::create([
-                        'user_id' => Auth::user()->id,
-                        'apprentince_id' => $apprentince->id,
-                        ''
-                    ]);
+                for ($i  = 0; $i < count($apprentince_detail); $i++) {
+                    if ($apprentince_detail[$i] != "") {
+                        ApprentinceDetail::create([
+                            'apprentince_id' => $apprentince->id,
+                            'nisn_nim' => $request->nisn_nim_detail[$i],
+                            'name' => $request->name_detail[$i],
+                            'department' => $request->department_detail[$i],
+                            'gender' => $request->gender_detail[$i],
+                            'birth_date' => $request->birth_date_detail[$i],
+                            'birth_place' => $request->birth_place_detail[$i],
+                            'address' => $request->address_detail[$i],
+                            'phone_number' => $request->phone_number_detail[$i],
+                        ]);
+                    }
                 }
             }
 
@@ -116,7 +123,7 @@ class ApprentinceController extends Controller
 
             // Alert & Redirect
             Alert::toast('Data Berhasil Disimpan', 'success');
-            return redirect()->route('apprentince.index');
+            return redirect()->route('home');
         } catch (\Exception $e) {
             // If Data Error
             DB::rollBack();
