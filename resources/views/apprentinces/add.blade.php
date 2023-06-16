@@ -10,7 +10,8 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
-                    <form id="form-wizard1" action="{{ route('apprentince.store') }}" class="text-center mt-4" method="post" enctype="multipart/form-data">
+                    <form id="form-wizard1" action="{{ route('apprentince.store') }}" class="text-center mt-4" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         <ul id="top-tab-list" class="p-0">
                             <li class="active" id="account">
@@ -48,7 +49,7 @@
                                             <label for="school">Asal Instansi</label>
                                             <input type="text" name="school" class="form-control" id="school"
                                                 value="{{ old('school') }}" placeholder="Asal Instansi" required>
-                                            @error('name')
+                                            @error('school')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -124,7 +125,7 @@
                                             <input type="number" name="phone_number[]" class="form-control"
                                                 id="phone_number" value="{{ old('phone_number') }}"
                                                 placeholder=" No. Handphone" required>
-                                            @error('name')
+                                            @error('phone_number')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -133,7 +134,7 @@
                                         <div class="form-group">
                                             <label for="address">Alamat</label>
                                             <textarea class="form-control" name="address[]" id="address" rows="1" placeholder="Alamat" required>{{ old('address') }}</textarea>
-                                            @error('name')
+                                            @error('address')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -143,7 +144,7 @@
                                             <label for="date_start">Tanggal Mulai PKL</label>
                                             <input type="date" class="form-control" id="date_start[]"
                                                 value="{{ old('date_start') }}" placeholder="Tanggal Mulai PKL"required>
-                                            @error('name')
+                                            @error('date_start')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -153,7 +154,7 @@
                                             <label for="file">Tanggal Selesai PKL</label>
                                             <input type="date" class="form-control" id="date_end[]"
                                                 value="{{ old('date_end') }}" placeholder="Tanggal Selesai PKL"required>
-                                            @error('name')
+                                            @error('date_end')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -242,7 +243,7 @@
                                             <input type="number" name="phone_number" class="form-control"
                                                 id="phone_number" value="{{ old('phone_number') }}"
                                                 placeholder=" No. Handphone">
-                                            @error('name')
+                                            @error('phone_number')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -251,7 +252,7 @@
                                         <div class="form-group">
                                             <label for="address">Alamat</label>
                                             <textarea class="form-control" name="address" id="address" placeholder="Alamat">{{ old('address') }}</textarea>
-                                            @error('name')
+                                            @error('address')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -398,7 +399,7 @@
                                         <label for="phone_number">No. Handphone</label>
                                         <input type="number" name="phone_number" class="form-control" id="phone_number"
                                             value="{{ old('phone_number') }}" placeholder=" No. Handphone">
-                                        @error('name')
+                                        @error('phone_number')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -407,7 +408,7 @@
                                     <div class="form-group">
                                         <label for="address">Alamat</label>
                                         <textarea class="form-control" name="address" id="address" rows="1" placeholder="Alamat">{{ old('address') }}</textarea>
-                                        @error('name')
+                                        @error('address')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
