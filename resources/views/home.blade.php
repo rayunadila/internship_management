@@ -10,7 +10,7 @@
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-body iq-box-relative">
                         <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
-                            {{--  Logo --}}
+
                             <i class="ri-file-line"></i>
                         </div>
                         <p class="text-secondary"> Pengajuan PKL</p>
@@ -30,9 +30,9 @@
                         </div>
                         <p class="text-secondary">Aktivitas Harian PKL</p>
                         <div class="d-flex align-items-center justify-content-between">
-                            <h4><b>Data Aktivitas Harian </b></h4>
+                            <h4><b>Data Kegiatan Harian </b></h4>
                         </div>
-                        <a class="text-primary" href=""><i class="ri-arrow-right-fill"></i>
+                        <a class="text-primary" href="{{ route('daily_activity.index') }}"><i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-body iq-box-relative">
                         <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
-                            {{--  Logo --}}
+
                             <i class="ri-file-line"></i>
                         </div>
                         <p class="text-secondary">Pengajuan PKL</p>
@@ -94,7 +94,7 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <h4><b>Buat Aktivitas Harian </b></h4>
                         </div>
-                        <a class="text-primary" href=""><i class="ri-arrow-right-fill"></i>
+                        <a class="text-primary" href="{{ route('daily_activity.create') }}"><i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <h4><b>Buat Presensi</b></h4>
                         </div>
-                        <a class="text-primary" href="{{ route('attendance.index') }}"><i class="ri-arrow-right-fill"></i>
+                        <a class="text-primary" href="{{ route('attendance.create') }}"><i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
                     </div>
                 </div>
@@ -129,6 +129,7 @@
                 </div>
             </div>
         @endrole
+
     </div>
 @endsection
 

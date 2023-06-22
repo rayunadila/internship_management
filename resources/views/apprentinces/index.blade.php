@@ -30,6 +30,7 @@
                                 <th>Asal Instansi</th>
                                 <th>Tanggal Mulai PKL</th>
                                 <th>Tanggal Selesai PKL</th>
+                                <th>Surat Pengajuan</th>
                                 <th>Diinputkan Pada</th>
                             </tr>
                         </thead>
@@ -91,6 +92,10 @@
                     {
                         name: 'date_end',
                         data: 'date_end'
+                    },
+                    {
+                        name: 'file',
+                        data: 'file'
                     },
                     {
                         name: 'created_at',

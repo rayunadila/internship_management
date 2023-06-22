@@ -56,34 +56,32 @@
 
                         </ul>
                     </li>
-
-                    <li>
-                        <a href="#wizard-form" class="iq-waves-effect collapsed" data-toggle="collapse"
-                            aria-expanded="false"><i class="ri-archive-drawer-line iq-arrow-left"></i><span>Kelola Presensi
-                            </span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="wizard-form" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="form-wizard.html"><i class="ri-clockwise-line"></i> Data Presensi </a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
                                 class="ri-table-line iq-arrow-left"></i><span>Kelola Catatan Harian </span><i
                                 class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="tables" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="tables-basic.html"><i class="ri-table-line"></i>Data Catatan Harian</a></li>
+                            <li><a href="{{ route('daily_activity.index') }}"><i class="ri-table-line"></i>Data Catatan
+                                    Harian</a></li>
+                        </ul>
                     </li>
-                </ul>
-                </li>
-
-                <li>
-                    <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse"
-                        aria-expanded="false"><i class="ri-pages-line iq-arrow-left"></i><span>Kelola Sertifikat
-                            PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                    <ul id="authentication" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li><a href="sign-in.html"><i class="las la-sign-in-alt"></i>Data Sertifikat PKL</a></li>
-                    </ul>
-                </li>
+                    <li>
+                        <a href="#wizard-form" class="iq-waves-effect collapsed" data-toggle="collapse"
+                            aria-expanded="false"><i class="ri-archive-drawer-line iq-arrow-left"></i><span>Kelola Presensi
+                            </span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="wizard-form" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                            <li><a href="{{ route('apprentince.index') }}"><i class="ri-clockwise-line"></i> Data Presensi
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse"
+                            aria-expanded="false"><i class="ri-pages-line iq-arrow-left"></i><span>Kelola Sertifikat
+                                PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="authentication" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                            <li><a href="sign-in.html"><i class="las la-sign-in-alt"></i>Data Sertifikat PKL</a></li>
+                        </ul>
+                    </li>
             </nav>
             <div class="p-3"></div>
         </div>

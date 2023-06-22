@@ -3,6 +3,10 @@
 @section('css_after')
 @endsection
 
+@section('content-header')
+    <h3>Presensi Peserta PKL</h3>
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-sm-12">
@@ -25,9 +29,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Aksi</th>
-                                <th>Tanggal</th>
                                 <th>Lokasi</th>
-                                <th>Status</th>
+                                <th>Waktu</th>
+                                <th>Diinputkan pada</th>
 
                             </tr>
                         </thead>
@@ -71,13 +75,18 @@
                         data: 'action'
                     },
                     {
+                        name: 'longtitude',
+                        data: 'longtitude'
+                    },
+                    {
                         name: 'latitude',
                         data: 'latitude'
                     },
                     {
-                        name: 'longtitude',
-                        data: 'longtitude'
+                        name: 'status',
+                        data: 'status'
                     },
+
                 ],
             });
         }

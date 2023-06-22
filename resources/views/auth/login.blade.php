@@ -41,68 +41,53 @@
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
                                 <h1 class="mb-0 text-center">Masuk</h1>
-                                <p class="text-center text-dark">Enter your email address and password to access admin
-                                    panel.</p>
+                                <p class="text-center text-dark">Isilah nama lengkap anda dan katasandi yang sesuai.</p>
                                 <form action="{{ route('login') }}" method="POST" class="mt-4">
                                     @csrf
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama Lengkap</label>
                                         <input type="text" class="form-control mb-0" id="exampleInputEmail1"
-                                            placeholder="Enter name" name="name" value="{{ old('name') }}">
+                                            placeholder="Nama Lengkap" name="name" value="{{ old('name') }}">
                                         @error('name')
-                                        <span class="text-danger"> {{ $message }}
-                                        </span>
+                                            <span class="text-danger"> {{ $message }}
+                                            </span>
                                         @enderror
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <a href="#" class="float-right">Forgot password?</a>
+                                        <label for="exampleInputPassword1">Kata Sandi</label>
                                         <input type="password" class="form-control mb-0" id="exampleInputPassword1"
-                                            placeholder="Password" name="password" value="{{ old('password') }}">
+                                            placeholder="Kata Sandi" name="password" value="{{ old('password') }}">
                                         @error('password')
-                                        <span class="text-danger"> {{ $massage }}                                        </span>
+                                            <span class="text-danger"> {{ $massage }} </span>
                                         @enderror
                                     </div>
 
-                                    <div class="d-inline-block w-100">
-                                        <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Remember Me</label>
-                                        </div>
-                                    </div>
                                     <div class="sign-info text-center">
-                                        <button type="submit" class="btn btn-primary d-block w-100 mb-2">Sign in</button>
-                                        <span class="text-dark dark-color d-inline-block line-height-2">Don't have an
-                                            account? <a href="{{ route('register') }}">Sign up</a></span>
+                                        <button type="submit" class="btn btn-primary d-block w-100 mb-2">Masuk</button>
+                                        <span class="text-dark dark-color d-inline-block line-height-2">Tidak Punya
+                                            Akun? <a href="{{ route('register') }}">Daftar Akun</a></span>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="col-md-7 text-center sign-in-page-image">
                             <div class="sign-in-detail text-white">
-                                <a class="sign-in-logo mb-5" href="#"><img src="images/logo-full.png"
+                                <a class="sign-in-logo mb-5" href="#"><img src="{{ asset('images/LOGO S.png') }}"
                                         class="img-fluid" alt="logo"></a>
                                 <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false"
                                     data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1"
                                     data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
                                     <div class="item">
-                                        <img src="images/login/1.png" class="img-fluid mb-4" alt="logo">
-                                        <h4 class="mb-1 text-white">Find new friends</h4>
-                                        <p>It is a long established fact that a reader will be distracted by the
-                                            readable content.</p>
+                                        <img src="{{ asset('images/SI INNA.png') }}" class="img-fluid mb-4"
+                                            alt="logo">
+
                                     </div>
                                     <div class="item">
                                         <img src="images/login/1.png" class="img-fluid mb-4" alt="logo">
-                                        <h4 class="mb-1 text-white">Connect with the world</h4>
-                                        <p>It is a long established fact that a reader will be distracted by the
-                                            readable content.</p>
                                     </div>
                                     <div class="item">
                                         <img src="images/login/1.png" class="img-fluid mb-4" alt="logo">
-                                        <h4 class="mb-1 text-white">Create new events</h4>
-                                        <p>It is a long established fact that a reader will be distracted by the
-                                            readable content.</p>
                                     </div>
                                 </div>
                             </div>

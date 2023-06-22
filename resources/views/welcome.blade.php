@@ -41,13 +41,15 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="/" class="logo">
-                            Lava
-                        </a>
-                        <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
+                            <div class="iq-navbar-logo d-flex justify-content-between ml-3">
+                                <a href="" class="header-logo">
+                                    <img src="{{ asset('images/LOGO.png') }}"
+                                        style="margin: 0 50px 0 10px; width:50px;height:50px;" class="img-fluid rounded"
+                                        alt="">
+                                </a>
+                            </div>
                             <li class="scroll-to-section"><a href="#welcome" class="menu-item">Beranda</a></li>
                             <li class="scroll-to-section"><a href="#about" class="menu-item">Tentang Kami</a></li>
                             <li>
@@ -57,16 +59,13 @@
                                 <ul>
                                     <li><a href="" class="menu-item">Panduan Pengajuan PKL</a></li>
                                     <li><a href="" class="menu-item">Panduan Peserta PKL</a></li>
-                                    <li><a href="" class="menu-item">FAQ's</a></li>
-                                    <li><a href="" class="menu-item">Blog</a></li>
-
                                 </ul>
                             </li>
 
                             <li class="scroll-to-section"><a href="#" class="menu-item">Buat Pengajuan</a>
                             </li>
                             <div class="text-end mt-1">
-                                <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+                                <a href="{{ route('login') }}" class="btn btn-warning">Login</a>
                             </div>
                         </ul>
                         <a class='menu-trigger'>
@@ -93,11 +92,11 @@
                     <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
                         data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h1>Selamat Datang di Aplikasi <br> <em>SI INNA</em></h1>
-                        <p>Lava <a href="#">HTML landing page</a> template is provided by <a
+                        {{-- <p>Lava <a href="#">HTML landing page</a> template is provided by <a
                                 href="#">TemplateMo</a>.
                             You can modify and use it for your commercial websites for free of charge. This template is
-                            last updated on 29 Oct 2019.</p>
-                        <a href="#about" class="main-button-slider">KNOW US BETTER</a>
+                            last updated on 29 Oct 2019.</p> --}}
+                        <a href="{{ route('login') }}" class="main-button-slider">Masuk</a>
                     </div>
                 </div>
             </div>
@@ -110,17 +109,21 @@
     <section class="section" id="about">
         <div class="container">
             <div class="row">
+                <div class="text-center " data-scroll-reveal="enter up move 30px over 0.6s after 0.4s">
+                    <br> <br>
+                    <h1><b>Panduan Pengajuan <em>PKL</em></b></h1>
+                    <br>
+                </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <div class="features-item">
                         <div class="features-icon">
                             <h2>01</h2>
-                            <img src="assets/images/features-icon-1.png" alt="">
-                            <h4>Trend Analysis</h4>
-                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
-                            <a href="#testimonials" class="main-button">
-                                Read More
-                            </a>
+                            <img src="{{ asset('images/buat akun.png') }}" alt="">
+                            <h4>Buat Akun</h4>
+                            <p>Calon Peserta atau perwakilan dalam kelompok membuat akun terlebih
+                                dahulu untuk mendapatkan akses pengajuan PKL.</p>
+
                         </div>
                     </div>
                 </div>
@@ -129,12 +132,9 @@
                     <div class="features-item">
                         <div class="features-icon">
                             <h2>02</h2>
-                            <img src="images/..." alt="">
-                            <h4>Site Optimization</h4>
-                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
-                            <a href="#" class="main-button">
-                                Discover More
-                            </a>
+                            <img src="{{ asset('images/pengajuan.png') }}" alt="">
+                            <h4>Buat Pengajuan PKL</h4>
+                            <p>Ketua kelompok mengisi data-data anggotanya dan melampirkansurat pengajuan PKL.</p>
                         </div>
                     </div>
                 </div>
@@ -143,12 +143,10 @@
                     <div class="features-item">
                         <div class="features-icon">
                             <h2>03</h2>
-                            <img src="assets/images/features-icon-3.png" alt="">
-                            <h4>Email Design</h4>
-                            <p>Curabitur pulvinar vel odio sed sagittis. Nam maximus ex diam, nec consectetur diam.</p>
-                            <a href="#" class="main-button">
-                                More Detail
-                            </a>
+                            <img src="{{ asset('images/notif.png') }}" alt="">
+                            <h4>Menunggu Surat Balasan</h4>
+                            <p>Calon peserta akan mendapatkan notifikasi jika Pengajuan PKL tersebut sudah mendapatkan
+                                surat balasan yaitu diterima atau ditolak.</p>
                         </div>
                     </div>
                 </div>
@@ -163,40 +161,21 @@
     <section class="section" id="promotion">
         <div class="container">
             <div class="row">
-                <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                <div class="left-image col-lg-4 col-md-6 col-sm-12 mobile-bottom-fix-big"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="{{ asset('images/SI_INNA.png') }}" class="rounded img-fluid d-block mx-auto"
+                        alt="App">
                 </div>
                 <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
                     <ul>
                         <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                            <img src="assets/images/about-icon-01.png" alt="">
+                            <img src="" alt="">
                             <div class="text">
-                                <h4>Vestibulum pulvinar rhoncus</h4>
-                                <p>Please do not redistribute this template ZIP file for a download purpose. You may <a
-                                        rel="nofollow" href="https://templatemo.com/contact"
-                                        target="_parent">contact</a> us for
-                                    additional licensing of our template or to get a PSD file.</p>
+                                <h4>Merupakan Singkatan dari Aplika<em>si In</em>tership Ma<em>na</em>gement.</p>
+                                    <h4>Aplikasi </h4>
                             </div>
                         </li>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
-                            <img src="assets/images/about-icon-02.png" alt="">
-                            <div class="text">
-                                <h4>Sed blandit quam in velit</h4>
-                                <p>You can <a rel="nofollow"
-                                        href="https://templatemo.com/tm-540-lava-landing-page">download Lava
-                                        Template</a> from our website. Duis viverra, ipsum et scelerisque placerat, orci
-                                    magna consequat ligula.</p>
-                            </div>
-                        </li>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
-                            <img src="assets/images/about-icon-03.png" alt="">
-                            <div class="text">
-                                <h4>Aenean faucibus venenatis</h4>
-                                <p>Phasellus in imperdiet felis, eget vestibulum nulla. Aliquam nec dui nec augue
-                                    maximus porta. Curabitur tristique lacus.</p>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -212,7 +191,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="center-heading">
-                        <h2>What They Think <em>About Us</em></h2>
+                        <h2>Panduan<em> Peserta PKL</em></h2>
                         <p>Suspendisse vitae laoreet mauris. Fusce a nisi dapibus, euismod purus non, convallis odio.
                             Donec vitae magna ornare, pellentesque ex vitae, aliquet urna.</p>
                     </div>
@@ -221,17 +200,8 @@
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <div class="owl-carousel owl-theme">
                         <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Author One"></i>
-                            </div>
                             <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
+                                <i><img src="{{ asset('images/DPUBMTR.png') }}" alt=""></i>
                                 <h4>Jonathan Smart</h4>
                                 <p>“Nullam hendrerit, elit a semper pharetra, ipsum nibh tristique tortor, in tempus
                                     urna elit in mauris.”</p>
@@ -243,13 +213,7 @@
                                 <i><img src="assets/images/testimonial-author-1.png" alt="Second Author"></i>
                             </div>
                             <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
+
                                 <h4>Martino Tino</h4>
                                 <p>“Morbi non mi luctus felis molestie scelerisque. In ac libero viverra, placerat est
                                     interdum, rhoncus leo.”</p>
@@ -390,3 +354,5 @@
 </body>
 
 </html>
+
+

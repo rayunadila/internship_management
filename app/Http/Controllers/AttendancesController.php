@@ -41,126 +41,119 @@ class AttendancesController extends Controller
             ->toJson();
     }
 
-    // public function create()
-    // {
-    //     $attendances = Attendance::all();
-    //     return view('attendances.create', compact('attendances'));
-    // }
+    public function create()
+    {
+        return view('attendances.add');
+    }
 
-    // public function edit($id)
-    // {
-    //     $id = Crypt::decrypt($id);
-    //     $data = Attendance::find($id);
-    //     $attendances = Attendance::all();
+    public function edit($id)
+    {
+        $id = Crypt::decrypt($id);
+        return view('attendances.edit', compact('data', 'Attendances'));
+    }
 
-    //     return view('attendances.edit', compact('data', 'attendances'));
-    // }
+    public function show($id)
+    {
+    }
 
-    // public function show($id)
-    // {
-    // }
+    public function store(Request $request)
+    {
+        try {
+            DB::beginTransaction();
 
-    // public function store(Request $request)
-    // {
-    //     try {
-    //         DB::beginTransaction();
+            $request->validate([
+                'longitude' => 'required',
+                'latitude' => 'required',
+            ]);
 
-    //         $request->validate([
-    //             'attendance_id' => 'required',
-    //             'title' => 'required',
-    //             'date' => 'required',
-    //             'agenda' => 'required',
-    //         ]);
+            // Create Data
+            $input = $request->all();
 
-    //         // Create Data
-    //         $input = $request->all();
+            // Decrypt Meeting Room Id
+            $input['attendance_id'] = Crypt::decrypt($request->attendance_id);
 
-    //         // Decrypt Meeting Room Id
-    //         $input['attendance_id'] = Crypt::decrypt($request->attendance_id);
-    //         // Create Status
-    //         $input['status'] = Attendace::STATUS_NOT_READY;
+            // Create Status
 
-    //         Attendace::create($input);
 
-    //         // Save Data
-    //         DB::commit();
+            // Save Data
+            DB::commit();
 
-    //         // Alert & Redirect
-    //         Alert::toast('Data Berhasil Disimpan', 'success');
-    //         return redirect()->route('attendace.index');
-    //     } catch (\Exception $e) {
-    //         // If Data Error
-    //         DB::rollBack();
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Disimpan', 'success');
+            return redirect()->route('attendance.index');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
 
-    //         // Alert & Redirect
-    //         Alert::toast('Data Tidak Tersimpan', 'error');
-    //         return redirect()->back()->with('error', 'Data Tidak Berhasil Disimpan' . $e->getMessage());
-    //     }
-    // }
+            // Alert & Redirect
+            Alert::toast('Data Tidak Tersimpan', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Disimpan' . $e->getMessage());
+        }
+    }
 
-    // public function update($id, Request $request)
-    // {
-    //     try {
-    //         DB::beginTransaction();
+    public function update($id, Request $request)
+    {
+        try {
+            DB::beginTransaction();
 
-    //         $request->validate([
-    //             'attendance_id' => 'required',
-    //             'title' => 'required',
-    //             'date' => 'required',
-    //             'agenda' => 'required',
-    //         ]);
+            $request->validate([
+                'attendance_id' => 'required',
+                'title' => 'required',
+                'date' => 'required',
+                'agenda' => 'required',
+            ]);
 
-    //         // Update Data
-    //         $id = Crypt::decrypt($id);
-    //         $attendance = Attendance::find($id);
+            // Update Data
+            $id = Crypt::decrypt($id);
+            $attendance = Attendances::find($id);
 
-    //         $input = $request->all();
+            $input = $request->all();
 
-    //         // Decrypt Meeting Room Id
-    //         $input['attendance_id'] = Crypt::decrypt($request->attendance_id);
+            // Decrypt Meeting Room Id
+            $input['attendance_id'] = Crypt::decrypt($request->attendance_id);
 
-    //         $attendance->update($input);
+            $attendance->update($input);
 
-    //         // Save Data
-    //         DB::commit();
+            // Save Data
+            DB::commit();
 
-    //         // Alert & Redirect
-    //         Alert::toast('Data Berhasil Diperbarui', 'success');
-    //         return redirect()->route('attendance.index');
-    //     } catch (\Exception $e) {
-    //         // If Data Error
-    //         DB::rollBack();
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('attendance.index');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
 
-    //         // Alert & Redirect
-    //         Alert::toast('Data Tidak Tersimpan', 'error');
-    //         return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
-    //     }
-    // }
+            // Alert & Redirect
+            Alert::toast('Data Tidak Tersimpan', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
 
-    // public function destroy($id)
-    // {
-    //     try {
-    //         DB::beginTransaction();
+    public function destroy($id)
+    {
+        try {
+            DB::beginTransaction();
 
-    //         $id = Crypt::decrypt($id);
-    //         $attendance = Attendance::find($id);
+            $id = Crypt::decrypt($id);
+            $attendance = Attendances::find($id);
 
-    //         // Delete Data
-    //         $attendance->delete();
+            // Delete Data
+            $attendance->delete();
 
-    //         // Save Data
-    //         DB::commit();
+            // Save Data
+            DB::commit();
 
-    //         // Alert & Redirect
-    //         Alert::toast('Data Berhasil Dihapus', 'success');
-    //         return redirect()->route('attendance.index');
-    //     } catch (\Exception $e) {
-    //         // If Data Error
-    //         DB::rollBack();
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Dihapus', 'success');
+            return redirect()->route('attendance.index');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
 
-    //         // Alert & Redirect
-    //         Alert::toast('Data Tidak Berhasil Dihapus', 'error');
-    //         return redirect()->back()->with('error', 'Data Tidak Berhasil Dihapus' . $e->getMessage());
-    //     }
-    // }
+            // Alert & Redirect
+            Alert::toast('Data Tidak Berhasil Dihapus', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Dihapus' . $e->getMessage());
+        }
+    }
 }

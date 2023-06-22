@@ -120,21 +120,20 @@
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
                                 <h1 class="mb-0 text-center">Daftar Akun</h1>
-                                <p class="text-center text-dark">Enter your email address and password to access admin
-                                    panel.</p>
 
-                              <form action="{{ route('register') }}" method="POST" class="mt-4">
+                                <form action="{{ route('register') }}" method="POST" class="mt-4">
                                     @csrf
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama Lengkap</label>
                                         <input type="text" class="form-control mb-0" id="exampleInputEmail1"
-                                            name="name" value="{{ old('name') }}" placeholder="Your Full Name">
+                                            name="name" value="{{ old('name') }}"
+                                            placeholder="Nama Lengkap Anda">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail2">Email</label>
                                         <input type="email" class="form-control mb-0" id="exampleInputEmail2"
-                                            name="email" value="{{ old('email') }}" placeholder="Enter email">
+                                            name="email" value="{{ old('email') }}" placeholder="Email Anda">
                                         @error('email')
                                             <span class="text-danger"> {{ $message }}
                                             </span>
@@ -142,18 +141,19 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
+                                        <label for="exampleInputPassword1">Kata Sandi</label>
                                         <input type="password" class="form-control mb-0" id="exampleInputPassword1"
-                                            name="password" value="{{ old('password') }}" placeholder="Password">
+                                            name="password" value="{{ old('password') }}" placeholder="Kata Sandi">
                                         @error('password')
                                             <span class="text-danger"> {{ $message }}
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Konfirmasi Password</label>
+                                        <label for="exampleInputPassword1">Konfirmasi Kata Sandi</label>
                                         <input type="password" class="form-control mb-0" id="exampleInputPassword1"
-                                            name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="password_confirmation">
+                                            name="password_confirmation" value="{{ old('password_confirmation') }}"
+                                            placeholder="Konfirmasi Kata Sandi">
                                         @error('password_confirmation')
                                             <span class="text-danger"> {{ $message }}
                                             </span>
@@ -167,7 +167,8 @@
                                         </div>
                                     </div> --}}
                                     <div class="sign-info text-center">
-                                        <button type="submit" class="btn btn-primary d-block w-100 mb-2">Sign Up</button>
+                                        <button type="submit" class="btn btn-primary d-block w-100 mb-2">Daftar
+                                            Akun</button>
                                         <span class="text-dark d-inline-block line-height-2">Sudah Punya akun? <a
                                                 href="{{ route('login') }}">Masuk</a></span>
                                     </div>
