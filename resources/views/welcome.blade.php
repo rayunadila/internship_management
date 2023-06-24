@@ -1,403 +1,632 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <!-- Site made with Mobirise Website Builder v5.6.13, https://mobirise.com -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="generator" content="Mobirise v5.6.13, mobirise.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:src" content="" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:title" content="Home" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="shortcut icon" href="{{ asset('landing_page/assets/images/logo-1.png') }}" type="image/x-icon" />
+    <meta name="description" content="" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>SI INNA</title>
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('landing_pages/assets/css/bootstrap.min.css') }}">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('landing_pages/assets/css/font-awesome.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('landing_pages/assets/css/templatemo-lava.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('landing_pages/assets/css/owl-carousel.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/web/assets/mobirise-icons2/mobirise2.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/bootstrap/css/bootstrap-grid.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/bootstrap/css/bootstrap-reboot.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/dropdown/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/socicon/css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/theme/css/style.css') }}" />
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" />
+    </noscript>
+    <link rel="preload" as="style" href="{{ asset('landing_page/assets/mobirise/css/mbr-additional.css') }}" />
+    <link rel="stylesheet" href="{{ asset('landing_page/assets/mobirise/css/mbr-additional.css') }}" type="text/css" />
 </head>
 
 <body>
+    <section data-bs-version="5.1" class="menu menu2 cid-sFHpMqcXGj" once="menu" id="menu2-2">
+        <nav class="navbar navbar-dropdown navbar-expand-lg">
+            <div class="container">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
+                        <img src="{{ asset('landing_page/assets/images/logo-1.png') }}" alt="Mobirise Website Builder"
+                            style="height: 3rem" />
+
+                        &ensp;
+
+                        <img src="{{ asset('landing_page/assets/images/logo2.png') }}" alt="Mobirise Website Builder"
+                            style="height: 3rem" />
+
+                    </span>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                    data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-primary display-4" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link dropdown-toggle text-primary display-4"
+                                href="index.html#timeline3-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside" aria-expanded="false">Panduan</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-385">
+                                <a class="dropdown-item text-primary display-4" href="index.html#features1-6">Panduan
+                                    Pengajuan PKL</a><a class="show dropdown-item text-primary display-4"
+                                    href="index.html#timeline3-4">Panduan Peserta PKL</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-primary display-4" href="index.html#image2-8">Tentang</a>
+                        </li>
+                    </ul>
+
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section data-bs-version="5.1" class="slider1 cid-tHTTAY4Vto" id="slider1-2">
+        <div class="carousel slide carousel-fade" id="tI6LX4Q21S" data-ride="carousel" data-bs-ride="carousel"
+            data-interval="3000" data-bs-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-slide-to="0" data-bs-slide-to="0" class="active" data-target="#tI6LX4Q21S"
+                    data-bs-target="#tI6LX4Q21S"></li>
+                <li data-slide-to="1" data-bs-slide-to="1" data-target="#tI6LX4Q21S" data-bs-target="#tI6LX4Q21S">
+                </li>
+                <li data-slide-to="2" data-bs-slide-to="2" data-target="#tI6LX4Q21S" data-bs-target="#tI6LX4Q21S">
+                </li>
+            </ol>
+
+            <!-- foto   1 -->
+            <div class="carousel-inner">
+                <div class="carousel-item slider-image item active">
+                    <div class="item-wrapper">
+                        <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255)"></div>
+
+                        <img class="d-block w-100" src="{{ asset('landing_page/assets/images/img-6449.jpeg') }}"
+                            alt="Mobirise Website Builder" />
+
+                        <div class="carousel-caption">
+                            <h5 class="mbr-section-subtitle mbr-fonts-style display-1" style="color: black">
+                                <strong>SELAMAT DATANG</strong><br /><br /><br /><br /><strong><br /></strong><br />
+                            </h5>
+
+                            <div class="mbr-section-btn mt-3">
+                                <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- foto 2 -->
+                <div class="carousel-item slider-image item">
+                    <div class="item-wrapper">
+                        <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255)"></div>
+
+                        <img class="d-block w-100" src="{{ asset('landing_page/assets/images/img-6445.jpeg') }}"
+                            alt="Mobirise Website Builder" />
+
+                        <div class="carousel-caption">
+                            <h5 class="mbr-section-subtitle mbr-fonts-style display-1" style="color: black">
+                                <strong>SELAMAT DATANG</strong><br /><br /><br /><br /><br /><strong><br /></strong>
+                            </h5>
+                            <div class="mbr-section-btn mt-3">
+                                <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- foto 3 -->
+                <div class="carousel-item slider-image item">
+                    <div class="item-wrapper">
+                        <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255)"></div>
+                        <img class="d-block w-100" src="{{ asset('landing_page/assets/images/img-6446.jpg') }}"
+                            alt="Mobirise Website Builder" />
+
+                        <div class="carousel-caption">
+                            <h5 class="mbr-section-subtitle mbr-fonts-style display-1" style="color: black">
+                                <strong>SELAMAT DATANG</strong><br /><br /><br /><br /><br /><strong><br /></strong>
+                            </h5>
+                            <div class="mbr-section-btn mt-3">
+                                <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" data-bs-slide="prev"
+                href="#tI6LX4Q21S">
+                <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control carousel-control-next" role="button" data-slide="next" data-bs-slide="next"
+                href="#tI6LX4Q21S">
+                <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+                <span class="sr-only visually-hidden">Next</span>
+            </a>
         </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
+    </section>
 
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
+    <!-- ini tuh gak di ajak -->
+    <!-- <section
+      data-bs-version="5.1"
+      class="header9 cid-sFHoAfPmXB"
+      id="header9-1"
+    >
+      <div
+        class="mbr-overlay"
+        style="opacity: 0.7; background-color: rgb(255, 255, 255)"
+      ></div>
+
+      <div class="text-center container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-9">
+            <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1">
+              <strong>SELAMAT DATANG</strong>
+            </h1>
+
+            <div class="mbr-section-btn mt-3">
+              <a class="btn btn-warning display-4" href="https://mobiri.se"
+                >Masuk</a
+              >
+              <a class="btn btn-info display-4" href="https://mobiri.se"
+                >Daftar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section data-bs-version="5.1" class="features1 cid-tHXxTIAjAt" id="features1-6">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <div class="iq-navbar-logo d-flex justify-content-between ml-3">
-                                <a href="" class="header-logo">
-                                    <img src="{{ asset('images/LOGO.png') }}"
-                                        style="margin: 0 50px 0 10px; width:50px;height:50px;" class="img-fluid rounded"
-                                        alt="">
-                                </a>
-                            </div>
-                            <li class="scroll-to-section"><a href="#welcome" class="menu-item">Beranda</a></li>
-                            <li class="scroll-to-section"><a href="#about" class="menu-item">Tentang Kami</a></li>
-                            <li>
-                            </li>
-                            <li class="submenu">
-                                <a href="javascript:;">Panduan</a>
-                                <ul>
-                                    <li><a href="" class="menu-item">Panduan Pengajuan PKL</a></li>
-                                    <li><a href="" class="menu-item">Panduan Peserta PKL</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="scroll-to-section"><a href="#" class="menu-item">Buat Pengajuan</a>
-                            </li>
-                            <div class="text-end mt-1">
-                                <a href="{{ route('login') }}" class="btn btn-warning">Login</a>
-                            </div>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                    <div class="col-md-8 col-md-offset-2">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-
-			<!-- deklarasi carousel -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="{{ asset('images/DPUBMTR.png') }}" alt="www.malasngoding.com">
-					<div class="carousel-caption">
-						<h3>www.malasngoding.com</h3>
-						<p>Tutorial belajar pemrograman web, mobile dan design.</p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="img/malasngoding2.png" alt="www.malasngoding.com">
-					<div class="carousel-caption">
-						<h3>Tutorial Bootstrap</h3>
-						<p>Belajar tutorial bootstrap dasar di www.malasngoding.com</p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="{{ asset('images/DPUBMTR.png') }}" alt="www.malasngoding.com">
-					<div class="carousel-caption">
-						<h3>Tutorial Android</h3>
-						<p>Tutorial membuat aplikasi android.</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- membuat panah next dan previous -->
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Alur atau Proses Pengajuan PKL</strong>
+                    </h3>
                 </div>
             </div>
-        </div>
-
-    </header>
-    <!-- ***** Header Area End ***** -->
-
-
-    <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area" id="welcome">
-
-        <!-- ***** Header Text Start ***** -->
-        <div class="header-text">
-            <div class="container">
-                <div class="row">
-                    <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
-                        data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                        <h1>Selamat Datang di Aplikasi <br> <em>SI INNA</em></h1>
-                        {{-- <p>Lava <a href="#">HTML landing page</a> template is provided by <a
-                                href="#">TemplateMo</a>.
-                            You can modify and use it for your commercial websites for free of charge. This template is
-                            last updated on 29 Oct 2019.</p> --}}
-                        <a href="{{ route('login') }}" class="main-button-slider">Masuk</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ***** Header Text End ***** -->
-    </div>
-    <!-- ***** Welcome Area End ***** -->
-
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section" id="about">
-        <div class="container">
             <div class="row">
-                <div class="text-center " data-scroll-reveal="enter up move 30px over 0.6s after 0.4s">
-                    <br> <br>
-                    <h1><b>Panduan Pengajuan <em>PKL</em></b></h1>
-                    <br>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                            <h2>01</h2>
-                            <img src="{{ asset('images/buat akun.png') }}" alt="">
-                            <h4>Buat Akun</h4>
-                            <p>Calon Peserta atau perwakilan dalam kelompok membuat akun terlebih
-                                dahulu untuk mendapatkan akses pengajuan PKL.</p>
-
+                <div class="card col-12 col-md-6 col-lg-3">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <div class="iconfont-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri"></span>
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-7">
+                                <strong>1. Buat Akun dan Pin</strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-7">
+                                Silahkan buat akun dan PIN disini, daftarkan yang akan menjadi
+                                Ketua Kelompok
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                            <h2>02</h2>
-                            <img src="{{ asset('images/pengajuan.png') }}" alt="">
-                            <h4>Buat Pengajuan PKL</h4>
-                            <p>Ketua kelompok mengisi data-data anggotanya dan melampirkansurat pengajuan PKL.</p>
+                <div class="card col-12 col-md-6 col-lg-3">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <div class="iconfont-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-users mobi-mbri"></span>
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-7">
+                                <strong>2. Tambah Anggota Kelompok</strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-7">
+                                Tambahkan anggota kelompok yang akan melaksanakan PKL, dan
+                                lengkapi semua profilnya, beserta surat pengajuan PKL
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
-                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <div class="features-item">
-                        <div class="features-icon">
-                            <h2>03</h2>
-                            <img src="{{ asset('images/notif.png') }}" alt="">
-                            <h4>Menunggu Surat Balasan</h4>
-                            <p>Calon peserta akan mendapatkan notifikasi jika Pengajuan PKL tersebut sudah mendapatkan
-                                surat balasan yaitu diterima atau ditolak.</p>
+                <div class="card col-12 col-md-6 col-lg-3">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <div class="iconfont-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-file mobi-mbri"></span>
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-7">
+                                <strong>3. Simpan Permanen Ajuan</strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-7">
+                                Setelah semua data diisi, selanjutnya simpan permanen agar
+                                ajuan mu diverifikasi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-6 col-lg-3">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <div class="iconfont-wrapper">
+                                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-7">
+                                <strong>4. Menunggu Verifikasi</strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-5">
+                                Silahkan menunggu notifikasi verifikasi pengajuan pkl berisi
+                                diterima atau ditolak nya ajuan tersebut. Selanjutnya unduh
+                                surat balasan ajuan yang telah dilampirkan.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ***** Features Big Item End ***** -->
-
-    <div class="left-image-decor"></div>
-
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section" id="promotion">
+    <br>
+    <br>
+    <br>
+    <section data-bs-version="5.1" class="image2 cid-tHY3PaTkNq" id="image2-8">
         <div class="container">
-            <div class="row">
-                <div class="left-image col-lg-4 col-md-6 col-sm-12 mobile-bottom-fix-big"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="{{ asset('images/SI_INNA.png') }}" class="rounded img-fluid d-block mx-auto"
-                        alt="App">
-                </div>
-                <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
-                    <ul>
-                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                            <img src="" alt="">
-                            <div class="text">
-                                <h4>Merupakan Singkatan dari Aplika<em>si In</em>tership Ma<em>na</em>gement.</p>
-                                    <h4>Aplikasi </h4>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Big Item End ***** -->
-
-    <div class="right-image-decor"></div>
-
-    <!-- ***** Testimonials Starts ***** -->
-    <section class="section" id="testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="center-heading">
-                        <h2>Panduan<em> Peserta PKL</em></h2>
-                        <p>Suspendisse vitae laoreet mauris. Fusce a nisi dapibus, euismod purus non, convallis odio.
-                            Donec vitae magna ornare, pellentesque ex vitae, aliquet urna.</p>
+            <center>
+                <h3 class="mbr-section-title mbr-fonts-style mb-3 display-2">
+                    <strong>Tentang&nbsp; "SI INNA"</strong>
+                </h3>
+            </center>
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-4">
+                    <div class="image-wrapper">
+                        <img src="{{ asset('landing_page/assets/images/si-inna-500x500.png') }}"
+                            alt="Mobirise Website Builder" />
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <div class="owl-carousel owl-theme">
-                        <div class="item service-item">
-                            <div class="testimonial-content">
-                                <i><img src="{{ asset('images/DPUBMTR.png') }}" alt=""></i>
-                                <h4>Jonathan Smart</h4>
-                                <p>“Nullam hendrerit, elit a semper pharetra, ipsum nibh tristique tortor, in tempus
-                                    urna elit in mauris.”</p>
-                                <span>Besta CTO</span>
-                            </div>
-                        </div>
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Second Author"></i>
-                            </div>
-                            <div class="testimonial-content">
-
-                                <h4>Martino Tino</h4>
-                                <p>“Morbi non mi luctus felis molestie scelerisque. In ac libero viverra, placerat est
-                                    interdum, rhoncus leo.”</p>
-                                <span>Web Analyst</span>
-                            </div>
-                        </div>
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Author Third"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h4>George Tasa</h4>
-                                <p>“Fusce rutrum in dolor sit amet lobortis. Ut at vehicula justo. Donec quam dolor,
-                                    congue a fringilla sed, maximus et urna.”</p>
-                                <span>System Admin</span>
-                            </div>
-                        </div>
-                        <div class="item service-item">
-                            <div class="author">
-                                <i><img src="assets/images/testimonial-author-1.png" alt="Fourth Author"></i>
-                            </div>
-                            <div class="testimonial-content">
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h4>Sir James</h4>
-                                <p>"Fusce rutrum in dolor sit amet lobortis. Ut at vehicula justo. Donec quam dolor,
-                                    congue a fringilla sed, maximus et urna."</p>
-                                <span>New Villager</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Testimonials Ends ***** -->
-
-
-    <!-- ***** Footer Start ***** -->
-    <footer id="contact-us">
-        <div class="container">
-            <div class="footer-content">
-                <div class="row">
-                    <!-- ***** Contact Form Start ***** -->
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="contact-form">
-                            <form id="contact" action="" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="name" type="text" id="name"
-                                                placeholder="Full Name" required=""
-                                                style="background-color: rgba(250,250,250,0.3);">
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <fieldset>
-                                            <input name="email" type="text" id="email"
-                                                placeholder="E-Mail Address" required=""
-                                                style="background-color: rgba(250,250,250,0.3);">
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <fieldset>
-                                            <textarea name="message" rows="6" id="message" placeholder="Your Message" required=""
-                                                style="background-color: rgba(250,250,250,0.3);"></textarea>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <fieldset>
-                                            <button type="submit" id="form-submit" class="main-button">Send Message
-                                                Now</button>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- ***** Contact Form End ***** -->
-                    <div class="right-content col-lg-6 col-md-12 col-sm-12">
-                        <h2>More About <em>Lava</em></h2>
-                        <p>Phasellus dapibus urna vel lacus accumsan, iaculis eleifend leo auctor. Duis at finibus odio.
-                            Vivamus ut pharetra arcu, in porta metus. Suspendisse blandit pulvinar ligula ut elementum.
-                            <br><br>If you need this contact form to send email to your inbox, you may follow our <a
-                                rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact</a>
-                            page
-                            for more detail.
+                <div class="col-12 col-lg">
+                    <div class="text-wrapper">
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            SI INNA Merupakan Singkatan dari Internship Management yang
+                            digunakan untuk mengelola data-data pengajuan Praktik Kerja
+                            Lapangan (PKL), mengelola data peserta, presensi peserta dan
+                            mecetak sertifikat PKL. Peserta Didik yang melaksanakan Praktik
+                            Kerja Lapangan (PKL) di Dinas Pekerjaan Umum Bina Marga dan Tata
+                            Ruang, diharapkan dengan adanya aplikasi ini diharapkan
+                            menjadikan Pengelolaan PKL, Manajemen PKL lebih mudah dalam
+                            pengelolaannya karena peserta dapat menggunakan aplikasi ini
+                            untuk presensi, mencatat kegiatan harian dan mencetaknya sebagai
+                            lampiran laporan tertulis agar mendapatkan sertifikat PKL.
                         </p>
-                        <ul class="social">
-                            <li><a href="https://fb.com/templatemo"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sub-footer">
-                        <p>Copyright &copy; 2020 Lava Landing Page
-
-                            | Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- jQuery -->
-    <script src="{{ asset('landing_pages/assets/js/jquery-2.1.0.min.js') }}"></script>
+    <!--  <section data-bs-version="5.1" class="features13 cid-tHY6QUNy6B" id="features14-a">
+       <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3
+              class="mbr-section-title align-center mb-4 mbr-fonts-style display-2"
+            >
+              <strong>Panduan Peserta PKL</strong>
+            </h3>
+          </div>
+          <div class="card col-12 col-md-4 col-lg-2 p-3">
+            <div class="card-wrapper">
+              <div class="card-box align-center">
+                <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri"></span>
+                <h4
+                  class="card-title align-center mbr-black mbr-fonts-style display-7"
+                >
+                  <strong>Login</strong>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="card p-3 col-12 col-md-4 col-lg-2">
+            <div class="card-wrapper">
+              <div class="card-box align-center">
+                <span
+                  class="mbr-iconfont mobi-mbri-bulleted-list mobi-mbri"
+                ></span>
+                <h4
+                  class="card-title align-center mbr-black mbr-fonts-style display-7"
+                >
+                  <strong>Presensi</strong>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="card p-3 col-12 col-md-4 col-lg-2">
+            <div class="card-wrapper">
+              <div class="card-box align-center">
+                <span
+                  class="mbr-iconfont mobi-mbri-contact-form mobi-mbri"
+                ></span>
+                <h4
+                  class="card-title align-center mbr-black mbr-fonts-style display-7"
+                >
+                  <strong>Catatan Harian</strong>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="card p-3 col-12 col-md-4 col-lg-2">
+            <div class="card-wrapper">
+              <div class="card-box align-center">
+                <span
+                  class="mbr-iconfont mobi-mbri-cursor-click mobi-mbri"
+                ></span>
+                <h4
+                  class="card-title align-center mbr-black mbr-fonts-style display-7"
+                >
+                  <strong>Input Laporan PKL</strong>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="card p-3 col-12 col-md-4 col-lg-2">
+            <div class="card-wrapper">
+              <div class="card-box align-center">
+                <span class="mbr-iconfont mobi-mbri-download mobi-mbri"></span>
+                <h4
+                  class="card-title align-center mbr-black mbr-fonts-style display-7"
+                >
+                  <strong>Download Sertifikat</strong>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
 
-    <!-- Bootstrap -->
-    <script src="{{ asset('landing_pages/assets/js/popper.js') }}"></script>
-    <script src="{{ asset('landing_pages/assets/js/bootstrap.min.js') }}"></script>
+    <section data-bs-version="5.1" class="timeline3 cid-sFHr5fwP9J" id="timeline3-4">
 
-    <!-- Plugins -->
-    <script src="{{ asset('landing_pages/assets/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('landing_pages/assets/js/scrollreveal.min.js') }}"></script>
-    <script src="{{ asset('landing_pages/assets/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('landing_pages/assets/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('landing_pages/assets/js/imgfix.min.js') }}"></script>
+        <br> <br>
+        <div class="container">
+            <div class="mbr-section-head">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Panduan Peserta PKL</strong>
+                </h3>
+            </div>
+            <div class="timelines-container mt-4">
+                <div class="row timeline-element first-separline mb-5">
+                    <div class="timeline-date col-12">
+                        <div class="timeline-date-wrapper">
+                            <p class="mbr-timeline-date display-7">1. Login</p>
+                        </div>
+                    </div>
+                    <span class="iconBackground"></span>
+                    <div class="col-12 col-md-6">
+                        <div class="image-wrapper">
+                            <!-- ini gambar -->
 
-    <!-- Global Init -->
-    <script src="{{ asset('landing_pages/assets/js/custom.js') }}"></script>
+                            <img src="{{ asset('landing_page/assets/images/login.png') }}"
+                                alt="Mobirise Website Builder" title="" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="timeline-text-wrapper">
+                            <h4 class="mbr-timeline-title mbr-fonts-style mb-0 display-2">
+                                <strong>Login</strong>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row timeline-element first-separline mb-5">
+                    <div class="timeline-date col-12">
+                        <div class="timeline-date-wrapper">
+                            <p class="mbr-timeline-date display-7">2. Presensi</p>
+                        </div>
+                    </div>
+                    <span class="iconBackground"></span>
+                    <div class="col-12 col-md-6">
+                        <div class="image-wrapper">
+                            <img src="{{ asset('landing_page/assets/images/presensi.png') }}"
+                                alt="Mobirise Website Builder" title="" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="timeline-text-wrapper">
+                            <h4 class="mbr-timeline-title mbr-fonts-style mb-0 display-2">
+                                <strong>Presensi</strong>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur sit amet porttitor ante. Pellentesque eu orci
+                                molestie est tincidunt interdum. Duis pellentesque volutpat
+                                leo vel rhoncus. Sed a metus sit amet sapien vulputate mattis.
+                                Nulla vel elementum lectus. Nulla euismod euismod maximus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row timeline-element first-separline mb-5">
+                    <div class="timeline-date col-12">
+                        <div class="timeline-date-wrapper">
+                            <p class="mbr-timeline-date display-7">3. Catatan Harian</p>
+                        </div>
+                    </div>
+                    <span class="iconBackground"></span>
+                    <div class="col-12 col-md-6">
+                        <div class="image-wrapper">
+                            <img src="{{ asset('landing_page/assets/images/harian.png') }}"
+                                alt="Mobirise Website Builder" title="" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="timeline-text-wrapper">
+                            <h4 class="mbr-timeline-title mbr-fonts-style mb-0 display-2">
+                                <strong>Catatan Harian</strong>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur sit amet porttitor ante. Pellentesque eu orci
+                                molestie est tincidunt interdum. Duis pellentesque volutpat
+                                leo vel rhoncus. Sed a metus sit amet sapien vulputate mattis.
+                                Nulla vel elementum lectus. Nulla euismod euismod maximus.<br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row timeline-element first-separline mb-5">
+                    <div class="timeline-date col-12">
+                        <div class="timeline-date-wrapper">
+                            <p class="mbr-timeline-date display-7">4. Input Laporan PKL</p>
+                        </div>
+                    </div>
+                    <span class="iconBackground"></span>
+                    <div class="col-12 col-md-6">
+                        <div class="image-wrapper">
+                            <img src="{{ asset('landing_page/assets/images/input.png') }}"
+                                alt="Mobirise Website Builder" title="" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="timeline-text-wrapper">
+                            <h4 class="mbr-timeline-title mbr-fonts-style mb-0 display-2">
+                                <strong>Input Laporan PKL</strong>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
+                                This is a timeline block. Click on the blue gear icon to set
+                                the number of items in this timeline. Use Mobirise website
+                                building software to create multiple sites for commercial and
+                                non-profit projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row timeline-element first-separline mb-5">
+                    <div class="timeline-date col-12">
+                        <div class="timeline-date-wrapper">
+                            <p class="mbr-timeline-date display-7">
+                                5. Download Sertifikat
+                            </p>
+                        </div>
+                    </div>
+                    <span class="iconBackground"></span>
+                    <div class="col-12 col-md-6">
+                        <div class="image-wrapper">
+                            <img src="{{ asset('landing_page/assets/images/file.png') }}"
+                                alt="Mobirise Website Builder" title="" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="timeline-text-wrapper">
+                            <h4 class="mbr-timeline-title mbr-fonts-style mb-0 display-2">
+                                <strong>Download Sertifikat</strong>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
+                                This is a timeline block. Click on the blue gear icon to set
+                                the number of items in this timeline. You don't have to code
+                                to create your own site. Select one of available themes in the
+                                Mobirise sitebuilder.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section data-bs-version="5.1" class="map1 cid-sFHu4seZjP" id="map1-a">
+        <div class="container">
+            <div class="mbr-section-head mb-4">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Lokasi Pengajuan Praktik Kerja Lapangan</strong>
+                </h3>
+            </div>
+            <div class="google-map">
+                <iframe frameborder="0" style="border: 0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZI5F_k6S1k46ujh0SNrapM89f7mJxd30&amp;q=Dinas Pekerjaan Umum Bina Marga dan Tata Ruang"
+                    allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </section>
 
-    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <section data-bs-version="5.1" class="social1 cid-sFHrCR0OHz" id="share1-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mbr-section-title mb-3 align-center mbr-fonts-style display-2">
+                        <strong>Sosial Media</strong>
+                    </h3>
+                    <div>
+                        <div class="mbr-social-likes align-center">
+                            <span class="btn btn-social socicon-bg-facebook facebook m-2">
+                                <i class="socicon socicon-instagram"></i>
+                            </span>
+
+                            <span class="btn btn-social socicon-bg-facebook facebook m-2">
+                                <i class="socicon socicon-youtube"></i>
+                            </span>
+
+                            <span class="btn btn-social socicon-bg-facebook facebook m-2">
+                                <i class="socicon socicon-mail"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="display-0"
+        style="
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        display: flex;
+        position: relative;
+        height: 0rem;
+      ">
+        <a href="https://mobiri.se/2871549"
+            style="
+          flex: 1 1;
+          height: 0rem;
+          position: absolute;
+          width: 100%;
+          z-index: 1;
+        "><img
+                alt="Mobirise.com" style="height: 0rem"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" /></a>
+        <!-- <p style="margin: 0; text-align: center" class="display-7">
+        Created with Mobirise &#8204;
+      </p> -->
+        <a style="z-index: 1" href="https://mobirise.com/offline-website-builder.html"></a>
+    </section>
+    <script src="{{ asset('landing_page/assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('landing_page/assets/smoothscroll/smooth-scroll.js') }}"></script>
+    <script src="{{ asset('landing_page/assets/ytplayer/index.js') }}"></script>
+    <script src="{{ asset('landing_page/assets/dropdown/js/navbar-dropdown.js') }}"></script>
+    <script src="{{ asset('landing_page/assets/sociallikes/social-likes.js') }}"></script>
+    <script src="{{ asset('landing_page/assets/theme/js/script.js') }}"></script>
 </body>
 
 </html>
-
-
