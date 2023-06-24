@@ -70,8 +70,16 @@
                             aria-expanded="false"><i class="ri-archive-drawer-line iq-arrow-left"></i><span>Kelola Presensi
                             </span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="wizard-form" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="{{ route('apprentince.index') }}"><i class="ri-clockwise-line"></i> Data Presensi
+                            <li><a href="{{ route('attendance.index') }}"><i class="ri-clockwise-line"></i> Data Presensi
                                 </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse"
+                            aria-expanded="false"><i class="ri-pantone-line iq-arrow-left"></i><span>Data Laporan
+                                PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="extra-pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                            <li><a href="pages-maintenance.html"><i class="ri-archive-line"></i>Data Laporan PKL</a></li>
                         </ul>
                     </li>
                     <li>
