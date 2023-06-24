@@ -1,82 +1,3 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
-
-
 <!doctype html>
 <html lang="en">
 
@@ -86,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Daftar Akun</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('images/LOGO.png') }}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('findash/css/bootstrap.min.css') }}">
     <!-- Typography CSS -->
@@ -119,65 +40,42 @@
                     <div class="row m-0">
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
-                                <h1 class="mb-0 text-center">Daftar Akun</h1>
-
-                                <form action="{{ route('register') }}" method="POST" class="mt-4">
+                                <h2 class="mb-0 text-center">Buat Pengajuan PKL</h2>
+                                <form action="{{ route('apprentince.store_request') }}" method="POST" class="mt-4"
+                                    enctype="multipart/form-data">
                                     @csrf
+
+                                    @if (session('error'))
+                                        <p class="text-dark">{{ session('error') }}</p>
+                                    @endif
+
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Nama Lengkap</label>
+                                        <label for="exampleInputEmail1">Asal Instansi/Sekolah</label>
                                         <input type="text" class="form-control mb-0" id="exampleInputEmail1"
-                                            name="name" value="{{ old('name') }}" placeholder="Nama Lengkap Anda">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail2">Email</label>
-                                        <input type="email" class="form-control mb-0" id="exampleInputEmail2"
-                                            name="email" value="{{ old('email') }}" placeholder="Email Anda">
-                                        @error('email')
-                                            <span class="text-danger"> {{ $message }}
-                                            </span>
-                                        @enderror
-
+                                            name="school" value="{{ old('school') }}"
+                                            placeholder="Masukan Asal Instansi/Sekolah">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Kata Sandi</label>
-                                        <input type="password" class="form-control mb-0" id="exampleInputPassword1"
-                                            name="password" value="{{ old('password') }}" placeholder="Kata Sandi">
-                                        @error('password')
-                                            <span class="text-danger"> {{ $message }}
-                                            </span>
-                                        @enderror
+                                        <label for="exampleInputEmail1">Email Aktif</label>
+                                        <input type="email" class="form-control mb-0" id="exampleInputEmail1"
+                                            name="email" value="{{ old('email') }}"
+                                            placeholder="Masukan Asal Instansi/Sekolah">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Konfirmasi Kata Sandi</label>
-                                        <input type="password" class="form-control mb-0" id="exampleInputPassword1"
-                                            name="password_confirmation" value="{{ old('password_confirmation') }}"
-                                            placeholder="Konfirmasi Kata Sandi">
-                                        @error('password_confirmation')
-                                            <span class="text-danger"> {{ $message }}
-                                            </span>
-                                        @enderror
+                                        <label>Surat Pengajuan PKL <br> (File harus menggunakan ekstensi PDF)</label>
+                                        <input type="file" class="form-control" name="file">
                                     </div>
-                                    {{-- <div class="d-inline-block w-100">
-                                        <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">I accept <a
-                                                    href="#">Terms and Conditions</a></label>
-                                        </div>
-                                    </div> --}}
                                     <div class="sign-info text-center">
-                                        <button type="submit" class="btn btn-primary d-block w-100 mb-2">Daftar
-                                            Akun</button>
-                                        <span class="text-dark d-inline-block line-height-2">Sudah Punya akun? <a
-                                                href="{{ route('login') }}">Masuk</a></span>
+                                        <button type="submit" class="btn btn-danger d-block w-100 mb-2">Buat
+                                            Pengajuan</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="col-md-7 text-center sign-in-page-image">
                             <div class="sign-in-detail text-white">
-                                <a class="sign-in-logo mb-5" href="#"><img
-                                        src="{{ asset('images/LOGO.png')}}" class="img-fluid" alt="logo"></a>
+                                <a class="sign-in-logo mb-5" href="#"><img src="{{ asset('images/LOGO.png') }}"
+                                        class="img-fluid" alt="logo"></a>
                                 <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false"
                                     data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1"
                                     data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
@@ -192,7 +90,6 @@
                                     <div class="item">
                                         <img src="{{ asset('landing_page/assets/images/img-6446.jpg') }}"
                                             class="img-fluid mb-4" alt="logo">
-
                                     </div>
                                 </div>
                             </div>
@@ -238,6 +135,8 @@
     <script src="{{ asset('findash/js/chart-custom.js') }}"></script>
     <!-- Custom JavaScript -->
     <script src="{{ asset('findash/js/custom.js') }}"></script>
+
+    @include('sweetalert::alert')
 </body>
 
 </html>

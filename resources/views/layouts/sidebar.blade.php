@@ -46,11 +46,21 @@
                     </li>
 
                     <li>
+                        <a href="#userinfo2" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
+                                class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>
+                                Kelola Peserta PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="userinfo2" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
+                            <li><a href="{{ route('user.index') }}"><i class="las la-id-card-alt"></i> Pengguna</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
                         <a href="#forms" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
                                 class="lab la-wpforms iq-arrow-left"></i><span>Kelola Pengajuan </span><i
                                 class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="forms" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="{{ route('apprentince.index') }}"><i class="las la-book"></i>Data Pengajuan PKL
+                            <li><a href="{{ route('apprentince.index_request') }}"><i class="las la-book"></i>Data Pengajuan
+                                    PKL
                                 </a>
                             </li>
 

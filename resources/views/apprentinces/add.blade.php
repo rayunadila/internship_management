@@ -50,7 +50,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="school">Asal Instansi</label>
-                                            <input type="text" name="school" class="form-control" id="school"
+                                            <input type="text" name="school[]" class="form-control" id="school"
                                                 value="{{ old('school') }}" placeholder="Asal Instansi" required>
                                             @error('school')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -61,7 +61,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="department">Jurusan </label>
-                                            <input type="text" name="department" class="form-control" id="department"
+                                            <input type="text" name="department[]" class="form-control" id="department"
                                                 value="{{ old('department') }}" placeholder="Jurusan" required>
                                             @error('department')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -71,7 +71,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Nama Lengkap </label>
-                                            <input type="text" name="name" class="form-control" id="name"
+                                            <input type="text" name="name[]" class="form-control" id="name"
                                                 value="{{ old('name') }}" placeholder="Nama Lengkap" required>
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>

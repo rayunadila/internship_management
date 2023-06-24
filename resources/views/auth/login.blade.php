@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login Si Inna</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('findash/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('images/LOGO.png') }}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('findash/css/bootstrap.min.css') }}">
     <!-- Typography CSS -->

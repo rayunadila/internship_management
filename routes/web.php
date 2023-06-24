@@ -30,16 +30,20 @@ Auth::routes();
 // Dashboard
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// pprentince
+// apprentince
 
 Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprentince', 'as' => 'apprentince.'], function () {
     Route::get('/', 'index')->name('index');
+    Route::get('/index_request', 'index_request')->name('index_request');
     Route::get('/create', 'create')->name('create');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
     Route::get('/datatable', 'datatable')->name('datatable');
+    Route::get('/datatable_request', 'datatable_request')->name('datatable_request');
     Route::post('/store', 'store')->name('store');
+    Route::post('/store_request', 'store_request')->name('store_request');
     Route::put('/update/{id}', 'update')->name('update');
+    Route::put('/update_confirm/{id}', 'update_confirm')->name('update_confirm');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
 });
 

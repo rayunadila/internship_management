@@ -11,12 +11,6 @@
                     <div class="iq-header-title">
                         <h4 class="card-title">Data Pengajuan</h4>
                     </div>
-                    <div class="float-right">
-                        <a class="btn btn-sm bg-primary" href="{{ route('apprentince.create') }}"><i class="ri-add-fill"><span
-                                    class="pl-1">Tambah
-                                    Data</span></i>
-                        </a>
-                    </div>
                 </div>
                 <div class="iq-card-body">
                     <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
@@ -25,11 +19,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Aksi</th>
-                                <th>Nama Lengkap</th>
-                                <th>NIM/NISN</th>
+                                <th>Nama</th>
+                                <th>Email</th>
                                 <th>Asal Instansi</th>
-                                <th>Tanggal Mulai PKL</th>
-                                <th>Tanggal Selesai PKL</th>
                                 <th>Surat Pengajuan</th>
                                 <th>Diinputkan Pada</th>
                             </tr>
@@ -54,7 +46,7 @@
         function getDatatable() {
             data_table = $("#data-table").DataTable({
                 ajax: {
-                    url: "{{ route('apprentince.datatable') }}",
+                    url: "{{ route('apprentince.datatable_request') }}",
                 },
                 serverSide: true,
                 destroy: true,
@@ -78,20 +70,12 @@
                         data: 'name'
                     },
                     {
-                        name: 'nisn_nim',
-                        data: 'nisn_nim'
+                        name: 'email',
+                        data: 'email'
                     },
                     {
                         name: 'school',
                         data: 'school'
-                    },
-                    {
-                        name: 'date_start',
-                        data: 'date_start'
-                    },
-                    {
-                        name: 'date_end',
-                        data: 'date_end'
                     },
                     {
                         name: 'show_file',

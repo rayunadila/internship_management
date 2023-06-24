@@ -13,76 +13,17 @@
                 <div class="card-body">
                     {{-- MENAMPILKAN FILE --}}
                     <div class="card">
-                        <div class="card-header text-center mb-3">
-                            <h4 class="card-title mb-3">{{ $apprentince['name'] }}</h4>
-
+                        <div class="card-header mb-3">
+                            <h4 class="card-title mb-3">Data Pengajuan PKL</h4>
                         </div>
-
                         <div class="card-body">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h4>Nama Lengkap</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $apprentince['name'] }}</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>NIM/NISN</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $apprentince['nim/nisn'] }}</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>Asal Instansi</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $apprentince['school'] }}</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>Tanggal Mulai PKL</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $apprentince['date_start'] }}</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>Tanggal Selesai PKL</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $apprentince['date_end'] }}</h4>
-                                    </td>
-                                </tr>
-
-
-                                @if (!empty($apprentince['file']))
-                                    <iframe width="100%" height="500px"
-                                        src="{{ asset('apprentinces/' . $apprentince['file']) }}"
-                                        alt="{{ $apprentince['file'] }}"></iframe>
-                                @endif
-                            </table>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="name">Nama Lengkap</label>
+                                    <input id="name" type="text" class="form-control" value="{{ $data['name'] }}"
+                                        disabled>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
