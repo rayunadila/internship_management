@@ -22,6 +22,15 @@
                                 class="las la-home iq-arrow-left"></i><span>Beranda</span></a>
                     </li>
                 </ul>
+                <li>
+                    <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse"
+                        aria-expanded="false"><i class="ri-pages-line iq-arrow-left"></i><span>Kelola Sertifikat
+                            PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                    <ul id="authentication" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        <li><a href="{{ route('apprentince.index_sertificate') }}"><i class="las la-sign-in-alt"></i>Data
+                                Sertifikat PKL</a></li>
+                    </ul>
+                </li>
             </nav>
         </div>
     @endrole

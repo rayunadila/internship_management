@@ -17,7 +17,7 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <h4><b>Data Pengajuan PKL</b></h4>
                         </div>
-                        <a class="text-primary" href="{{ route('apprentince.index') }}"> <i class="ri-arrow-right-fill"></i>
+                        <a class="text-primary" href="{{ route('apprentince.index_request') }}"> <i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
                     </div>
                 </div>
@@ -185,9 +185,9 @@
 
                         <i class="ri-file-line"></i>
                     </div>
-                    <p class="text-secondary">Pengajuan PKL</p>
+                    <p class="text-secondary">Data Peserta PKL</p>
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4><b>Buat Pengajuan</b></h4>
+                        <h4><b>Buat Data Peserta</b></h4>
                     </div>
                     <a class="text-primary" href="{{ route('apprentince.create') }}"> <i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
