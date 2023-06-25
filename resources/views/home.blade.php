@@ -17,7 +17,8 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <h4><b>Data Pengajuan PKL</b></h4>
                         </div>
-                        <a class="text-primary" href="{{ route('apprentince.index_request') }}"> <i class="ri-arrow-right-fill"></i>
+                        <a class="text-primary" href="{{ route('apprentince.index_request') }}"> <i
+                                class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
                     </div>
                 </div>
@@ -235,7 +236,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4><b>Buat Laporan Kegiatan</b></h4>
                     </div>
-                    <a class="text-primary" href=""><i class="ri-arrow-right-fill"></i> Selengkapnya</a>
+                    <a class="text-primary" href="{{ route('apprentince_file.create') }}"><i class="ri-arrow-right-fill"></i> Selengkapnya</a>
                 </div>
             </div>
         </div>

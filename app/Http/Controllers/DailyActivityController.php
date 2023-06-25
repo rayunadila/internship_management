@@ -47,9 +47,13 @@ class DailyActivityController extends Controller
                 $url_delete = route('daily_activity.destroy', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
-                if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
-                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
+
+                if (Auth::user()->hasRole('Admin')) {
+                    if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
+                        $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
+                    }
                 }
+
 
                 $btn .= "<a href='$url_edit' class = 'btn btn-outline-info btn-sm text-nowrap'><i class='fas fa-edit mr-2'></i> Edit</a>";
                 $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
