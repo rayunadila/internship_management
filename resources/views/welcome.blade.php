@@ -141,7 +141,8 @@
                             </h5>
                             <div class="mbr-section-btn mt-3">
                                 <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
-                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Buat Pengajuan
+                                    PKL</a>
                             </div>
                         </div>
                     </div>
@@ -308,7 +309,7 @@
                 </div>
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
-                        <p class="mbr-text mbr-fonts-style display-7" align="justify">
+                         <p class="mbr-text mbr-fonts-style display-7" align="justify">
                             SI INNA Merupakan Singkatan dari Internship Management yang
                             digunakan untuk mengelola data-data pengajuan Praktik Kerja
                             Lapangan (PKL), mengelola data peserta, presensi peserta dan
@@ -437,8 +438,8 @@
                                 <strong>Login</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            </p>
+                                Peserta mendapatkan akun kemudian melakukan login agar mendapatkan akses ke aplikasi SI
+                                INNA</p>
                         </div>
                     </div>
                 </div>
@@ -461,11 +462,7 @@
                                 <strong>Presensi</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Curabitur sit amet porttitor ante. Pellentesque eu orci
-                                molestie est tincidunt interdum. Duis pellentesque volutpat
-                                leo vel rhoncus. Sed a metus sit amet sapien vulputate mattis.
-                                Nulla vel elementum lectus. Nulla euismod euismod maximus.
+                                Peserta yang melaksanakan PKL dapat melakukan presensi pada saat melaksanakan PKL
                             </p>
                         </div>
                     </div>
@@ -489,11 +486,7 @@
                                 <strong>Catatan Harian</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Curabitur sit amet porttitor ante. Pellentesque eu orci
-                                molestie est tincidunt interdum. Duis pellentesque volutpat
-                                leo vel rhoncus. Sed a metus sit amet sapien vulputate mattis.
-                                Nulla vel elementum lectus. Nulla euismod euismod maximus.<br />
+                                Peserta dapat mengisi catatan kegiaatan selama PKL berlangsung.<br />
                             </p>
                         </div>
                     </div>
@@ -517,10 +510,8 @@
                                 <strong>Input Laporan PKL</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                This is a timeline block. Click on the blue gear icon to set
-                                the number of items in this timeline. Use Mobirise website
-                                building software to create multiple sites for commercial and
-                                non-profit projects.
+                                Setelah melaksanakan PKL peserta mengirimkan Laporan tertulis serta melampirkan data
+                                presensi dan data kegiatan harian.
                             </p>
                         </div>
                     </div>
@@ -546,10 +537,8 @@
                                 <strong>Download Sertifikat</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                This is a timeline block. Click on the blue gear icon to set
-                                the number of items in this timeline. You don't have to code
-                                to create your own site. Select one of available themes in the
-                                Mobirise sitebuilder.
+                                Setelah laporan peserta telah dikonfirmasi maka peserta dapat mendownload sertifikat
+                                PKL.
                             </p>
                         </div>
                     </div>
@@ -584,17 +573,23 @@
                     </h3>
                     <div>
                         <div class="mbr-social-likes align-center">
-                            <span class="btn btn-social socicon-bg-facebook facebook m-2">
-                                <i class="socicon socicon-instagram"></i>
-                            </span>
+                            <a href="https://instagram.com/dinaspubmtr?igshid=NTc4MTIwNjQ2YQ==">
+                                <span class="btn btn-social socicon-bg-facebook facebook m-2">
+                                    <i class="socicon socicon-instagram"></i>
+                                </span>
+                            </a>
 
-                            <span class="btn btn-social socicon-bg-facebook facebook m-2">
-                                <i class="socicon socicon-youtube"></i>
-                            </span>
+                            <a href="https://youtube.com/@dinaspubinamargatataruangs4941">
+                                <span class="btn btn-social socicon-bg-facebook facebook m-2">
+                                    <i class="socicon socicon-youtube"></i>
+                                </span>
+                            </a>
 
-                            <span class="btn btn-social socicon-bg-facebook facebook m-2">
-                                <i class="socicon socicon-mail"></i>
-                            </span>
+                            <a href="">
+                                <span class="btn btn-social socicon-bg-facebook facebook m-2">
+                                    <i class="socicon socicon-mail"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -14,10 +14,10 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->comment('foreign key user');
+            $table->bigInteger('apprentince_id')->comment('foreign key apprentince');
             $table->string('latitude')->nullable()->comment('latitude');
             $table->string('longitude')->nullable()->comment('longitude');
-            $table->boolean('status')->nullable()->comment('status');
+            $table->string('status')->nullable()->comment('status');
 
             $table->timestamps();
         });

@@ -65,8 +65,6 @@
 
                                     <div class="sign-info text-center">
                                         <button type="submit" class="btn btn-primary d-block w-100 mb-2">Masuk</button>
-                                        <span class="text-dark dark-color d-inline-block line-height-2">Tidak Punya
-                                            Akun? <a href="{{ route('register') }}">Daftar Akun</a></span>
                                     </div>
                                 </form>
                             </div>

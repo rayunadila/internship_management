@@ -11,6 +11,9 @@
                     </div>
                 </div>
                 <div class="iq-card-body">
+                    @if (session('error'))
+                        <p>{{ session('error') }}</p>
+                    @endif
 
                     <form action="{{ route('daily_activity.store') }}" method="post">
                         @csrf

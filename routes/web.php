@@ -38,6 +38,8 @@ Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprent
     Route::get('/create', 'create')->name('create');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
+    Route::get('/accepted/{id}', 'accepted')->name('accepted');
+    Route::get('/rejected/{id}', 'rejected')->name('rejected');
     Route::get('/datatable', 'datatable')->name('datatable');
     Route::get('/datatable_request', 'datatable_request')->name('datatable_request');
     Route::post('/store', 'store')->name('store');
@@ -77,6 +79,7 @@ Route::group(['controller' => DailyActivityController::class, 'prefix' => 'daily
     Route::get('/create', 'create')->name('create');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
+    Route::get('/accepted/{id}', 'accepted')->name('accepted');
     Route::get('/datatable', 'datatable')->name('datatable');
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');

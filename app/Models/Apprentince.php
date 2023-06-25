@@ -12,9 +12,6 @@ class Apprentince extends Model
     protected $guarded = ['id'];
 
     // Status
-    const STATUS_NOT_CONFIRMED = "Belum Dikonfirmasi";
-    const STATUS_APPROVED = "Disetujui";
-    const STATUS_REJECTED = "Ditolak";
     const STATUS_ON_APPRENTINCE = "Magang";
     const STATUS_FINISHED = "Selesai Magang";
 

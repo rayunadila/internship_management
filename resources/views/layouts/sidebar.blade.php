@@ -50,7 +50,7 @@
                                 class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>
                                 Kelola Peserta PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="userinfo2" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                            <li><a href="{{ route('user.index') }}"><i class="las la-id-card-alt"></i> Pengguna</a></li>
+                            <li><a href="{{ route('apprentince.index') }}"><i class="las la-id-card-alt"></i> Data Peserta PKL</a></li>
                         </ul>
                     </li>
 

@@ -3,46 +3,36 @@
 @section('content')
     <div class="row">
         <div class="col-md-12 col-lg-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between">
-                    <div class="header-title">
-                        <a class="btn btn-info btn-sm mb-2" href="{{ route('attendance.index') }}">Kembali</a>
-                        <h4 class="card-title">Data Pengajuan</h4>
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Detail Presensi</h4>
                     </div>
                 </div>
-                <div class="card-body">
-                    {{-- MENAMPILKAN FILE --}}
-                    <div class="card">
-                        <div class="card-header text-center mb-3">
-                            <h4 class="card-title mb-3">{{ $attendance['longitude'] }}</h4>
+                <div class="card m-3">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">Lokasi Presensi</h4>
+                    </div>
+                    <div class="card-body">
+                        <iframe
+                            src="https://maps.google.com/maps?q=+{{ $data['latitude'] }}+,+{{ $data['longitude'] }}+&hl=en&z=14&amp;output=embed"
+                            width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="iq-card-body">
+                    <div class="row">
 
+                        <div class="col-md-6">
+                            <label>Nama Mahasiswa/Siswa</label>
+                            <input class="form-control" type="text" disabled>
                         </div>
-
-                        <div class="card-body">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h4>Lokasi</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $attendance['longitude'] }}</h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>Waktu</h4>
-                                    </td>
-                                    <td>
-                                        <h4>:</h4>
-                                    </td>
-                                    <td>
-                                        <h4>{{ $attendance['laitude'] }}</h4>
-                                    </td>
-                                </tr>
-                            </table>
+                        <div class="col-md-6">
+                            <label>Status Kehadiran</label>
+                            @if ($data['status'] == App\Models\Attendance::STATUS_PRESENT)
+                                <span class="badge bg-success">{{ $data['status'] }}</span>
+                            @else
+                                <span class="badge bg-danger">{{ $data['status'] }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>

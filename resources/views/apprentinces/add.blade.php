@@ -6,7 +6,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Pengajuan PKL</h4>
+                        <h4 class="card-title">Data Peserta PKL</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">
@@ -19,17 +19,7 @@
                         <ul id="top-tab-list" class="p-0">
                             <li class="active" id="account">
                                 <a href="javascript:void();">
-                                    <i class="ri-user-fill"></i><span>Data Ketua</span>
-                                </a>
-                            </li>
-                            <li id="personal">
-                                <a href="javascript:void();">
-                                    <i class="ri-user-add-fill"></i><span>Data Anggota</span>
-                                </a>
-                            </li>
-                            <li id="payment">
-                                <a href="javascript:void();">
-                                    <i class="ri-file-fill"></i><span>File Pengajuan</span>
+                                    <i class="ri-user-fill"></i><span>Isi Data</span>
                                 </a>
                             </li>
                             <li id="confirm">
@@ -50,7 +40,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="school">Asal Instansi</label>
-                                            <input type="text" name="school[]" class="form-control" id="school"
+                                            <input type="text" name="school" class="form-control" id="school"
                                                 value="{{ old('school') }}" placeholder="Asal Instansi" required>
                                             @error('school')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -61,7 +51,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="department">Jurusan </label>
-                                            <input type="text" name="department[]" class="form-control" id="department"
+                                            <input type="text" name="department" class="form-control" id="department"
                                                 value="{{ old('department') }}" placeholder="Jurusan" required>
                                             @error('department')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -71,7 +61,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Nama Lengkap </label>
-                                            <input type="text" name="name[]" class="form-control" id="name"
+                                            <input type="text" name="name" class="form-control" id="name"
                                                 value="{{ old('name') }}" placeholder="Nama Lengkap" required>
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -164,44 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" name="next" class="btn btn-primary next action-button float-right"
-                                value="Next">Selanjutnya</button>
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card text-left">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h3>Tambah Anggota:</h3>
-                                        <h6 class="mb-4">*Isi jika terdapat anggota</h6>
-                                    </div>
-                                </div>
-                                <div id="form-item">
-                                </div>
-                            </div>
-                            <button type="button" id="btn_add" class="btn btn-primary float-left">Tambah
-                                Anggota</button>
-                            <button type="button" name="next" class="btn btn-primary next action-button float-right"
-                                value="Next">Selanjutnya</button>
-                            <button type="button" name="previous"
-                                class="btn btn-dark previous action-button-previous float-right mr-3"
-                                value="Previous">Kembali</button>
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card text-left">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h3 class="mb-4">File Pengajuan PKL :</h3>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>File Pengajuan PKL:</label>
-                                    <input type="file" class="form-control" name="file">
-                                </div>
-                            </div>
                             <button type="submit" class="btn btn-primary float-right">Submit</button>
-                            <button type="button" name="previous"
-                                class="btn btn-dark previous action-button-previous float-right mr-3"
-                                value="Previous">Previous</button>
                         </fieldset>
                     </form>
                 </div>

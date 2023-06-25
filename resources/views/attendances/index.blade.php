@@ -16,8 +16,8 @@
                         <h4 class="card-title">Data Presensi</h4>
                     </div>
                     <div class="float-right">
-                        <a class="btn btn-sm bg-primary" href="{{ route('attendance.create') }}"><i
-                                class="ri-add-fill"><span class="pl-1">Tambah
+                        <a class="btn btn-sm bg-primary" href="{{ route('attendance.create') }}"><i class="ri-add-fill"><span
+                                    class="pl-1">Tambah
                                     Data</span></i>
                         </a>
                     </div>
@@ -29,10 +29,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Aksi</th>
-                                <th>Lokasi</th>
-                                <th>Waktu</th>
+                                <th>Nama</th>
+                                <th>Status</th>
                                 <th>Diinputkan pada</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -75,16 +74,16 @@
                         data: 'action'
                     },
                     {
-                        name: 'longtitude',
-                        data: 'longtitude'
-                    },
-                    {
                         name: 'latitude',
                         data: 'latitude'
                     },
                     {
                         name: 'status',
                         data: 'status'
+                    },
+                    {
+                        name: 'created_at',
+                        data: 'created_at'
                     },
 
                 ],

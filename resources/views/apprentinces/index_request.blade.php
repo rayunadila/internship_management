@@ -24,6 +24,7 @@
                                 <th>Asal Instansi</th>
                                 <th>Surat Pengajuan</th>
                                 <th>Diinputkan Pada</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,6 +85,10 @@
                     {
                         name: 'created_at',
                         data: 'created_at'
+                    },
+                    {
+                        name: 'status',
+                        data: 'status'
                     },
                 ],
             });

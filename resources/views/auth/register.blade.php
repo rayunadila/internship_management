@@ -50,6 +50,12 @@
                                     @endif
 
                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">Nama Lengkap</label>
+                                        <input type="text" class="form-control mb-0" id="exampleInputEmail1"
+                                            name="name" value="{{ old('name') }}"
+                                            placeholder="Masukan Nama Lengkap">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">Asal Instansi/Sekolah</label>
                                         <input type="text" class="form-control mb-0" id="exampleInputEmail1"
                                             name="school" value="{{ old('school') }}"
@@ -66,6 +72,7 @@
                                         <input type="file" class="form-control" name="file">
                                     </div>
                                     <div class="sign-info text-center">
+                                        <a href="{{ url('/') }}" class="btn btn-primary d-block w-100 mb-2">Kembali</a>
                                         <button type="submit" class="btn btn-danger d-block w-100 mb-2">Buat
                                             Pengajuan</button>
                                     </div>

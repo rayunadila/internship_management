@@ -9,7 +9,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Data Pengajuan</h4>
+                        <h4 class="card-title">Data Peserta PKL</h4>
                     </div>
                     <div class="float-right">
                         <a class="btn btn-sm bg-primary" href="{{ route('apprentince.create') }}"><i class="ri-add-fill"><span
@@ -30,7 +30,6 @@
                                 <th>Asal Instansi</th>
                                 <th>Tanggal Mulai PKL</th>
                                 <th>Tanggal Selesai PKL</th>
-                                <th>Surat Pengajuan</th>
                                 <th>Diinputkan Pada</th>
                             </tr>
                         </thead>
@@ -92,10 +91,6 @@
                     {
                         name: 'date_end',
                         data: 'date_end'
-                    },
-                    {
-                        name: 'show_file',
-                        data: 'show_file'
                     },
                     {
                         name: 'created_at',

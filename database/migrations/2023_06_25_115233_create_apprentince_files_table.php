@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_activities', function (Blueprint $table) {
+        Schema::create('apprentince_files', function (Blueprint $table) {
             $table->id();
-            // TABEL
             $table->bigInteger('apprentince_id')->comment('foreign key apprentince');
-            $table->date('date');
-            $table->string('activity');
+            $table->string('file');
             $table->string('status');
-
-            // END TABEL
             $table->timestamps();
         });
     }
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daily_activities');
+        Schema::dropIfExists('apprentince_files');
     }
 };

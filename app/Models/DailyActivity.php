@@ -9,5 +9,9 @@ class DailyActivity extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-}
 
+    // Status
+    const STATUS_NOT_CONFIRMED = "Belum Dikonfirmasi";
+    const STATUS_CONFIRMED = "Sudah Dikonfirmasi";
+    
+}

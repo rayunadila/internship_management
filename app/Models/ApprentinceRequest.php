@@ -13,5 +13,5 @@ class ApprentinceRequest extends Model
 
     const STATUS_NOT_CONFIRMED = "Belum Dikonfirmasi";
     const STATUS_ACCEPTED = "Diterima";
-    const STATUS_REJETED = "Ditolak";
+    const STATUS_REJECTED = "Ditolak";
 }

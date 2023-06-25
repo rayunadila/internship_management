@@ -40,11 +40,6 @@ class ApprentinceController extends Controller
                 return $formatedDate;
             })
 
-            ->addColumn('show_file', function ($data) {
-                $file = asset('assets/pengajuan/' . $data['file']);
-                return "<a href='$file' target='_blank' class='btn btn-primary'><i class='fa fa-info'></i> Lihat File</a>";
-            })
-
             ->addColumn('action', function ($data) {
                 $url_show = route('apprentince.show', Crypt::encrypt($data->id));
                 $url_delete = route('apprentince.destroy', Crypt::encrypt($data->id));
@@ -56,32 +51,53 @@ class ApprentinceController extends Controller
 
                 return $btn;
             })
-            ->rawColumns(['show_file', 'action'])
             ->toJson();
     }
 
     public function datatable_request()
     {
-        $model = ApprentinceRequest::where('status', ApprentinceRequest::STATUS_NOT_CONFIRMED)->orderBy('id', 'desc');
+        $model = ApprentinceRequest::query();
         return DataTables::of($model)
+            ->editColumn('status', function ($data) {
+                if ($data['status'] == ApprentinceRequest::STATUS_NOT_CONFIRMED) {
+                    $badge  = "<span class='badge bg-warning'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceRequest::STATUS_ACCEPTED) {
+                    $badge  = "<span class='badge bg-success'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceRequest::STATUS_REJECTED) {
+                    $badge  = "<span class='badge bg-danger'>" . $data['status'] . "</span>";
+                }
+                return $badge;
+            })
             ->editColumn('created_at', function ($data) {
                 $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
                 return $formatedDate;
             })
-
             ->addColumn('show_file', function ($data) {
                 $file = asset('assets/pengajuan/' . $data['file']);
                 return "<a href='$file' target='_blank' class='btn btn-primary'><i class='fa fa-info'></i> Lihat File</a>";
             })
+            ->addColumn('action', function ($data) {
+                $url_accepted = route('apprentince.accepted', Crypt::encrypt($data->id));
+                $url_rejected = route('apprentince.rejected', Crypt::encrypt($data->id));
 
-            ->rawColumns(['show_file', 'action'])
+                $btn = "<div class='btn-group'>";
+                if ($data['status'] == ApprentinceRequest::STATUS_NOT_CONFIRMED) {
+                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Diterima</a>";
+                    $btn .= "<a href='$url_rejected' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-trash mr-2'></i> Ditolak</a>";
+                }
+                $btn .= "</div>";
+
+                return $btn;
+            })
+
+            ->rawColumns(['status', 'show_file', 'action'])
             ->toJson();
     }
 
     public function create()
     {
-        $users = User::where('name', '!=', 'admin')->get();
-        return view('apprentinces.add', compact('users'));
+
+        return view('apprentinces.add');
     }
 
 
@@ -122,40 +138,11 @@ class ApprentinceController extends Controller
 
             $input = $request->all();
 
-            // Save file
-            if ($file = $request->file('file')) {
-                $destinationPath = 'assets/pengajuan/';
-                $fileName = "Pengajuan" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
-                $file->move($destinationPath, $fileName);
-                $input['file'] = $fileName;
-            }
-
             $input['user_id'] = Auth::user()->id;
-            $input['status'] = Apprentince::STATUS_NOT_CONFIRMED;
+            $input['status'] = Apprentince::STATUS_ON_APPRENTINCE;
 
             // Create Apprentince
-            $apprentince = Apprentince::create($input);
-
-            // Create Apprentince Detail
-            if ($request->department_detail) {
-                $apprentince_detail = $request->input('department_detail', []);
-
-                for ($i  = 0; $i < count($apprentince_detail); $i++) {
-                    if ($apprentince_detail[$i] != "") {
-                        ApprentinceDetail::create([
-                            'apprentince_id' => $apprentince->id,
-                            'nisn_nim' => $request->nisn_nim_detail[$i],
-                            'name' => $request->name_detail[$i],
-                            'department' => $request->department_detail[$i],
-                            'gender' => $request->gender_detail[$i],
-                            'birth_date' => $request->birth_date_detail[$i],
-                            'birth_place' => $request->birth_place_detail[$i],
-                            'address' => $request->address_detail[$i],
-                            'phone_number' => $request->phone_number_detail[$i],
-                        ]);
-                    }
-                }
-            }
+            Apprentince::create($input);
 
             // Save Data
             DB::commit();
@@ -276,6 +263,62 @@ class ApprentinceController extends Controller
             // Alert & Redirect
             Alert::toast('Data Tidak Berhasil Dihapus', 'error');
             return redirect()->back()->with('error', 'Data Tidak Berhasil Dihapus' . $e->getMessage());
+        }
+    }
+
+    public function accepted($id)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $apprentince_request = ApprentinceRequest::find($id);
+
+            $apprentince_request->update([
+                'status' => ApprentinceRequest::STATUS_ACCEPTED
+            ]);
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('apprentince.index_request');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
+    public function rejected($id)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $apprentince_request = ApprentinceRequest::find($id);
+
+            $apprentince_request->update([
+                'status' => ApprentinceRequest::STATUS_REJECTED
+            ]);
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('apprentince.index_request');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
         }
     }
 }
