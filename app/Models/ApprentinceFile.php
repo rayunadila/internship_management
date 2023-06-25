@@ -12,6 +12,5 @@ class ApprentinceFile extends Model
     protected $guarded = ['id'];
 
     const STATUS_NOT_CONFIRMED = "Belum Dikonfirmasi";
-    const STATUS_ACCEPTED = "Diterima";
-    const STATUS_REJECTED = "Ditolak";
+    const STATUS_CONFIRMED = "Dikonfirmasi";
 }

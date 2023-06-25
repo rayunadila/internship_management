@@ -50,7 +50,8 @@
                                 class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>
                                 Kelola Peserta PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="userinfo2" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
-                            <li><a href="{{ route('apprentince.index') }}"><i class="las la-id-card-alt"></i> Data Peserta PKL</a></li>
+                            <li><a href="{{ route('apprentince.index') }}"><i class="las la-id-card-alt"></i> Data Peserta
+                                    PKL</a></li>
                         </ul>
                     </li>
 
@@ -89,7 +90,8 @@
                             aria-expanded="false"><i class="ri-pantone-line iq-arrow-left"></i><span>Data Laporan
                                 PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="extra-pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="pages-maintenance.html"><i class="ri-archive-line"></i>Data Laporan PKL</a></li>
+                            <li><a href="{{ route('apprentince_file.index') }}"><i class="ri-archive-line"></i>Data
+                                    Laporan PKL</a></li>
                         </ul>
                     </li>
                     <li>
@@ -97,7 +99,8 @@
                             aria-expanded="false"><i class="ri-pages-line iq-arrow-left"></i><span>Kelola Sertifikat
                                 PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="authentication" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="sign-in.html"><i class="las la-sign-in-alt"></i>Data Sertifikat PKL</a></li>
+                            <li><a href="{{ route('apprentince.index_sertificate') }}"><i
+                                        class="las la-sign-in-alt"></i>Data Sertifikat PKL</a></li>
                         </ul>
                     </li>
             </nav>

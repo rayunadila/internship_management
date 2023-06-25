@@ -31,6 +31,11 @@ class ApprentinceController extends Controller
         return view('apprentinces.index_request');
     }
 
+    public function index_sertificate()
+    {
+        return view('apprentinces.index_sertificate');
+    }
+
     public function datatable()
     {
         $model = Apprentince::query();
@@ -94,9 +99,27 @@ class ApprentinceController extends Controller
             ->toJson();
     }
 
+    public function datatable_sertificate()
+    {
+        $model = Apprentince::whereNull('sertificate')->orderBy('id', 'desc');
+        return DataTables::of($model)
+            ->editColumn('created_at', function ($data) {
+                $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
+                return $formatedDate;
+            })
+            ->addColumn('action', function ($data) {
+                $url_create = route('apprentince.create_sertificate', Crypt::encrypt($data->id));
+
+                $btn = "<div class='btn-group'>";
+                $btn .= "<a href='$url_create' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Input Sertifikat</a>";
+
+                return $btn;
+            })
+            ->toJson();
+    }
+
     public function create()
     {
-
         return view('apprentinces.add');
     }
 
@@ -108,6 +131,14 @@ class ApprentinceController extends Controller
         $apprentinces = Apprentince::all();
 
         return view('apprentinces.edit', compact('data', 'apprentinces'));
+    }
+
+    public function create_sertificate($id)
+    {
+        $id = Crypt::decrypt($id);
+        $data = Apprentince::find($id);
+
+        return view('apprentinces.add_sertificate', compact('data'));
     }
 
     public function show($id)
@@ -229,6 +260,42 @@ class ApprentinceController extends Controller
             // Alert & Redirect
             Alert::toast('Data Berhasil Diperbarui', 'success');
             return redirect()->route('apprentince.index');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Tidak Tersimpan', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
+    public function update_sertificate(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+
+            // Update Data
+            $id = Crypt::decrypt($id);
+            $apprentince = Apprentince::find($id);
+
+            // Save file
+            if ($file = $request->file('file')) {
+                $destinationPath = 'assets/sertifikat/';
+                $fileName = "Sertifikat" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $fileName);
+            }
+
+            $apprentince->update([
+                'sertificate' => $fileName
+            ]);
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('apprentince.index_sertificate');
         } catch (\Exception $e) {
             // If Data Error
             DB::rollBack();
