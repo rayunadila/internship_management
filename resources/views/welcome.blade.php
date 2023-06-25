@@ -78,6 +78,10 @@
                         <li class="nav-item">
                             <a class="nav-link link text-primary display-4" href="index.html#image2-8">Tentang</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-primary display-4" href="{{ route('register') }}">Buat
+                                Pengajuan PKL</a>
+                        </li>
                     </ul>
 
                     <div class="navbar-buttons mbr-section-btn">
@@ -116,7 +120,8 @@
 
                             <div class="mbr-section-btn mt-3">
                                 <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
-                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Buat Pengajuan
+                                    PKL</a>
                             </div>
                         </div>
                     </div>
@@ -222,11 +227,11 @@
                                 <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri"></span>
                             </div>
                             <h5 class="card-title mbr-fonts-style display-7">
-                                <strong>1. Buat Akun dan Pin</strong>
+                                <strong>1. Klik Tombol Buat Pengajuan PKL</strong>
                             </h5>
-                            <p class="card-text mbr-fonts-style display-7">
-                                Silahkan buat akun dan PIN disini, daftarkan yang akan menjadi
-                                Ketua Kelompok
+                            <p class="card-text mbr-fonts-style display-7" align="justify">
+                                Calon peserta atau Ketua kelompok mengklik tombol Buat Pengajuan PKL yang terdapat
+                                dibagian atas
                             </p>
                         </div>
                     </div>
@@ -238,11 +243,11 @@
                                 <span class="mbr-iconfont mobi-mbri-users mobi-mbri"></span>
                             </div>
                             <h5 class="card-title mbr-fonts-style display-7">
-                                <strong>2. Tambah Anggota Kelompok</strong>
+                                <strong>2. Mengisi data dan Surat Pengajuan PKL</strong>
                             </h5>
                             <p class="card-text mbr-fonts-style display-7">
-                                Tambahkan anggota kelompok yang akan melaksanakan PKL, dan
-                                lengkapi semua profilnya, beserta surat pengajuan PKL
+                                Ketua kelompok melengkapi data-data dan melampirkan surat pengajuan pkl dari sekolah
+                                yang bersangkutan.
                             </p>
                         </div>
                     </div>
@@ -254,7 +259,7 @@
                                 <span class="mbr-iconfont mobi-mbri-file mobi-mbri"></span>
                             </div>
                             <h5 class="card-title mbr-fonts-style display-7">
-                                <strong>3. Simpan Permanen Ajuan</strong>
+                                <strong>3. Simpan Ajuan PKL </strong>
                             </h5>
                             <p class="card-text mbr-fonts-style display-7">
                                 Setelah semua data diisi, selanjutnya simpan permanen agar
@@ -270,11 +275,12 @@
                                 <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
                             </div>
                             <h5 class="card-title mbr-fonts-style display-7">
-                                <strong>4. Menunggu Verifikasi</strong>
+                                <strong>4. Menunggu Notifikasi</strong>
                             </h5>
                             <p class="card-text mbr-fonts-style display-5">
                                 Silahkan menunggu notifikasi verifikasi pengajuan pkl berisi
-                                diterima atau ditolak nya ajuan tersebut. Selanjutnya unduh
+                                diterima atau ditolak nya ajuan tersebut melalui email yang bersangkutan. Selanjutnya
+                                unduh
                                 surat balasan ajuan yang telah dilampirkan.
                             </p>
                         </div>
@@ -302,7 +308,7 @@
                 </div>
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
-                        <p class="mbr-text mbr-fonts-style display-7">
+                        <p class="mbr-text mbr-fonts-style display-7" align="justify">
                             SI INNA Merupakan Singkatan dari Internship Management yang
                             digunakan untuk mengelola data-data pengajuan Praktik Kerja
                             Lapangan (PKL), mengelola data peserta, presensi peserta dan

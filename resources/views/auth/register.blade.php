@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Daftar Akun</title>
-    <!-- Favicon -->
+    <title>Buat Pengajuan PKL</title>
+    <!-- Favico ->
     <link rel="shortcut icon" href="{{ asset('images/LOGO.png') }}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('findash/css/bootstrap.min.css') }}">
