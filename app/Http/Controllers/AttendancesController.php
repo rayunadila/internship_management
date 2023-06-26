@@ -84,12 +84,24 @@ class AttendancesController extends Controller
             $apprentince = Apprentince::where('user_id', $user_id)->first();
             $apprentince_id = $apprentince->id;
 
-            $input['apprentince_id'] = $user_id;
+            $input['apprentince_id'] = $apprentince_id;
 
             if ($request->description == Attendance::STATUS_PRESENT) {
                 $input['status'] = Attendance::STATUS_PRESENT;
             } else {
                 $input['status'] = Attendance::STATUS_ABSENT;
+            }
+
+            $attended = Attendance::where('apprentince_id', $apprentince_id)
+                ->whereDate('created_at', Carbon::today())
+                ->exists();
+
+            if ($attended) {
+                DB::rollBack();
+
+                // Alert & Redirect
+                Alert::toast('Anda sudah melakukan presensi hari ini!', 'error');
+                return redirect()->back();
             }
 
             Attendance::create($input);

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('FINDASH/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('images/LOGO.png') }}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('FINDASH/css/bootstrap.min.css') }}">
     <!-- Typography CSS -->

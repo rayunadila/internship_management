@@ -64,7 +64,8 @@
                         <div class="d-flex align-items-center justify-content-between">
                             <h4><b>Data Laporan Kegiatan</b></h4>
                         </div>
-                        <a class="text-primary" href=""><i class="ri-arrow-right-fill"></i> Selengkapnya</a>
+                        <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -81,7 +82,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <center>
-                                            <h4 class="card-title">Tentang SI INNA</h4>
+                                            <h4 class="card-title">Tentang Kami</h4>
                                         </center>
                                         <center><img src="{{ asset('images/SI_INNA.png') }}" alt="" width="40%">
                                         </center>
@@ -236,6 +237,8 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4><b>Buat Laporan Kegiatan</b></h4>
                     </div>
+                    <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i class="ri-arrow-right-fill"></i>
+                        Selengkapnya</a>
                     <a class="text-primary" href="{{ route('apprentince_file.create') }}"><i class="ri-arrow-right-fill"></i> Selengkapnya</a>
                 </div>
             </div>
