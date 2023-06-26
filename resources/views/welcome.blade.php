@@ -63,7 +63,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item">
-                            <a class="nav-link link text-primary display-4" href="index.html">Beranda</a>
+                            <a class="nav-link link text-primary display-4" href="">Beranda</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link link dropdown-toggle text-primary display-4"
@@ -72,7 +72,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdown-385">
                                 <a class="dropdown-item text-primary display-4" href="index.html#features1-6">Panduan
                                     Pengajuan PKL</a><a class="show dropdown-item text-primary display-4"
-                                    href="index.html#timeline3-4">Panduan Peserta PKL</a>
+                                    href="index.html#features14-a">Panduan Peserta PKL</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -309,7 +309,7 @@
                 </div>
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
-                         <p class="mbr-text mbr-fonts-style display-7" align="justify">
+                        <p class="mbr-text mbr-fonts-style display-7" align="justify">
                             SI INNA Merupakan Singkatan dari Internship Management yang
                             digunakan untuk mengelola data-data pengajuan Praktik Kerja
                             Lapangan (PKL), mengelola data peserta, presensi peserta dan
@@ -327,87 +327,69 @@
         </div>
     </section>
 
-    <!--  <section data-bs-version="5.1" class="features13 cid-tHY6QUNy6B" id="features14-a">
-       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3
-              class="mbr-section-title align-center mb-4 mbr-fonts-style display-2"
-            >
-              <strong>Panduan Peserta PKL</strong>
-            </h3>
-          </div>
-          <div class="card col-12 col-md-4 col-lg-2 p-3">
-            <div class="card-wrapper">
-              <div class="card-box align-center">
-                <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri"></span>
-                <h4
-                  class="card-title align-center mbr-black mbr-fonts-style display-7"
-                >
-                  <strong>Login</strong>
-                </h4>
-              </div>
+    <section data-bs-version="5.1" class="features13 cid-tHY6QUNy6B" id="features14-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="mbr-section-title align-center mb-4 mbr-fonts-style display-2">
+                        <strong>Panduan Peserta PKL</strong>
+                    </h3>
+                </div>
+                <div class="card col-12 col-md-4 col-lg-2 p-3">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <span class="mbr-iconfont mobi-mbri-user-2 mobi-mbri"></span>
+                            <h4 class="card-title align-center mbr-black mbr-fonts-style display-7">
+                                <strong>Login</strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-4 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <span class="mbr-iconfont mobi-mbri-bulleted-list mobi-mbri"></span>
+                            <h4 class="card-title align-center mbr-black mbr-fonts-style display-7">
+                                <strong>Presensi</strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-4 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <span class="mbr-iconfont mobi-mbri-contact-form mobi-mbri"></span>
+                            <h4 class="card-title align-center mbr-black mbr-fonts-style display-7">
+                                <strong>Catatan Harian</strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-4 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <span class="mbr-iconfont mobi-mbri-cursor-click mobi-mbri"></span>
+                            <h4 class="card-title align-center mbr-black mbr-fonts-style display-7">
+                                <strong>Input Laporan PKL</strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-4 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-box align-center">
+                            <span class="mbr-iconfont mobi-mbri-download mobi-mbri"></span>
+                            <h4 class="card-title align-center mbr-black mbr-fonts-style display-7">
+                                <strong>Download Sertifikat</strong>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="card p-3 col-12 col-md-4 col-lg-2">
-            <div class="card-wrapper">
-              <div class="card-box align-center">
-                <span
-                  class="mbr-iconfont mobi-mbri-bulleted-list mobi-mbri"
-                ></span>
-                <h4
-                  class="card-title align-center mbr-black mbr-fonts-style display-7"
-                >
-                  <strong>Presensi</strong>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="card p-3 col-12 col-md-4 col-lg-2">
-            <div class="card-wrapper">
-              <div class="card-box align-center">
-                <span
-                  class="mbr-iconfont mobi-mbri-contact-form mobi-mbri"
-                ></span>
-                <h4
-                  class="card-title align-center mbr-black mbr-fonts-style display-7"
-                >
-                  <strong>Catatan Harian</strong>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="card p-3 col-12 col-md-4 col-lg-2">
-            <div class="card-wrapper">
-              <div class="card-box align-center">
-                <span
-                  class="mbr-iconfont mobi-mbri-cursor-click mobi-mbri"
-                ></span>
-                <h4
-                  class="card-title align-center mbr-black mbr-fonts-style display-7"
-                >
-                  <strong>Input Laporan PKL</strong>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="card p-3 col-12 col-md-4 col-lg-2">
-            <div class="card-wrapper">
-              <div class="card-box align-center">
-                <span class="mbr-iconfont mobi-mbri-download mobi-mbri"></span>
-                <h4
-                  class="card-title align-center mbr-black mbr-fonts-style display-7"
-                >
-                  <strong>Download Sertifikat</strong>
-                </h4>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section> -->
+    </section>
 
-    <section data-bs-version="5.1" class="timeline3 cid-sFHr5fwP9J" id="timeline3-4">
+    {{-- <section data-bs-version="5.1" class="timeline3 cid-sFHr5fwP9J" id="timeline3-4">
 
         <br> <br>
         <div class="container">
@@ -429,7 +411,7 @@
                             <!-- ini gambar -->
 
                             <img src="{{ asset('landing_page/assets/images/login.png') }}"
-                                alt="Mobirise Website Builder" title="" />
+                                width="50" height="80" />
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -545,16 +527,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <br>
     <br>
-    <br>
+    <br> <br><br>
     <section data-bs-version="5.1" class="map1 cid-sFHu4seZjP" id="map1-a">
         <div class="container">
             <div class="mbr-section-head mb-4">
-                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                    <strong>Lokasi Pengajuan Praktik Kerja Lapangan</strong>
-                </h3>
+                <h5 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Lokasi Kantor :</strong>
+                </h5>
             </div>
             <div class="google-map">
                 <iframe frameborder="0" style="border: 0"
