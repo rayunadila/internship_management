@@ -27,9 +27,9 @@
                                 <div class="btn-group">
                                     <form action="{{ route('attendance.store') }}" method="post" class="m-3">
                                         @csrf
-                                        <input type="hidden" name="description" value="Hadir">
-                                        <input type="hidden" name="latitude" id="latitude">
-                                        <input type="hidden" name="longitude" id="longitude">
+                                        <input type="hidden" class="description" name="description" value="Hadir">
+                                        <input type="hidden" class="latitude" name="latitude">
+                                        <input type="hidden" class="longitude" name="longitude">
                                         <button type="submit" class="btn btn-success"
                                             onclick="return confirm('Konfirmasi Data')">Hadir</button>
                                     </form>
@@ -37,8 +37,8 @@
                                     <form action="{{ route('attendance.store') }}" method="post" class="m-3">
                                         @csrf
                                         <input type="hidden" name="description" value="Tidak Hadir">
-                                        <input type="hidden" name="latitude" id="latitude2">
-                                        <input type="hidden" name="longitude" id="longitude2">
+                                        <input type="hidden" name="latitude" class="latitude">
+                                        <input type="hidden" name="longitude" class="longitude">
                                         <button type="submit" class="btn btn-danger"
                                             onclick="return confirm('Konfirmasi Data')">Tidak Hadir</button>
                                     </form>
@@ -59,20 +59,21 @@
     <script type="text/javascript">
         function initGeolocation() {
             if (navigator.geolocation) {
+                let options = {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0
+                };
                 // Call getCurrentPosition with success and failure callbacks
-                navigator.geolocation.getCurrentPosition(success, fail);
+                navigator.geolocation.getCurrentPosition(success, fail, options);
             } else {
                 alert("Sorry, your browser does not support geolocation services.");
             }
         }
 
         function success(position) {
-
-            document.getElementById('longitude').value = position.coords.longitude;
-            document.getElementById('latitude').value = position.coords.latitude;
-
-            document.getElementById('longitude2').value = position.coords.longitude;
-            document.getElementById('latitude2').value = position.coords.latitude
+            $(".longitude").val(position.coords.longitude);
+            $(".latitude").val(position.coords.latitude);
         }
 
         function fail() {
