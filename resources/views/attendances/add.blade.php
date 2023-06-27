@@ -4,54 +4,49 @@
 @endsection
 
 @section('content-header')
-    <h3>Tambah Data Presensi</h3>
+    <h3>Data Presensi</h3>
 @endsection
 
 
 @section('content')
     <section class="section">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Tambah Data Presensi</h4>
-
-            </div>
-            <div class="iq-card-body">
-
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            @if (session('error'))
-                                <span class="bg-danger">{{ session('error') }}</span>
-                            @endif
-                            <div class="text-center">
-                                <div class="btn-group">
-                                    <form action="{{ route('attendance.store') }}" method="post" class="m-3">
-                                        @csrf
-                                        <input type="hidden" class="description" name="description" value="Hadir">
-                                        <input type="hidden" class="latitude" name="latitude">
-                                        <input type="hidden" class="longitude" name="longitude">
-                                        <button type="submit" class="btn btn-success"
-                                            onclick="return confirm('Konfirmasi Data')">Hadir</button>
-                                    </form>
-
-                                    <form action="{{ route('attendance.store') }}" method="post" class="m-3">
-                                        @csrf
-                                        <input type="hidden" name="description" value="Tidak Hadir">
-                                        <input type="hidden" name="latitude" class="latitude">
-                                        <input type="hidden" name="longitude" class="longitude">
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('Konfirmasi Data')">Tidak Hadir</button>
-                                    </form>
-                                </div>
-
-                            </div>
-                            <div class="col-12 d-flex justify-content-end mt-3">
-                                <a href="{{ route('attendance.index') }}"
-                                    class="btn btn-light-secondary me-3 mb-1">Kembali</a>
-                            </div>
-                        </div>
+        <div class="col-lg-12">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Kehadiran</h4>
                     </div>
                 </div>
+                <div class="iq-card-body">
+                    <form action="{{ route('attendance.store') }}" method="post">
+                        <div class="row">
+                            @csrf
+                            <div class="col-md-6">
+                                <label>Nama</label>
+                                <input type="text" value="{{ Auth::user()->name }}" class="form-control" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="attendance_type">Status Kehadiran</label>
+                                <select name="attendance_type" id="attendance_type" class="form-control" required>
+                                    <option value="">Pilih Kehadiran</option>
+                                    @foreach (App\Models\Attendance::STATUS_CHOICE as $key => $value)
+                                        <option value="{{ $key }}">{{ $value }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <input type="hidden" name="longitude" id="longitude">
+                            <input type="hidden" name="latitude" id="latitude">
+                            <div class="col-md-12 mt-4">
+                                <div class="text-center">
+                                    <a href="{{ route('attendance.index') }}" class="btn btn-warning mr -3">Kembali</a>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
 
@@ -72,8 +67,8 @@
         }
 
         function success(position) {
-            $(".longitude").val(position.coords.longitude);
-            $(".latitude").val(position.coords.latitude);
+            $("#longitude").val(position.coords.longitude);
+            $("#latitude").val(position.coords.latitude);
         }
 
         function fail() {

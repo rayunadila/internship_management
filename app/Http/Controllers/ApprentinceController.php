@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Apprentince;
-use App\Models\ApprentinceDetail;
 use App\Models\ApprentinceRequest;
-use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -112,6 +110,31 @@ class ApprentinceController extends Controller
 
                 $btn = "<div class='btn-group'>";
                 $btn .= "<a href='$url_create' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Input Sertifikat</a>";
+                $btn .= "</div>";
+
+                return $btn;
+            })
+            ->toJson();
+    }
+
+    public function datatable_sertificate_student()
+    {
+        $user_id = Auth::user()->id;
+
+        $model = Apprentince::where('user_id', $user_id)
+            ->whereNotNull('sertificate')
+            ->orderBy('id', 'desc');
+        return DataTables::of($model)
+            ->editColumn('created_at', function ($data) {
+                $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
+                return $formatedDate;
+            })
+            ->addColumn('action', function ($data) {
+                $file = asset('assets/sertifikat/' . $data['sertificate']);
+
+                $btn = "<div class='btn-group'>";
+                $btn .= "<a href='$file' target='_blank' class='btn btn-primary'><i class='fa fa-info'></i> Lihat File</a>";
+                $btn .= "</div>";
 
                 return $btn;
             })

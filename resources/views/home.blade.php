@@ -239,7 +239,6 @@
                     </div>
                     <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
-                    <a class="text-primary" href="{{ route('apprentince_file.create') }}"><i class="ri-arrow-right-fill"></i> Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -250,7 +249,6 @@
                     <div class="card">
                         <div class="card-header">
                             <br> <br>
-
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -336,7 +334,6 @@
                                                     <div class="d-inline-block w-100">
                                                         <p align="justify">Setelah laporan peserta telah dikonfirmasi maka
                                                             peserta dapat mendownload sertifikat PKL.
-
                                                         </p>
                                                     </div>
                                                 </li>

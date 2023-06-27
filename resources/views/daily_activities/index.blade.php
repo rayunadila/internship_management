@@ -16,7 +16,7 @@
                                 class="ri-add-fill"><span class="pl-1">Tambah
                                     Data</span></i>
                         </a>
-                        <a href="" class="btn btn-danger">Cetak PDF</a>
+                        <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak PDF</a>
                     </div>
                 </div>
                 <div class="row">

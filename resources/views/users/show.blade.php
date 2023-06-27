@@ -24,7 +24,7 @@
                     <div class="card card-block p-card">
                         <div class="profile-box">
                             <div class="profile-card rounded">
-                                <img src="{{ asset('assets/images/user.png') }}" alt="{{ $user['name'] }}"
+                                <img src="{{ asset('images/user.png') }}" alt="{{ $user['name'] }}"
                                     class="avatar-100 rounded d-block mx-auto img-fluid mb-3">
                                 <h3 class="font-600 text-white text-center mb-4">{{ $user['name'] }}</h3>
                             </div>

@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class AttendancesController extends Controller
@@ -25,13 +26,24 @@ class AttendancesController extends Controller
         return view('attendances.index');
     }
 
+    public function report_pdf()
+    {
+        $data = Attendance::all();
+
+        $pdf = PDF::loadView('attendances.report_pdf', compact('data'));
+
+        $fileName = "Laporan Presensi Harian.pdf";
+
+        return $pdf->stream($fileName);
+    }
+
     public function datatable()
     {
         $model = Attendance::query();
         return DataTables::of($model)
             ->editColumn('created_at', function ($data) {
                 $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
-                return $formatedDate;
+                return $formatedDate;   
             })
             ->addColumn('action', function ($data) {
                 $url_show = route('attendance.show', Crypt::encrypt($data->id));
@@ -50,13 +62,6 @@ class AttendancesController extends Controller
     public function create()
     {
         return view('attendances.add');
-    }
-
-    public function edit($id)
-    {
-        $id = Crypt::decrypt($id);
-        $data = Attendance::find($id);
-        return view('attendances.edit', compact('data'));
     }
 
     public function show($id)
@@ -86,7 +91,7 @@ class AttendancesController extends Controller
 
             $input['apprentince_id'] = $apprentince_id;
 
-            if ($request->description == Attendance::STATUS_PRESENT) {
+            if ($request->attendance_type == Attendance::STATUS_PRESENT) {
                 $input['status'] = Attendance::STATUS_PRESENT;
             } else {
                 $input['status'] = Attendance::STATUS_ABSENT;
@@ -119,45 +124,6 @@ class AttendancesController extends Controller
             // Alert & Redirect
             Alert::toast('Data Tidak Tersimpan', 'error');
             return redirect()->back()->with('error', 'Data Tidak Berhasil Disimpan' . $e->getMessage());
-        }
-    }
-
-    public function update($id, Request $request)
-    {
-        try {
-            DB::beginTransaction();
-
-            $request->validate([
-                'attendance_id' => 'required',
-                'title' => 'required',
-                'date' => 'required',
-                'agenda' => 'required',
-            ]);
-
-            // Update Data
-            $id = Crypt::decrypt($id);
-            $attendance = Attendance::find($id);
-
-            $input = $request->all();
-
-            // Decrypt Meeting Room Id
-            $input['attendance_id'] = Crypt::decrypt($request->attendance_id);
-
-            $attendance->update($input);
-
-            // Save Data
-            DB::commit();
-
-            // Alert & Redirect
-            Alert::toast('Data Berhasil Diperbarui', 'success');
-            return redirect()->route('attendance.index');
-        } catch (\Exception $e) {
-            // If Data Error
-            DB::rollBack();
-
-            // Alert & Redirect
-            Alert::toast('Data Tidak Tersimpan', 'error');
-            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
         }
     }
 

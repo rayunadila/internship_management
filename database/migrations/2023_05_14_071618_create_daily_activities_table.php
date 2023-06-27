@@ -16,7 +16,7 @@ return new class extends Migration
             // TABEL
             $table->bigInteger('apprentince_id')->comment('foreign key apprentince');
             $table->date('date');
-            $table->string('activity');
+            $table->text('activity');
             $table->string('status');
 
             // END TABEL

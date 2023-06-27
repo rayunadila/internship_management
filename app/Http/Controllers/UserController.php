@@ -84,6 +84,14 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
 
+    public function profile($id)
+    {
+        $id = Crypt::decrypt($id);
+        $user = User::find($id);
+
+        return view('users.profile', compact('user'));
+    }
+
     public function edit($id)
     {
         $id = Crypt::decrypt($id);
@@ -176,6 +184,59 @@ class UserController extends Controller
 
             // Alert & Redirect
             Alert::toast('Data Gagal Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
+    public function update_profile($id, Request $request)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $user = User::find($id);
+
+            // Validate Data
+            $request->validate([
+                'photo' => 'mimes:jpg,jpeg,png|max:1024'
+            ]);
+
+            // Update Data
+            $input = $request->all();
+
+            // Image
+            if ($file = $request->file('photo')) {
+                // Remove Old File
+                if (!empty($user['photo'])) {
+                    $file_exist = 'assets/images/' . $user['photo'];
+
+                    if (file_exists($file_exist)) {
+                        unlink($file_exist);
+                    }
+                }
+
+                // Store New File
+                $destinationPath = 'assets/images/';
+                $fileName = "USER" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $fileName);
+                $input['photo'] = $fileName;
+            } else {
+                unset($input['photo']);
+            }
+
+            $user->update($input);
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Gagal Diperbarui, Format Tidak Sesuai', 'error');
             return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
         }
     }

@@ -13,4 +13,5 @@ class ApprentinceFile extends Model
 
     const STATUS_NOT_CONFIRMED = "Belum Dikonfirmasi";
     const STATUS_CONFIRMED = "Dikonfirmasi";
+    const STATUS_NOT_COMPLETED = "Belum Lengkap";
 }

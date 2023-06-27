@@ -12,4 +12,9 @@ class Attendance extends Model
 
     const STATUS_PRESENT = "Hadir";
     const STATUS_ABSENT = "Tidak Hadir";
+
+    const STATUS_CHOICE = [
+        self::STATUS_PRESENT => self::STATUS_PRESENT,
+        self::STATUS_ABSENT => self::STATUS_ABSENT,
+    ];
 }

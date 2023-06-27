@@ -72,8 +72,13 @@
                     <ul class="navbar-list">
                         <li class="line-height">
                             <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                                <img src="{{ asset('assets/images/' . Auth::user()->photo) }}"
-                                    class="img-fluid rounded mr-3" alt="{{ Auth::user()->name }}">
+                                @if (empty(Auth::user()->photo))
+                                    <img src="{{ asset('images/user.png') }}" alt="User"
+                                        class="img-fluid rounded mr-3">
+                                @else
+                                    <img src="{{ asset('assets/images/' . Auth::user()->photo) }}"
+                                        class="img-fluid rounded mr-3" alt="{{ Auth::user()->name }}">
+                                @endif
                                 <div class="caption">
                                     <h6 class="mb-0 line-height">{{ Auth::user()->name }}</h6>
                                 </div>
@@ -84,7 +89,8 @@
                                         <div class="bg-primary p-3">
                                             <h5 class="mb-0 text-white line-height">{{ Auth::user()->name }}</h5>
                                         </div>
-                                        <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                        <a href="{{ route('user.profile', Crypt::encrypt(Auth::user()->id)) }}"
+                                            class="iq-sub-card iq-bg-primary-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-primary">
                                                     <i class="ri-file-user-line"></i>

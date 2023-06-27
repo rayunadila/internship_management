@@ -32,7 +32,10 @@ class ApprentinceFileController extends Controller
                     $badge  = "<span class='badge bg-warning'>" . $data['status'] . "</span>";
                 } elseif ($data['status'] == ApprentinceFile::STATUS_CONFIRMED) {
                     $badge  = "<span class='badge bg-success'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceFile::STATUS_NOT_COMPLETED) {
+                    $badge  = "<span class='badge bg-danger'>" . $data['status'] . "</span>";
                 }
+
                 return $badge;
             })
             ->addColumn('show_file', function ($data) {
@@ -41,10 +44,12 @@ class ApprentinceFileController extends Controller
             })
             ->addColumn('action', function ($data) {
                 $url_accepted = route('apprentince_file.accepted', Crypt::encrypt($data->id));
+                $url_not_completed = route('apprentince_file.not_complete', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
                 if ($data['status'] == ApprentinceFile::STATUS_NOT_CONFIRMED) {
-                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Konfirmasi</a>";
+                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
+                    $btn .= "<a href='$url_not_completed' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-xmark mr-2'></i> Belum Lengkap</a>";
                 }
                 $btn .= "</div>";
 
@@ -123,7 +128,35 @@ class ApprentinceFileController extends Controller
 
             // Alert & Redirect
             Alert::toast('Data Berhasil Diperbarui', 'success');
-            return redirect()->route('apprentince.index_request');
+            return redirect()->route('apprentince_file.index');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
+    public function not_complete($id)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $apprentince_request = ApprentinceFile::find($id);
+
+            $apprentince_request->update([
+                'status' => ApprentinceFile::STATUS_NOT_COMPLETED
+            ]);
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('apprentince_file.index');
         } catch (\Exception $e) {
             // If Data Error
             DB::rollBack();

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DailyActivityController extends Controller
 {
@@ -22,6 +23,17 @@ class DailyActivityController extends Controller
         confirmDelete($title, $text);
 
         return view('daily_activities.index');
+    }
+
+    public function report_pdf()
+    {
+        $data = DailyActivity::all();
+
+        $pdf = PDF::loadView('daily_activities.report_pdf', compact('data'));
+
+        $fileName = "Laporan Kegiatan Harian.pdf";
+
+        return $pdf->stream($fileName);
     }
 
     public function datatable()
@@ -47,14 +59,9 @@ class DailyActivityController extends Controller
                 $url_delete = route('daily_activity.destroy', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
-
-                if (Auth::user()->hasRole('Admin')) {
-                    if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
-                        $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
-                    }
+                if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
+                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
                 }
-
-
                 $btn .= "<a href='$url_edit' class = 'btn btn-outline-info btn-sm text-nowrap'><i class='fas fa-edit mr-2'></i> Edit</a>";
                 $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
                 $btn .= "</div>";

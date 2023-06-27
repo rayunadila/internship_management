@@ -20,11 +20,12 @@
                                     class="pl-1">Tambah
                                     Data</span></i>
                         </a>
+                        <a target="_blank" href="{{ route('attendance.report_pdf') }}" class="btn btn-danger">Cetak
+                            PDF</a>
                     </div>
                 </div>
                 <div class="iq-card-body">
                     <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
-
                         <thead>
                             <tr>
                                 <th>No</th>
