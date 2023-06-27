@@ -1308,7 +1308,7 @@ a {
   flex-wrap: wrap;
 }
 .cid-sFHr5fwP9J .image-wrapper img {
-  width: 100%;
+  width: 50%;
   object-fit: cover;
 }
 .cid-sFHr5fwP9J .mbr-section-title,
@@ -1325,13 +1325,13 @@ a {
   margin-left: -9px;
   padding: 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 80px) {
   .cid-sFHr5fwP9J .iconBackground {
     left: 15px;
     top: 30px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 80px) {
   .cid-sFHr5fwP9J .iconBackground {
     top: 70px;
     left: 50%;
