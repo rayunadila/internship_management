@@ -67,12 +67,12 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link link dropdown-toggle text-primary display-4"
-                                href="index.html#timeline3-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown"
-                                data-bs-auto-close="outside" aria-expanded="false">Panduan</a>
+                                data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                                aria-expanded="false">Panduan</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-385">
-                                <a class="dropdown-item text-primary display-4" href="index.html#features1-6">Panduan
+                                <a class="dropdown-item text-primary display-4" href="#features1-6">Panduan
                                     Pengajuan PKL</a><a class="show dropdown-item text-primary display-4"
-                                    href="index.html#features14-a">Panduan Peserta PKL</a>
+                                    href="#timeline3-4">Panduan Peserta PKL</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -327,7 +327,7 @@
         </div>
     </section>
 
-    <section data-bs-version="5.1" class="features13 cid-tHY6QUNy6B" id="features14-a">
+    {{-- <section data-bs-version="5.1" class="features13 cid-tHY6QUNy6B" id="features14-a">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -387,9 +387,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    {{-- <section data-bs-version="5.1" class="timeline3 cid-sFHr5fwP9J" id="timeline3-4">
+    <section data-bs-version="5.1" class="timeline3 cid-sFHr5fwP9J" id="timeline3-4">
 
         <br> <br>
         <div class="container">
@@ -410,8 +410,7 @@
                         <div class="image-wrapper">
                             <!-- ini gambar -->
 
-                            <img src="{{ asset('landing_page/assets/images/login.png') }}"
-                                width="50" height="80" />
+                            <img src="{{ asset('landing_page/assets/images/login.png') }}" />
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -527,7 +526,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <br>
     <br>
     <br> <br><br>
@@ -539,9 +538,10 @@
                 </h5>
             </div>
             <div class="google-map">
-                <iframe frameborder="0" style="border: 0"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZI5F_k6S1k46ujh0SNrapM89f7mJxd30&amp;q=Dinas Pekerjaan Umum Bina Marga dan Tata Ruang"
-                    allowfullscreen=""></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.1095212999705!2d104.74916760014287!3d-2.9758464213436935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b75dfda995445%3A0xe1ffdb86cc1f2d16!2sDinas%20Pekerjaan%20Umum%20Bina%20Marga%20dan%20Tata%20Ruang!5e0!3m2!1sid!2sid!4v1687837334023!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
