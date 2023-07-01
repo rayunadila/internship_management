@@ -16,7 +16,8 @@
                                 class="ri-add-fill"><span class="pl-1">Tambah
                                     Data</span></i>
                         </a>
-                        <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak PDF</a>
+                        <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak
+                            PDF</a>
                     </div>
                 </div>
                 <div class="row">
@@ -47,49 +48,100 @@
 @endsection
 
 @section('js_after')
-    <script>
-        $(document).ready(function() {
-            getDatatable();
-        });
-
-        let data_table = "";
-
-        function getDatatable() {
-            data_table = $("#data-table").DataTable({
-                ajax: {
-                    url: "{{ route('daily_activity.datatable') }}",
-                },
-                serverSide: true,
-                destroy: true,
-                order: [
-                    [2, 'desc']
-                ],
-                columns: [{
-                        "data": null,
-                        "sortable": false,
-                        searchable: false,
-                        render: function(data, type, row, meta) {
-                            return meta.row + meta.settings._iDisplayStart + 1;
-                        }
-                    },
-                    {
-                        name: 'action',
-                        data: 'action'
-                    },
-                    {
-                        name: 'date',
-                        data: 'date'
-                    },
-                    {
-                        name: 'activity',
-                        data: 'activity'
-                    },
-                    {
-                        name: 'status',
-                        data: 'status'
-                    }
-                ],
+    @hasrole('Admin')
+        <script>
+            $(document).ready(function() {
+                getDatatable();
             });
-        }
-    </script>
+
+            let data_table = "";
+
+            function getDatatable() {
+                data_table = $("#data-table").DataTable({
+                    ajax: {
+                        url: "{{ route('daily_activity.datatable') }}",
+                    },
+                    serverSide: true,
+                    destroy: true,
+                    order: [
+                        [2, 'desc']
+                    ],
+                    columns: [{
+                            "data": null,
+                            "sortable": false,
+                            searchable: false,
+                            render: function(data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        {
+                            name: 'action',
+                            data: 'action'
+                        },
+                        {
+                            name: 'date',
+                            data: 'date'
+                        },
+                        {
+                            name: 'activity',
+                            data: 'activity'
+                        },
+                        {
+                            name: 'status',
+                            data: 'status'
+                        }
+                    ],
+                });
+            }
+        </script>
+    @endrole
+
+
+    @hasrole('Mahasiswa')
+        <script>
+            $(document).ready(function() {
+                getDatatable();
+            });
+
+            let data_table = "";
+
+            function getDatatable() {
+                data_table = $("#data-table").DataTable({
+                    ajax: {
+                        url: "{{ route('daily_activity.datatable_student') }}",
+                    },
+                    serverSide: true,
+                    destroy: true,
+                    order: [
+                        [2, 'desc']
+                    ],
+                    columns: [{
+                            "data": null,
+                            "sortable": false,
+                            searchable: false,
+                            render: function(data, type, row, meta) {
+                                return meta.row + meta.settings._iDisplayStart + 1;
+                            }
+                        },
+                        {
+                            name: 'action',
+                            data: 'action'
+                        },
+                        {
+                            name: 'date',
+                            data: 'date'
+                        },
+                        {
+                            name: 'activity',
+                            data: 'activity'
+                        },
+                        {
+                            name: 'status',
+                            data: 'status'
+                        }
+                    ],
+                });
+            }
+        </script>
+    @endrole
 @endsection

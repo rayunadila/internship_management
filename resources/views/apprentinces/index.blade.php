@@ -43,7 +43,8 @@
 @endsection
 
 @section('js_after')
-    <script>
+@hasrole('Admin')
+<script>
         $(document).ready(function() {
             getDatatable();
         });
@@ -100,4 +101,67 @@
             });
         }
     </script>
+
+@endrole
+
+@hasrole('Mahasiswa')
+<script>
+        $(document).ready(function() {
+            getDatatable();
+        });
+
+        let data_table = "";
+
+        function getDatatable() {
+            data_table = $("#data-table").DataTable({
+                ajax: {
+                    url: "{{ route('apprentince.datatable_student') }}",
+                },
+                serverSide: true,
+                destroy: true,
+                order: [
+                    [4, 'desc']
+                ],
+                columns: [{
+                        "data": null,
+                        "sortable": false,
+                        searchable: false,
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
+                        name: 'action',
+                        data: 'action'
+                    },
+                    {
+                        name: 'name',
+                        data: 'name'
+                    },
+                    {
+                        name: 'nisn_nim',
+                        data: 'nisn_nim'
+                    },
+                    {
+                        name: 'school',
+                        data: 'school'
+                    },
+                    {
+                        name: 'date_start',
+                        data: 'date_start'
+                    },
+                    {
+                        name: 'date_end',
+                        data: 'date_end'
+                    },
+                    {
+                        name: 'created_at',
+                        data: 'created_at'
+                    },
+                ],
+            });
+        }
+    </script>
+
+@endrole
 @endsection

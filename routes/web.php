@@ -43,6 +43,8 @@ Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprent
     Route::get('/accepted/{id}', 'accepted')->name('accepted');
     Route::get('/rejected/{id}', 'rejected')->name('rejected');
     Route::get('/datatable', 'datatable')->name('datatable');
+    // datapeserta utk user
+    Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
     Route::get('/datatable_request', 'datatable_request')->name('datatable_request');
     Route::get('/datatable_sertificate', 'datatable_sertificate')->name('datatable_sertificate');
     Route::get('/datatable_sertificate_student', 'datatable_sertificate_student')->name('datatable_sertificate_student');
@@ -88,6 +90,7 @@ Route::group(['controller' => DailyActivityController::class, 'prefix' => 'daily
     Route::get('/show/{id}', 'show')->name('show');
     Route::get('/accepted/{id}', 'accepted')->name('accepted');
     Route::get('/datatable', 'datatable')->name('datatable');
+    Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
     Route::get('/report_pdf', 'report_pdf')->name('report_pdf');
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
@@ -102,6 +105,8 @@ Route::group(['controller' => AttendancesController::class, 'prefix' => 'attenda
     Route::get('/create', 'create')->name('create');
     Route::get('/show/{id}', 'show')->name('show');
     Route::get('/datatable', 'datatable')->name('datatable');
+    Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
+
     Route::post('/store', 'store')->name('store');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
 });
@@ -115,6 +120,7 @@ Route::group(['controller' => ApprentinceFileController::class, 'prefix' => 'app
     Route::get('/accepted/{id}', 'accepted')->name('accepted');
     Route::get('/not_complete/{id}', 'not_complete')->name('not_complete');
     Route::get('/datatable', 'datatable')->name('datatable');
+    Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');

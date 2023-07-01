@@ -3,13 +3,49 @@
 @section('css_after')
 @endsection
 
+
 @section('content')
-    <div class="row">
-        @role('Admin')
-            <div class="col-sm-6 col-md-6 col-lg-3">
+    @role('Admin')
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-4">
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-body iq-box-relative">
-                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
+
+                            <i class="ri-file-user-line"></i>
+                        </div>
+                        <p class="text-secondary"> Pengguna</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Data Pengguna </b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('user.index') }}"> <i class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
+
+                            <i class="ri-group-line"></i>
+                        </div>
+                        <p class="text-secondary"> Peserta PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Data Peserta PKL</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('apprentince.index') }}"> <i
+                                class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
 
                             <i class="ri-file-line"></i>
                         </div>
@@ -23,10 +59,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-3">
                 <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
                     <div class="iq-card-body iq-box-relative">
-                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
                             <i class="ri-task-line"></i>
                         </div>
                         <p class="text-secondary">Presensi PKL</p>
@@ -69,6 +107,24 @@
                     </div>
                 </div>
             </div>
+             <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
+
+                            <i class="ri-pages-line"></i>
+                        </div>
+                        <p class="text-secondary"> Sertifikat PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Data Sertifikat PKL</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('apprentince.index_sertificate') }}"> <i
+                                class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <section class="section">
                 <div class="row">
@@ -122,6 +178,18 @@
                                                         </div>
                                                     </li>
                                                     <li>
+                                                        <div class="timeline-dots border-warning"><i
+                                                                class="ri-pantone-line"></i>
+                                                        </div>
+                                                        <h6 class="float-left mb-1">Buat Data Peserta</h6>
+                                                        <div class="d-inline-block w-100">
+                                                            <p align="justify">Peserta diharuskan mengisi data-data pribadi
+                                                                terlebih dahulu agar mendapatkan akses ke fitur-fitur lainnya.
+
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
                                                         <div class="timeline-dots border-success"><i
                                                                 class="ri-pantone-line"></i></div>
                                                         <h6 class="float-left mb-1">Buat Presensi Harian</h6>
@@ -133,7 +201,8 @@
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div class="timeline-dots border-danger"><i class="ri-pantone-line"></i>
+                                                        <div class="timeline-dots border-danger"><i
+                                                                class="ri-pantone-line"></i>
                                                         </div>
                                                         <h6 class="float-left mb-1">Buat Catatan Kegiatan Harian</h6>
                                                         <div class="d-inline-block w-100">
@@ -191,7 +260,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4><b>Buat Data Peserta</b></h4>
                     </div>
-                    <a class="text-primary" href="{{ route('apprentince.create') }}"> <i class="ri-arrow-right-fill"></i>
+                    <a class="text-primary" href="{{ route('apprentince.index') }}"> <i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
                 </div>
             </div>
@@ -206,7 +275,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4><b>Buat Presensi</b></h4>
                     </div>
-                    <a class="text-primary" href="{{ route('attendance.create') }}"><i class="ri-arrow-right-fill"></i>
+                    <a class="text-primary" href="{{ route('attendance.index') }}"><i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
                 </div>
             </div>
@@ -221,7 +290,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4><b>Buat Aktivitas Harian </b></h4>
                     </div>
-                    <a class="text-primary" href="{{ route('daily_activity.create') }}"><i class="ri-arrow-right-fill"></i>
+                    <a class="text-primary" href="{{ route('daily_activity.index') }}"><i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
                 </div>
             </div>
@@ -289,6 +358,17 @@
                                                     <div class="d-inline-block w-100">
                                                         <p align="justify"> Peserta mendapatkan akun kemudian melakukan
                                                             login agar mendapatkan akses ke aplikasi SI INNA
+
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="timeline-dots border-warning"><i class="ri-pantone-line"></i>
+                                                    </div>
+                                                    <h6 class="float-left mb-1">Buat Data Peserta</h6>
+                                                    <div class="d-inline-block w-100">
+                                                        <p align="justify">Peserta diharuskan mengisi data-data pribadi
+                                                            terlebih dahulu agar mendapatkan akses ke fitur-fitur lainnya.
 
                                                         </p>
                                                     </div>

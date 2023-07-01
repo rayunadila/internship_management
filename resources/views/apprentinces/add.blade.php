@@ -28,12 +28,13 @@
                                 </a>
                             </li>
                         </ul>
+
                         <!-- fieldsets -->
                         <fieldset>
                             <div class="form-card text-left">
                                 <div class="row">
                                     <div class="col-7">
-                                        <h3 class="mb-4">Data Ketua:</h3>
+                                        <h3 class="mb-4">Data Peserta PKL:</h3>
                                     </div>
                                 </div>
                                 <div class="row">

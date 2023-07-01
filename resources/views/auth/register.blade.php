@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="sign-info text-center">
                                         <a href="{{ url('/') }}" class="btn btn-primary d-block w-100 mb-2">Kembali</a>
-                                        <button type="submit" class="btn btn-danger d-block w-100 mb-2">Buat
+                                        <button type="submit" class="btn btn-warning d-block w-100 mb-2">Buat
                                             Pengajuan</button>
                                     </div>
                                 </form>

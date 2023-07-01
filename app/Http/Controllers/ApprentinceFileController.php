@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apprentince;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\ApprentinceFile;
@@ -51,6 +52,50 @@ class ApprentinceFileController extends Controller
                     $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
                     $btn .= "<a href='$url_not_completed' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-xmark mr-2'></i> Belum Lengkap</a>";
                 }
+                $btn .= "</div>";
+
+                return $btn;
+            })
+
+            ->rawColumns(['status', 'show_file', 'action'])
+            ->toJson();
+    }
+
+    public function datatable_student()
+    {
+        $user_id = Auth::user()->id;
+        $apprentince = Apprentince::where('user_id', $user_id)->first();
+        $model = ApprentinceFile::where('apprentince_id', $apprentince['id'])
+            ->orderBy('id', 'desc');
+        return DataTables::of($model)
+            ->editColumn('created_at', function ($data) {
+                $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
+                return $formatedDate;
+            })
+            ->editColumn('status', function ($data) {
+                if ($data['status'] == ApprentinceFile::STATUS_NOT_CONFIRMED) {
+                    $badge  = "<span class='badge bg-warning'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceFile::STATUS_CONFIRMED) {
+                    $badge  = "<span class='badge bg-success'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceFile::STATUS_NOT_COMPLETED) {
+                    $badge  = "<span class='badge bg-danger'>" . $data['status'] . "</span>";
+                }
+
+                return $badge;
+            })
+            ->addColumn('show_file', function ($data) {
+                $file = asset('assets/pkl/' . $data['file']);
+                return "<a href='$file' target='_blank' class='btn btn-primary'><i class='fa fa-info'></i> Lihat File</a>";
+            })
+            ->addColumn('action', function ($data) {
+                // $url_accepted = route('apprentince_file.accepted', Crypt::encrypt($data->id));
+                // $url_not_completed = route('apprentince_file.not_complete', Crypt::encrypt($data->id));
+
+                $btn = "<div class='btn-group'>";
+                // if ($data['status'] == ApprentinceFile::STATUS_NOT_CONFIRMED) {
+                //     $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
+                //     $btn .= "<a href='$url_not_completed' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-xmark mr-2'></i> Belum Lengkap</a>";
+                // }
                 $btn .= "</div>";
 
                 return $btn;

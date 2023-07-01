@@ -74,6 +74,46 @@ class DailyActivityController extends Controller
             ->toJson();
     }
 
+    // Datatable_student yaitu role mahasiswa sambungi ke views dan
+    public function datatable_student()
+        {
+        $model = DailyActivity::query();
+        return DataTables::of($model)
+            ->editColumn('date', function ($data) {
+                $formatedDate = Carbon::parse($data['date'])->translatedFormat('d F Y');
+                return $formatedDate;
+            })
+            ->editColumn('status', function ($data) {
+                if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
+                    $badge = "<span class ='badge bg-warning'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == DailyActivity::STATUS_CONFIRMED) {
+                    $badge = "<span class ='badge bg-success'>" . $data['status'] . "</span>";
+                }
+
+                return $badge;
+            })
+            ->addColumn('action', function ($data) {
+                $url_edit = route('daily_activity.edit', Crypt::encrypt($data->id));
+                // $url_accepted = route('daily_activity.accepted', Crypt::encrypt($data->id));
+                $url_delete = route('daily_activity.destroy', Crypt::encrypt($data->id));
+
+                $btn = "<div class='btn-group'>";
+                // if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
+                //     $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
+                // }
+                $btn .= "<a href='$url_edit' class = 'btn btn-outline-info btn-sm text-nowrap'><i class='fas fa-edit mr-2'></i> Edit</a>";
+                $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
+                $btn .= "</div>";
+
+                return $btn;
+            })
+
+
+            ->rawColumns(['status', 'action'])
+            ->toJson();
+        }
+
+
     public function create()
     {
 
