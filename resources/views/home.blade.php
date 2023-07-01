@@ -81,9 +81,9 @@
                         <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
                             <i class="ri-book-mark-fill"></i>
                         </div>
-                        <p class="text-secondary">Kegiatan Harian PKL</p>
+                        <p class="text-secondary">Aktivitas Harian Peserta</p>
                         <div class="d-flex align-items-center justify-content-between">
-                            <h4><b>Data Kegiatan Harian </b></h4>
+                            <h4><b>Data Aktivitas Harian Peserta</b></h4>
                         </div>
                         <a class="text-primary" href="{{ route('daily_activity.index') }}"><i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
@@ -97,9 +97,9 @@
                         <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
                             <i class="ri-folder-add-fill"></i>
                         </div>
-                        <p class="text-secondary">Laporan Kegiatan PKL</p>
+                        <p class="text-secondary">Laporan PKL</p>
                         <div class="d-flex align-items-center justify-content-between">
-                            <h4><b>Data Laporan Kegiatan</b></h4>
+                            <h4><b>Data Laporan PKL</b></h4>
                         </div>
                         <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
@@ -299,9 +299,9 @@
                     <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
                         <i class="ri-folder-add-fill"></i>
                     </div>
-                    <p class="text-secondary">Laporan Kegiatan PKL</p>
+                    <p class="text-secondary">Laporan PKL</p>
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4><b>Buat Laporan Kegiatan</b></h4>
+                        <h4><b>Buat Laporan PKL</b></h4>
                     </div>
                     <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i class="ri-arrow-right-fill"></i>
                         Selengkapnya</a>
