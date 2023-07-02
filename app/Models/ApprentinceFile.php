@@ -14,4 +14,9 @@ class ApprentinceFile extends Model
     const STATUS_NOT_CONFIRMED = "Belum Dikonfirmasi";
     const STATUS_CONFIRMED = "Dikonfirmasi";
     const STATUS_NOT_COMPLETED = "Belum Lengkap";
+
+    public function apprentince()
+    {
+        return $this->belongsTo(Apprentince::class, 'apprentince_id', 'id');
+    }
 }
