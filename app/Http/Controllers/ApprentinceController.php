@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ApprentinceController extends Controller
 {
@@ -57,12 +58,135 @@ class ApprentinceController extends Controller
             ->toJson();
     }
 
+    public function create_accept($id)
+    {
+        $id = Crypt::decrypt($id);
+
+        $data = ApprentinceRequest::find($id);
+
+        return view('apprentinces.accept', compact('data'));
+    }
+
+    public function create_reject($id)
+    {
+        $id = Crypt::decrypt($id);
+
+        $data = ApprentinceRequest::find($id);
+
+        return view('apprentinces.reject', compact('data'));
+    }
+
+    public function accepted(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $apprentince_request = ApprentinceRequest::find($id);
+
+            // Save file
+            if ($file = $request->file('file_email')) {
+                $destinationPath = 'assets/surat balasan/';
+                $fileName = "Surat Balasan" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $fileName);
+            }
+
+            $subject_email = $request->subject_email;
+
+            $apprentince_request->update([
+                'status' => ApprentinceRequest::STATUS_ACCEPTED,
+                'file_email' => $fileName,
+                'subject_email' => $subject_email
+            ]);
+
+            $data = [
+                'title' => ApprentinceRequest::LETTER_ACCEPT,
+                'name' => $apprentince_request['name'],
+                'email' => $apprentince_request['email'],
+                'file_email' => public_path('assets/surat balasan/' . $fileName),
+                'subject_email' => $subject_email
+            ];
+
+            Mail::send('apprentinces.email', $data, function ($message) use ($data) {
+                $message->to($data['email'], $data['email'])
+                    ->subject($data['title'])
+                    ->attach($data['file_email']);
+            });
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('apprentince.index_request');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
+    public function rejected(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $apprentince_request = ApprentinceRequest::find($id);
+
+            // Save file
+            if ($file = $request->file('file_email')) {
+                $destinationPath = 'assets/surat balasan/';
+                $fileName = "Surat Balasan" . "_" . date('YmdHis') . "." . $file->getClientOriginalExtension();
+                $file->move($destinationPath, $fileName);
+            }
+
+            $subject_email = $request->subject_email;
+
+            $apprentince_request->update([
+                'status' => ApprentinceRequest::STATUS_REJECTED,
+                'file_email' => $fileName,
+                'subject_email' => $subject_email
+            ]);
+
+            $data = [
+                'title' => ApprentinceRequest::LETTER_REJECT,
+                'name' => $apprentince_request['name'],
+                'email' => $apprentince_request['email'],
+                'file_email' => public_path('assets/surat balasan/' . $fileName),
+                'subject_email' => $subject_email
+            ];
+
+            Mail::send('apprentinces.email', $data, function ($message) use ($data) {
+                $message->to($data['email'], $data['email'])
+                    ->subject($data['title'])
+                    ->attach($data['file_email']);
+            });
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Data Berhasil Diperbarui', 'success');
+            return redirect()->route('apprentince.index_request');
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
     // data peserta tampilan user
     public function datatable_student()
     {
         $user_id = Auth::user()->id;
-        $model = Apprentince::where('user_id', $user_id)->first()
-            ->orderBy('id', 'desc');
+        $model = Apprentince::where('user_id', $user_id);
         return DataTables::of($model)
             ->editColumn('created_at', function ($data) {
                 $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
@@ -106,13 +230,14 @@ class ApprentinceController extends Controller
                 return "<a href='$file' target='_blank' class='btn btn-primary'><i class='fa fa-info'></i> Lihat File</a>";
             })
             ->addColumn('action', function ($data) {
-                $url_accepted = route('apprentince.accepted', Crypt::encrypt($data->id));
-                $url_rejected = route('apprentince.rejected', Crypt::encrypt($data->id));
+                $url_accepted = route('apprentince.create_accept', Crypt::encrypt($data->id));
+                $url_rejected = route('apprentince.create_reject', Crypt::encrypt($data->id));
+
 
                 $btn = "<div class='btn-group'>";
                 if ($data['status'] == ApprentinceRequest::STATUS_NOT_CONFIRMED) {
-                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Diterima</a>";
-                    $btn .= "<a href='$url_rejected' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-trash mr-2'></i> Ditolak</a>";
+                    $btn .= "<a href='$url_accepted' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Diterima</a>";
+                    $btn .= "<a href='$url_rejected' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-trash mr-2'></i> Ditolak</a>";
                 }
                 $btn .= "</div>";
 
@@ -379,62 +504,6 @@ class ApprentinceController extends Controller
             // Alert & Redirect
             Alert::toast('Data Tidak Berhasil Dihapus', 'error');
             return redirect()->back()->with('error', 'Data Tidak Berhasil Dihapus' . $e->getMessage());
-        }
-    }
-
-    public function accepted($id)
-    {
-        try {
-            DB::beginTransaction();
-
-            $id = Crypt::decrypt($id);
-            $apprentince_request = ApprentinceRequest::find($id);
-
-            $apprentince_request->update([
-                'status' => ApprentinceRequest::STATUS_ACCEPTED
-            ]);
-
-            // Save Data
-            DB::commit();
-
-            // Alert & Redirect
-            Alert::toast('Data Berhasil Diperbarui', 'success');
-            return redirect()->route('apprentince.index_request');
-        } catch (\Exception $e) {
-            // If Data Error
-            DB::rollBack();
-
-            // Alert & Redirect
-            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
-            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
-        }
-    }
-
-    public function rejected($id)
-    {
-        try {
-            DB::beginTransaction();
-
-            $id = Crypt::decrypt($id);
-            $apprentince_request = ApprentinceRequest::find($id);
-
-            $apprentince_request->update([
-                'status' => ApprentinceRequest::STATUS_REJECTED
-            ]);
-
-            // Save Data
-            DB::commit();
-
-            // Alert & Redirect
-            Alert::toast('Data Berhasil Diperbarui', 'success');
-            return redirect()->route('apprentince.index_request');
-        } catch (\Exception $e) {
-            // If Data Error
-            DB::rollBack();
-
-            // Alert & Redirect
-            Alert::toast('Data Tidak Berhasil Diperbarui', 'error');
-            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
         }
     }
 }

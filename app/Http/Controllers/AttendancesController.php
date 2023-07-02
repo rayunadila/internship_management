@@ -45,13 +45,14 @@ class AttendancesController extends Controller
                 $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
                 return $formatedDate;
             })
+            ->addColumn('apprentince_name', function ($data) {
+                return $data->apprentince->user->name;
+            })
             ->addColumn('action', function ($data) {
                 $url_show = route('attendance.show', Crypt::encrypt($data->id));
-                $url_delete = route('attendance.destroy', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
                 $btn .= "<a href='$url_show' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Lihat</a>";
-                $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
                 $btn .= "</div>";
 
                 return $btn;
@@ -64,7 +65,7 @@ class AttendancesController extends Controller
         $user_id = Auth::user()->id;
         $apprentince = Apprentince::where('user_id', $user_id)->first();
         $model = Attendance::where('apprentince_id', $apprentince['id'])
-        ->orderBy('id', 'desc');
+            ->orderBy('id', 'desc');
         return DataTables::of($model)
             ->editColumn('created_at', function ($data) {
                 $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');
