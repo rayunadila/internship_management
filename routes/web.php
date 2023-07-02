@@ -108,7 +108,6 @@ Route::group(['controller' => AttendancesController::class, 'prefix' => 'attenda
     Route::get('/show/{id}', 'show')->name('show');
     Route::get('/datatable', 'datatable')->name('datatable');
     Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
-
     Route::post('/store', 'store')->name('store');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
 });
