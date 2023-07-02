@@ -27,7 +27,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Aksi</th>
-                                    <th>Lokasi</th>
+                                    <th>Nama</th>
                                     <th>Status</th>
                                     <th>Diinputkan pada</th>
                                 </tr>
@@ -111,8 +111,8 @@
                             data: 'action'
                         },
                         {
-                            name: 'latitude',
-                            data: 'latitude'
+                            name: 'apprentince_name',
+                            data: 'apprentince_name'
                         },
                         {
                             name: 'status',

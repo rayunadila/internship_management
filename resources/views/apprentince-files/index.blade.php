@@ -12,12 +12,6 @@
                         <div class="iq-header-title">
                             <h4 class="card-title">Data Laporan PKL</h4>
                         </div>
-                        {{-- <div class="float-right">
-                        <a class="btn btn-sm bg-primary" href="{{ route('apprentince_file.create') }}"><i
-                                class="ri-add-fill"><span class="pl-1">Tambah
-                                    Data</span></i>
-                        </a>
-                    </div> --}}
                     </div>
                     <div class="iq-card-body">
                         <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">

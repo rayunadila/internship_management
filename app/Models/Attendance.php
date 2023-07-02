@@ -17,4 +17,9 @@ class Attendance extends Model
         self::STATUS_PRESENT => self::STATUS_PRESENT,
         self::STATUS_ABSENT => self::STATUS_ABSENT,
     ];
+
+    public function apprentince()
+    {
+        return $this->belongsTo(Apprentince::class, 'apprentince_id', 'id');
+    }
 }

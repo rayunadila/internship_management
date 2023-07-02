@@ -16,6 +16,6 @@ class DailyActivity extends Model
 
     public function apprentince()
     {
-        return $this->belongsTo(Apprentince::class, 'id', 'apprentince_id');
+        return $this->belongsTo(Apprentince::class, 'apprentince_id', 'id');
     }
 }

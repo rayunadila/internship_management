@@ -37,11 +37,13 @@ Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprent
     Route::get('/index_request', 'index_request')->name('index_request');
     Route::get('/index_sertificate', 'index_sertificate')->name('index_sertificate');
     Route::get('/create', 'create')->name('create');
+    Route::get('/create_accept/{id}', 'create_accept')->name('create_accept');
+    Route::get('/create_reject/{id}', 'create_reject')->name('create_reject');
     Route::get('/create_sertificate/{id}', 'create_sertificate')->name('create_sertificate');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
-    Route::get('/accepted/{id}', 'accepted')->name('accepted');
-    Route::get('/rejected/{id}', 'rejected')->name('rejected');
+    Route::put('/accepted/{id}', 'accepted')->name('accepted');
+    Route::put('/rejected/{id}', 'rejected')->name('rejected');
     Route::get('/datatable', 'datatable')->name('datatable');
     // datapeserta utk user
     Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
@@ -91,7 +93,7 @@ Route::group(['controller' => DailyActivityController::class, 'prefix' => 'daily
     Route::get('/accepted/{id}', 'accepted')->name('accepted');
     Route::get('/datatable', 'datatable')->name('datatable');
     Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
-    Route::get('/report_pdf', 'report_pdf')->name('report_pdf');
+    Route::get('/report_pdf/{id}', 'report_pdf')->name('report_pdf');
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');

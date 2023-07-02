@@ -25,9 +25,12 @@ class DailyActivityController extends Controller
         return view('daily_activities.index');
     }
 
-    public function report_pdf()
+    public function report_pdf($id)
     {
-        $data = DailyActivity::all();
+        $id = Crypt::decrypt($id);
+        $apprentince = Apprentince::where('user_id', $id)->first();
+
+        $data = DailyActivity::where('apprentince_id', $apprentince['id'])->get();
 
         $pdf = PDF::loadView('daily_activities.report_pdf', compact('data'));
 
@@ -53,24 +56,11 @@ class DailyActivityController extends Controller
 
                 return $badge;
             })
-            ->addColumn('action', function ($data) {
-                $url_edit = route('daily_activity.edit', Crypt::encrypt($data->id));
-                $url_accepted = route('daily_activity.accepted', Crypt::encrypt($data->id));
-                $url_delete = route('daily_activity.destroy', Crypt::encrypt($data->id));
-
-                $btn = "<div class='btn-group'>";
-                if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
-                    $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
-                }
-                $btn .= "<a href='$url_edit' class = 'btn btn-outline-info btn-sm text-nowrap'><i class='fas fa-edit mr-2'></i> Edit</a>";
-                $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
-                $btn .= "</div>";
-
-                return $btn;
+            ->addColumn('apprentince_name', function ($data) {
+                return $data->apprentince->user->name;
             })
 
-
-            ->rawColumns(['status', 'action'])
+            ->rawColumns(['status'])
             ->toJson();
     }
 
@@ -80,7 +70,7 @@ class DailyActivityController extends Controller
         $user_id = Auth::user()->id;
         $apprentince = Apprentince::where('user_id', $user_id)->first();
         $model = DailyActivity::where('apprentince_id', $apprentince['id'])
-        ->orderBy('id', 'desc');
+            ->orderBy('id', 'desc');
         return DataTables::of($model)
             ->editColumn('date', function ($data) {
                 $formatedDate = Carbon::parse($data['date'])->translatedFormat('d F Y');
@@ -97,13 +87,9 @@ class DailyActivityController extends Controller
             })
             ->addColumn('action', function ($data) {
                 $url_edit = route('daily_activity.edit', Crypt::encrypt($data->id));
-                // $url_accepted = route('daily_activity.accepted', Crypt::encrypt($data->id));
                 $url_delete = route('daily_activity.destroy', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
-                // if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
-                //     $btn .= "<a href='$url_accepted' onclick='return confirm(\" Validasi Data? \")' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Konfirmasi</a>";
-                // }
                 $btn .= "<a href='$url_edit' class = 'btn btn-outline-info btn-sm text-nowrap'><i class='fas fa-edit mr-2'></i> Edit</a>";
                 $btn .= "<a href='$url_delete' class = 'btn btn-outline-danger btn-sm text-nowrap' data-confirm-delete='true'><i class='fas fa-trash mr-2'></i> Hapus</a>";
                 $btn .= "</div>";
@@ -131,14 +117,6 @@ class DailyActivityController extends Controller
         $daily_activities = DailyActivity::all();
 
         return view('daily_activities.edit', compact('data', 'daily_activities'));
-    }
-
-    public function show($id)
-    {
-        // $id = Crypt::decrypt($id);
-        // $data = Apprentince::find($id);
-
-        // return view('daily_activities.show', compact('data'));
     }
 
     public function store(Request $request)

@@ -12,14 +12,6 @@
                         <div class="iq-header-title">
                             <h4 class="card-title">Aktivitas Harian Peserta PKL</h4>
                         </div>
-                        {{-- <div class="float-right">
-                            <a class="btn btn-sm bg-primary" href="{{ route('daily_activity.create') }}"><i
-                                    class="ri-add-fill"><span class="pl-1">Tambah
-                                        Data</span></i>
-                            </a>
-                            <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak
-                                PDF</a>
-                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
@@ -30,7 +22,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Aksi</th>
+                                                <th>Nama</th>
                                                 <th>Tanggal</th>
                                                 <th>Catatan Kegiatan Harian</th>
                                                 <th>Status</th>
@@ -46,7 +38,6 @@
                 </div>
             </div>
         </div>
-
     @endrole
 
     @hasrole('Mahasiswa')
@@ -62,7 +53,8 @@
                                     class="ri-add-fill"><span class="pl-1">Tambah
                                         Data</span></i>
                             </a>
-                            <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak
+                            <a target="_blank" href="{{ route('daily_activity.report_pdf', Crypt::encrypt(Auth::user()->id)) }}"
+                                class="btn btn-danger">Cetak
                                 PDF</a>
                         </div>
                     </div>
@@ -112,9 +104,6 @@
                     },
                     serverSide: true,
                     destroy: true,
-                    order: [
-                        [2, 'desc']
-                    ],
                     columns: [{
                             "data": null,
                             "sortable": false,
@@ -124,8 +113,8 @@
                             }
                         },
                         {
-                            name: 'action',
-                            data: 'action'
+                            name: 'apprentince_name',
+                            data: 'apprentince_name'
                         },
                         {
                             name: 'date',
