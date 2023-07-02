@@ -123,10 +123,10 @@ class ApprentinceFileController extends Controller
 
             $user_id = Auth::user()->id;
 
-            // $apprentince = Apprentince::where('user_id', $user_id)->first();
-            // $apprentince_id = $apprentince->id;
+            $apprentince = Apprentince::where('user_id', $user_id)->first();
+            $apprentince_id = $apprentince->id;
 
-            $input['apprentince_id'] = $user_id;
+            $input['apprentince_id'] = $apprentince_id;
 
             // Save file
             if ($file = $request->file('file')) {
