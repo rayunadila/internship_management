@@ -22,9 +22,9 @@
             <form action="{{ route('role.store') }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Nama Role </label>
+                    <label for="name">Nama Pengguna </label>
                     <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}"
-                        placeholder="Nama Role..." required>
+                        placeholder="Nama Pengguna..." required>
                 </div>
                 <hr>
                 <div class="form-group">

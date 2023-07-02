@@ -567,7 +567,7 @@
                                 </span>
                             </a>
 
-                            <a href="">
+                            <a href="mailto:">
                                 <span class="btn btn-social socicon-bg-facebook facebook m-2">
                                     <i class="socicon socicon-mail"></i>
                                 </span>
