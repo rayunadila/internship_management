@@ -62,8 +62,8 @@ class AttendancesController extends Controller
     public function datatable_student()
     {
         $user_id = Auth::user()->id;
-        $attendance = Attendance::where('user_id', $user_id)->first();
-        $model = Attendance::where('apprentince_id', $attendance['id'])
+        $apprentince = Apprentince::where('user_id', $user_id)->first();
+        $model = Attendance::where('apprentince_id', $apprentince['id'])
         ->orderBy('id', 'desc');
         return DataTables::of($model)
             ->editColumn('created_at', function ($data) {

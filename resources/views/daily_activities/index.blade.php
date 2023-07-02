@@ -4,48 +4,97 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="iq-card">
-                <div class="iq-card-header d-flex justify-content-between">
-                    <div class="iq-header-title">
-                        <h4 class="card-title">Catatan Harian Kegiatan Peserta PKL</h4>
+    @hasrole('Admin')
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Aktivitas Harian Peserta PKL</h4>
+                        </div>
+                        {{-- <div class="float-right">
+                            <a class="btn btn-sm bg-primary" href="{{ route('daily_activity.create') }}"><i
+                                    class="ri-add-fill"><span class="pl-1">Tambah
+                                        Data</span></i>
+                            </a>
+                            <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak
+                                PDF</a>
+                        </div> --}}
                     </div>
-                    <div class="float-right">
-                        <a class="btn btn-sm bg-primary" href="{{ route('daily_activity.create') }}"><i
-                                class="ri-add-fill"><span class="pl-1">Tambah
-                                    Data</span></i>
-                        </a>
-                        <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak
-                            PDF</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="iq-card-body">
-                            <div id="table" class="table-editable">
-                                <table id="data-table"
-                                    class="table table-bordered table-responsive-md table-striped text-center">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Aksi</th>
-                                            <th>Tanggal</th>
-                                            <th>Catatan Kegiatan Harian</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="iq-card-body">
+                                <div id="table" class="table-editable">
+                                    <table id="data-table"
+                                        class="table table-bordered table-responsive-md table-striped text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Aksi</th>
+                                                <th>Tanggal</th>
+                                                <th>Catatan Kegiatan Harian</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    @endrole
+
+    @hasrole('Mahasiswa')
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Catatan Harian Kegiatan Peserta PKL</h4>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-sm bg-primary" href="{{ route('daily_activity.create') }}"><i
+                                    class="ri-add-fill"><span class="pl-1">Tambah
+                                        Data</span></i>
+                            </a>
+                            <a target="_blank" href="{{ route('daily_activity.report_pdf') }}" class="btn btn-danger">Cetak
+                                PDF</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="iq-card-body">
+                                <div id="table" class="table-editable">
+                                    <table id="data-table"
+                                        class="table table-bordered table-responsive-md table-striped text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Aksi</th>
+                                                <th>Tanggal</th>
+                                                <th>Catatan Kegiatan Harian</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endrole
 @endsection
+
+
 
 @section('js_after')
     @hasrole('Admin')
@@ -95,7 +144,6 @@
             }
         </script>
     @endrole
-
 
     @hasrole('Mahasiswa')
         <script>

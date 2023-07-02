@@ -76,8 +76,11 @@ class DailyActivityController extends Controller
 
     // Datatable_student yaitu role mahasiswa sambungi ke views dan
     public function datatable_student()
-        {
-        $model = DailyActivity::query();
+    {
+        $user_id = Auth::user()->id;
+        $apprentince = Apprentince::where('user_id', $user_id)->first();
+        $model = DailyActivity::where('apprentince_id', $apprentince['id'])
+        ->orderBy('id', 'desc');
         return DataTables::of($model)
             ->editColumn('date', function ($data) {
                 $formatedDate = Carbon::parse($data['date'])->translatedFormat('d F Y');
@@ -111,7 +114,7 @@ class DailyActivityController extends Controller
 
             ->rawColumns(['status', 'action'])
             ->toJson();
-        }
+    }
 
 
     public function create()
@@ -132,6 +135,10 @@ class DailyActivityController extends Controller
 
     public function show($id)
     {
+        // $id = Crypt::decrypt($id);
+        // $data = Apprentince::find($id);
+
+        // return view('daily_activities.show', compact('data'));
     }
 
     public function store(Request $request)

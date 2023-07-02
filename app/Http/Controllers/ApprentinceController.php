@@ -60,7 +60,9 @@ class ApprentinceController extends Controller
     // data peserta tampilan user
     public function datatable_student()
     {
-        $model = Apprentince::query();
+        $user_id = Auth::user()->id;
+        $model = Apprentince::where('user_id', $user_id)->first()
+            ->orderBy('id', 'desc');
         return DataTables::of($model)
             ->editColumn('created_at', function ($data) {
                 $formatedDate = Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->translatedFormat('d F Y - H:i');

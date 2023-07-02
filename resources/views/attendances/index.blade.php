@@ -16,10 +16,10 @@
                         <div class="iq-header-title">
                             <h4 class="card-title">Data Presensi</h4>
                         </div>
-                        <div class="float-right">
+                        {{-- <div class="float-right">
                             <a target="_blank" href="{{ route('attendance.report_pdf') }}" class="btn btn-danger">Cetak
                                 PDF</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="iq-card-body">
                         <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
@@ -27,7 +27,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Aksi</th>
-                                    <th>Nama</th>
+                                    <th>Lokasi</th>
                                     <th>Status</th>
                                     <th>Diinputkan pada</th>
                                 </tr>
@@ -64,7 +64,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Aksi</th>
-                                    <th>Nama</th>
+                                    <th>Lokasi</th>
                                     <th>Status</th>
                                     <th>Diinputkan pada</th>
                                 </tr>

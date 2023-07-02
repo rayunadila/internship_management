@@ -83,7 +83,7 @@
                         </div>
                         <p class="text-secondary">Aktivitas Harian Peserta</p>
                         <div class="d-flex align-items-center justify-content-between">
-                            <h4><b>Data Aktivitas Harian Peserta</b></h4>
+                            <h4><b>Data Aktivitas Harian</b></h4>
                         </div>
                         <a class="text-primary" href="{{ route('daily_activity.index') }}"><i class="ri-arrow-right-fill"></i>
                             Selengkapnya</a>
@@ -246,69 +246,92 @@
     @endrole
 
     @role('Mahasiswa')
-        <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                <div class="iq-card-body iq-box-relative">
-                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
 
-                        <i class="ri-file-line"></i>
+                            <i class="ri-group-line"></i>
+                        </div>
+                        <p class="text-secondary"> Peserta PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Buat Data Peserta</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('apprentince.index') }}"> <i class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
                     </div>
-                    <p class="text-secondary">Data Peserta PKL</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h4><b>Buat Data Peserta</b></h4>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-primary">
+                            <i class="ri-task-line"></i>
+                        </div>
+                        <p class="text-secondary">Presensi PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Buat Presensi</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('attendance.index') }}"><i class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
                     </div>
-                    <a class="text-primary" href="{{ route('apprentince.index') }}"> <i class="ri-arrow-right-fill"></i>
-                        Selengkapnya</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                <div class="iq-card-body iq-box-relative">
-                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
-                        <i class="ri-task-line"></i>
+        {{-- batas --}}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
+                            <i class="ri-book-mark-fill"></i>
+                        </div>
+                        <p class="text-secondary">Aktivitas Harian PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Buat Aktivitas Harian PKL</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('daily_activity.index') }}"><i
+                                class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
                     </div>
-                    <p class="text-secondary">Presensi PKL</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h4><b>Buat Presensi</b></h4>
-                    </div>
-                    <a class="text-primary" href="{{ route('attendance.index') }}"><i class="ri-arrow-right-fill"></i>
-                        Selengkapnya</a>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                <div class="iq-card-body iq-box-relative">
-                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-danger">
-                        <i class="ri-book-mark-fill"></i>
-                    </div>
-                    <p class="text-secondary">Aktivitas Harian PKL</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h4><b>Buat Aktivitas Harian </b></h4>
-                    </div>
-                    <a class="text-primary" href="{{ route('daily_activity.index') }}"><i class="ri-arrow-right-fill"></i>
-                        Selengkapnya</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                <div class="iq-card-body iq-box-relative">
-                    <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
-                        <i class="ri-folder-add-fill"></i>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-warning">
+                            <i class="ri-folder-add-fill"></i>
+                        </div>
+                        <p class="text-secondary">Laporan PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Buat Laporan PKL</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i
+                                class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
                     </div>
-                    <p class="text-secondary">Laporan PKL</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h4><b>Buat Laporan PKL</b></h4>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
+                    <div class="iq-card-body iq-box-relative">
+                        <div class="iq-box-absolute icon iq-icon-box rounded-circle iq-bg-success">
+
+                            <i class="ri-pages-line"></i>
+                        </div>
+                        <p class="text-secondary"> Sertifikat PKL</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4><b>Unduh Sertifikat PKL</b></h4>
+                        </div>
+                        <a class="text-primary" href="{{ route('apprentince.index_sertificate') }}"> <i
+                                class="ri-arrow-right-fill"></i>
+                            Selengkapnya</a>
                     </div>
-                    <a class="text-primary" href="{{ route('apprentince_file.index') }}"><i class="ri-arrow-right-fill"></i>
-                        Selengkapnya</a>
                 </div>
             </div>
         </div>
-
         <section class="section">
             <div class="row">
                 <div class="col-12">
