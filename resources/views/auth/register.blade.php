@@ -68,11 +68,13 @@
                                             placeholder="Masukan Asal Instansi/Sekolah">
                                     </div>
                                     <div class="form-group">
-                                        <label>Surat Pengajuan PKL <br> (File harus menggunakan ekstensi PDF)</label>
+                                        <label>Surat Pengajuan PKL <br> (File harus menggunakan ekstensi PDF Maks
+                                            3MB)</label>
                                         <input type="file" class="form-control" name="file">
                                     </div>
                                     <div class="sign-info text-center">
-                                        <a href="{{ url('/') }}" class="btn btn-primary d-block w-100 mb-2">Kembali</a>
+                                        <a href="{{ url('/') }}"
+                                            class="btn btn-primary d-block w-100 mb-2">Kembali</a>
                                         <button type="submit" class="btn btn-warning d-block w-100 mb-2">Buat
                                             Pengajuan</button>
                                     </div>

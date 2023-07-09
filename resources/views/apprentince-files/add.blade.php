@@ -7,7 +7,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">File Harian Pengajuan Praktek Kerja Lapangan</h4>
+                        <h4 class="card-title">Input Laporan PKL</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">
@@ -18,7 +18,7 @@
                     <form action="{{ route('apprentince_file.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="file">File Laporan PKL (File Ekstensi PDF Maks 3MB)</label>
+                            <label for="file">File Laporan PKL (*File Ekstensi PDF Maks 3MB)</label>
                             <input type="file" class="form-control" placeholder="Tambahkan Catatan Kegiatan Harian"
                                 value="{{ old('file') }}" id="file" name="file" required>
                             @error('file')
