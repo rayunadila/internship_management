@@ -39,7 +39,8 @@
                             <div class="col-md-12 mt-4">
                                 <div class="text-center">
                                     <a href="{{ route('attendance.index') }}" class="btn btn-warning mr -3">Kembali</a>
-                                    <button type="submit" class="btn btn-primary">Kirim</button>
+                                    <button onclick="return confirm('Kirim Data?')" type="submit"
+                                        class="btn btn-primary">Kirim</button>
                                 </div>
                             </div>
                         </div>

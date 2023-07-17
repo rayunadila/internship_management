@@ -241,6 +241,51 @@ class UserController extends Controller
         }
     }
 
+    public function update_password(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+
+            $id = Crypt::decrypt($id);
+            $user = User::find($id);
+
+            $request->validate([
+                'current_password' => 'required',
+                'new_password' => 'required|same:confirm_new_password'
+            ]);
+
+            if (!(Hash::check($request['current_password'], $user->password))) {
+                Alert::toast('Password tidak cocok', 'error');
+                return redirect()->back();
+            }
+
+            if (strcmp($request['current_password'], $request['new_password']) == 0) {
+                // Current password and new password same
+                Alert::toast('Password baru tidak boleh sama dengan yang lama', 'error');
+                return redirect()->back();
+            }
+
+            // Change Password
+            $user->update([
+                'password' => Hash::make($request->new_password)
+            ]);
+
+            // Save Data
+            DB::commit();
+
+            // Alert & Redirect
+            Alert::toast('Password sudah diperbarui', 'success');
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // If Data Error
+            DB::rollBack();
+
+            // Alert & Redirect
+            Alert::toast('Data Gagal Diperbarui', 'error');
+            return redirect()->back()->with('error', 'Data Tidak Berhasil Diperbarui' . $e->getMessage());
+        }
+    }
+
     public function destroy($id)
     {
         try {

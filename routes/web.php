@@ -69,6 +69,7 @@ Route::group(['controller' => UserController::class, 'prefix' => 'user', 'as' =>
     Route::post('/store', 'store')->name('store');
     Route::put('/update/{id}', 'update')->name('update');
     Route::put('/update_profile/{id}', 'update_profile')->name('update_profile');
+    Route::put('/update_password/{id}', 'update_password')->name('update_password');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
 });
 
