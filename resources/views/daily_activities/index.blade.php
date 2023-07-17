@@ -22,6 +22,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Aksi </th>
                                                 <th>Nama</th>
                                                 <th>Tanggal</th>
                                                 <th>Catatan Kegiatan Harian</th>
@@ -111,6 +112,10 @@
                             render: function(data, type, row, meta) {
                                 return meta.row + meta.settings._iDisplayStart + 1;
                             }
+                        },
+                        {
+                            name: 'action',
+                            data: 'action'
                         },
                         {
                             name: 'apprentince_name',

@@ -7,7 +7,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Catatan Harian Pengajuan Praktek Kerja Lapangan</h4>
+                        <h4 class="card-title">Aktivitas Harian Peserta PKL</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">
@@ -18,8 +18,8 @@
                     <form action="{{ route('daily_activity.store') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="activity">Catatan Kegiatan Harian</label>
-                            <input type="text" class="form-control" placeholder="Tambahkan Catatan Kegiatan Harian"
+                            <label for="activity">Aktivitas Harian </label>
+                            <input type="text" class="form-control" placeholder="Tambahkan  Aktivitas Harian"
                                 value="{{ old('activity') }}" id="activity" name="activity" required>
                             @error('activity')
                                 <span class="text-danger">{{ $message }}</span>

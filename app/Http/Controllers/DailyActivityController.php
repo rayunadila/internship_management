@@ -56,11 +56,23 @@ class DailyActivityController extends Controller
 
                 return $badge;
             })
+            ->addColumn('action', function ($data) {
+                $url_accepted = route('daily_activity.accepted', Crypt::encrypt($data->id));
+
+                $btn = "<div class='btn-group'>";
+                if ($data['status'] == DailyActivity::STATUS_NOT_CONFIRMED) {
+                    $btn .= "<a href='$url_accepted' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Konfirmasi</a>";
+                }
+                $btn .= "</div>";
+
+                return $btn;
+            })
+
             ->addColumn('apprentince_name', function ($data) {
                 return $data->apprentince->user->name;
             })
 
-            ->rawColumns(['status'])
+            ->rawColumns(['status', 'action'])
             ->toJson();
     }
 

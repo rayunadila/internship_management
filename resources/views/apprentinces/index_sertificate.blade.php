@@ -4,12 +4,15 @@
 @endsection
 
 @section('content')
-    <div class="row">
+
+
+    @hasrole('Admin')
+        <div class="row">
         <div class="col-sm-12">
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Input Data Sertifikat</h4>
+                        <h4 class="card-title">Input Sertifika Peserta PKL</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">
@@ -32,6 +35,38 @@
             </div>
         </div>
     </div>
+    @endrole
+
+    @hasrole('Mahasiswa')
+        <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Unduh Sertifikat PKL</h4>
+                    </div>
+                </div>
+                <div class="iq-card-body">
+                    <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Sertifikat</th>
+                                <th>Nama</th>
+                                <th>Mulai Magang</th>
+                                <th>Selesai Magang</th>
+                                <th>Asal Instansi</th>
+                                <th>Diinputkan Pada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endrole
 @endsection
 
 @section('js_after')

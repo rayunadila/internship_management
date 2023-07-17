@@ -93,7 +93,7 @@
                                         <div class="form-group">
                                             <label for="birth_place">Tempat Lahir</label>
                                             <input type="text" name="birth_place" class="form-control" id="birth_place"
-                                                value="{{ old('birth_place') }}" placeholder="Tanggal Lahir" required>
+                                                value="{{ old('birth_place') }}" placeholder="Tempat Lahir" required>
                                             @error('birth_place')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
