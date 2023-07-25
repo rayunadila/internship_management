@@ -161,7 +161,7 @@
                             </h5>
                             <div class="mbr-section-btn mt-3">
                                 <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
-                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Buat Pengajuan</a>
                             </div>
                         </div>
                     </div>
@@ -231,7 +231,7 @@
                                 <strong>1. Klik Tombol Buat Pengajuan PKL</strong>
                             </h5>
                             <p class="card-text mbr-fonts-style display-7" align="justify">
-                                Calon peserta atau Ketua kelompok mengklik tombol Buat Pengajuan PKL yang terdapat
+                                Calon peserta atau Ketua kelompok (yang mewakili) mengklik tombol Buat Pengajuan PKL yang terdapat
                                 dibagian atas
                             </p>
                         </div>
@@ -247,7 +247,7 @@
                                 <strong>2. Mengisi data dan Surat Pengajuan PKL</strong>
                             </h5>
                             <p class="card-text mbr-fonts-style display-7">
-                                Ketua kelompok melengkapi data-data dan melampirkan surat pengajuan pkl dari sekolah
+                                Ketua kelompok melengkapi data-data pengajuan dan melampirkan surat pengajuan pkl dari sekolah atau instansi
                                 yang bersangkutan.
                             </p>
                         </div>
@@ -264,7 +264,7 @@
                             </h5>
                             <p class="card-text mbr-fonts-style display-7">
                                 Setelah semua data diisi, selanjutnya simpan permanen agar
-                                ajuan mu diverifikasi.
+                                ajuan mu diverifikasi oleh admin.
                             </p>
                         </div>
                     </div>
@@ -279,8 +279,7 @@
                                 <strong>4. Menunggu Notifikasi</strong>
                             </h5>
                             <p class="card-text mbr-fonts-style display-5">
-                                Silahkan menunggu notifikasi verifikasi pengajuan pkl berisi
-                                diterima atau ditolak nya ajuan tersebut melalui email yang bersangkutan. Selanjutnya
+                                Silahkan menunggu notifikasi pemberitahuan dari email yang bersangkutan kurang lebih 1-2minggu. Pemberitahuan dari email berupa informasi balasan pengajuan pkl beserta surat balasan pkl. Selanjutnya
                                 unduh
                                 surat balasan ajuan yang telah dilampirkan.
                             </p>
@@ -419,8 +418,8 @@
                                 <strong>Login</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                Peserta mendapatkan akun kemudian melakukan login agar mendapatkan akses ke aplikasi SI
-                                INNA</p>
+                                Peserta yang diterima pkl akan mendapatkan akun melalui email bersangkutan dan kemudian peserta dapat melakukan login agar mendapatkan akses ke aplikasi SI
+                                INNA agar mendapatkan akses ke fitur-fitur lainnya</p>
                         </div>
                     </div>
                 </div>
@@ -443,7 +442,7 @@
                                 <strong>Presensi</strong>
                             </h4>
                             <p class="mbr-text mbr-fonts-style mt-3 mb-0 display-7">
-                                Peserta yang melaksanakan PKL dapat melakukan presensi pada saat melaksanakan PKL
+                                Peserta yang melaksanakan PKL dapat melakukan presensi harian pada saat melaksanakan PKL
                             </p>
                         </div>
                     </div>
