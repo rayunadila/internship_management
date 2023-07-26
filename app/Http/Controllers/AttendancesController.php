@@ -124,7 +124,7 @@ class AttendancesController extends Controller
 
             $attended = Attendance::where('apprentince_id', $apprentince_id)
                 ->whereDate('created_at', Carbon::today())
-                ->exists();
+                ->first();
 
             if ($attended) {
                 DB::rollBack();
