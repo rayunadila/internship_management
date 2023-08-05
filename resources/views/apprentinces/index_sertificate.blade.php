@@ -12,7 +12,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Input Sertifika Peserta PKL</h4>
+                        <h4 class="card-title">Input Sertifikat Peserta PKL</h4>
                     </div>
                 </div>
                 <div class="iq-card-body">

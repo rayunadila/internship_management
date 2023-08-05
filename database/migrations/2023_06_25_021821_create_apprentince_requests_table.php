@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('file');
             $table->string('file_email')->nullable();
-            $table->string('subject_email')->nullable();
+            $table->text('subject_email')->nullable();
             $table->string('status');
             $table->timestamps();
         });

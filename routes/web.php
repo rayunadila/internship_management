@@ -103,14 +103,31 @@ Route::group(['controller' => DailyActivityController::class, 'prefix' => 'daily
 
 // Attendance
 Route::group(['controller' => AttendancesController::class, 'prefix' => 'attendance', 'as' => 'attendance.'], function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/report_pdf', 'report_pdf')->name('report_pdf');
-    Route::get('/create', 'create')->name('create');
-    Route::get('/show/{id}', 'show')->name('show');
+    // Route::get('/', 'index')->name('index');
+    // Route::get('/report_pdf', 'report_pdf')->name('report_pdf');
+    // Route::get('/create', 'create')->name('create');
+    // Route::get('/show/{id}', 'show')->name('show');
+    // Route::get('/datatable', 'datatable')->name('datatable');
+    // Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
+    // Route::post('/store', 'store')->name('store');
+    // Route::delete('/destroy/{id}', 'destroy')->name('destroy');
+
+    /* Data Table */
     Route::get('/datatable', 'datatable')->name('datatable');
     Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
-    Route::post('/store', 'store')->name('store');
+       
+
+    /* Store & Update */
+    Route::post('/store_present_in', 'store_present_in')->name('store_present_in');
+    Route::put('/store_present_out', 'store_present_out')->name('store_present_out');
     Route::delete('/destroy/{id}', 'destroy')->name('destroy');
+
+    /* Views */
+    Route::get('/', 'index')->name('index');
+    Route::get('/create_present', 'create_present')->name('create_present');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::get('/show/{id}', 'show')->name('show');
+    Route::get('/report_pdf', 'report_pdf')->name('report_pdf');
 });
 
 // Apprentince File

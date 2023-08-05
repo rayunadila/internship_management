@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label for="subject_email">Isi Email</label>
-                            <textarea class="form-control" name="subject_email" rows="2">{{ old('subject_email') }}</textarea>
+                            <textarea class="form-control" name="subject_email" rows="8">{{ old('subject_email') }}</textarea>
                             @error('subject_email')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

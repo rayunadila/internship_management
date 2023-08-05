@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('css_after')
 @endsection
@@ -78,4 +78,4 @@
 
         initGeolocation();
     </script>
-@endsection
+@endsection --}}

@@ -302,19 +302,18 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-4">
                     <div class="image-wrapper">
-                        <img src="{{ asset('landing_page/assets/images/si-inna-500x500.png') }}"
-                            alt="Mobirise Website Builder" />
+                        <img src="{{ asset('images/SI_INNA.png') }}" alt="" width="80%" />
                     </div>
                 </div>
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
                         <p class="mbr-text mbr-fonts-style display-7" align="justify">
                             SI INNA Merupakan Singkatan dari Internship Management yang
-                            digunakan untuk mengelola data-data pengajuan Praktik Kerja
-                            Lapangan (PKL), mengelola data peserta, presensi peserta dan
-                            mecetak sertifikat PKL. Peserta Didik yang melaksanakan Praktik
+                            digunakan untuk mengelola data-data pengajuan Praktek Kerja
+                            Lapangan (PKL), mengelola data peserta, presensi peserta, mengelola laporan pkl dan
+                            sertifikat PKL. Peserta Didik yang melaksanakan Praktek
                             Kerja Lapangan (PKL) di Dinas Pekerjaan Umum Bina Marga dan Tata
-                            Ruang, diharapkan dengan adanya aplikasi ini diharapkan
+                            Ruang Provinsi Sumatera Selatan, diharapkan dengan adanya aplikasi ini diharapkan
                             menjadikan Pengelolaan PKL, Manajemen PKL lebih mudah dalam
                             pengelolaannya karena peserta dapat menggunakan aplikasi ini
                             untuk presensi, mencatat kegiatan harian dan mencetaknya sebagai
