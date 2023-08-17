@@ -295,6 +295,12 @@ class ApprentinceController extends Controller
     public function create()
     {
         return view('apprentinces.add');
+
+    }
+
+    public function create_request()
+    {
+        return view('apprentinces.add_request');
     }
 
 

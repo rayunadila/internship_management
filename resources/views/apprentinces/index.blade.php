@@ -68,7 +68,7 @@
                                 <th>Aksi</th>
                                 <th>Nama Lengkap</th>
                                 <th>NIM/NISN</th>
-                                <th>Asal Instansi</th>
+                                <th>Asal Sekolah/Perguruan Tinggi</th>
                                 <th>Tanggal Mulai PKL</th>
                                 <th>Tanggal Selesai PKL</th>
                                 <th>Diinputkan Pada</th>

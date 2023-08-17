@@ -25,7 +25,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="school">Asal Instansi</label>
+                                    <label for="school">Asal Sekolah/Perguruan Tinggi</label>
                                     <input id="school" type="text" class="form-control" value="{{ $data['school'] }}"
                                         disabled>
                                 </div>

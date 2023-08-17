@@ -39,6 +39,7 @@ Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprent
     Route::get('/create', 'create')->name('create');
     Route::get('/create_accept/{id}', 'create_accept')->name('create_accept');
     Route::get('/create_reject/{id}', 'create_reject')->name('create_reject');
+    Route::get('/create_request/{id}', 'create_request')->name('create_request');
     Route::get('/create_sertificate/{id}', 'create_sertificate')->name('create_sertificate');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
@@ -115,7 +116,7 @@ Route::group(['controller' => AttendancesController::class, 'prefix' => 'attenda
     /* Data Table */
     Route::get('/datatable', 'datatable')->name('datatable');
     Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
-       
+
 
     /* Store & Update */
     Route::post('/store_present_in', 'store_present_in')->name('store_present_in');

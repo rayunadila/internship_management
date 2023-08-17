@@ -41,7 +41,6 @@
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
                                 <h1 class="mb-0 text-center">Masuk</h1>
-                                <p class="text-center text-dark">Isilah nama lengkap anda dan katasandi yang sesuai.</p>
                                 <form action="{{ route('login') }}" method="POST" class="mt-4">
                                     @csrf
                                     <div class="form-group">
