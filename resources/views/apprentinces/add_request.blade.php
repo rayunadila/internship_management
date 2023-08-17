@@ -84,6 +84,16 @@
                                     </div>
 
                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email">Email </label>
+                                            <input type="text" name="email" class="form-control" id="email"
+                                                value="{{ old('email') }}" placeholder="Email" required>
+                                            @error('email')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group has-icon-left">
                                             <label for="file">File Pengajuan Magang</label>
                                             <div class="position-relative">

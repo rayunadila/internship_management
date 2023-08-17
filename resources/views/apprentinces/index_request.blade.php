@@ -12,11 +12,10 @@
                         <h4 class="card-title">Data Pengajuan</h4>
                     </div>
                     <a class="text-end btn btn-sm btn-outline-info" href="{{ route('apprentince.create_request') }}"><i
-                                class="fa fa-plus"></i> Tambah Data</a>
+                            class="fa fa-plus"></i> Tambah Data</a>
                 </div>
                 <div class="iq-card-body">
                     <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
-
                         <thead>
                             <tr>
                                 <th>No</th>

@@ -37,15 +37,18 @@ Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprent
     Route::get('/index_request', 'index_request')->name('index_request');
     Route::get('/index_sertificate', 'index_sertificate')->name('index_sertificate');
     Route::get('/create', 'create')->name('create');
+    Route::get('/accept/{id}', 'accept')->name('accept');
     Route::get('/create_accept/{id}', 'create_accept')->name('create_accept');
+    Route::get('/reject/{id}', 'reject')->name('reject');
     Route::get('/create_reject/{id}', 'create_reject')->name('create_reject');
-    Route::get('/create_request/{id}', 'create_request')->name('create_request');
+    Route::get('/create_request', 'create_request')->name('create_request');
     Route::get('/create_sertificate/{id}', 'create_sertificate')->name('create_sertificate');
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::get('/show/{id}', 'show')->name('show');
     Route::put('/accepted/{id}', 'accepted')->name('accepted');
     Route::put('/rejected/{id}', 'rejected')->name('rejected');
     Route::get('/datatable', 'datatable')->name('datatable');
+
     // datapeserta utk user
     Route::get('/datatable_student', 'datatable_student')->name('datatable_student');
     Route::get('/datatable_request', 'datatable_request')->name('datatable_request');

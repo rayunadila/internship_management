@@ -76,6 +76,28 @@ class ApprentinceController extends Controller
         return view('apprentinces.reject', compact('data'));
     }
 
+    public function accept($id)
+    {
+        $id = Crypt::decrypt($id);
+
+        $data = ApprentinceRequest::find($id);
+
+        $data->update([
+            'status' => ApprentinceRequest::STATUS_ACCEPTED_EMAIL
+        ]);
+    }
+
+    public function reject($id)
+    {
+        $id = Crypt::decrypt($id);
+
+        $data = ApprentinceRequest::find($id);
+
+        $data->update([
+            'status' => ApprentinceRequest::STATUS_REJECTED_EMAIL
+        ]);
+    }
+
     public function accepted(Request $request, $id)
     {
         try {
@@ -230,15 +252,27 @@ class ApprentinceController extends Controller
                 return "<a href='$file' target='_blank' class='btn btn-primary'><i class='fa fa-info'></i> Lihat File</a>";
             })
             ->addColumn('action', function ($data) {
-                $url_accepted = route('apprentince.create_accept', Crypt::encrypt($data->id));
-                $url_rejected = route('apprentince.create_reject', Crypt::encrypt($data->id));
-
+                $url_accepted_email = route('apprentince.create_accept', Crypt::encrypt($data->id));
+                $url_rejected_email = route('apprentince.create_reject', Crypt::encrypt($data->id));
+                $url_accepted = route('apprentince.accept', Crypt::encrypt($data->id));
+                $url_rejected = route('apprentince.reject', Crypt::encrypt($data->id));
 
                 $btn = "<div class='btn-group'>";
-                if ($data['status'] == ApprentinceRequest::STATUS_NOT_CONFIRMED) {
-                    $btn .= "<a href='$url_accepted' class = 'btn btn-outline-primary btn-sm text-nowrap'><i class='fas fa-info mr-2'></i> Diterima</a>";
-                    $btn .= "<a href='$url_rejected' class = 'btn btn-outline-danger btn-sm text-nowrap'><i class='fas fa-trash mr-2'></i> Ditolak</a>";
+                if (Auth::user()->hasRole('Sekretaris')) {
+                    if ($data['status'] == ApprentinceRequest::STATUS_NOT_CONFIRMED) {
+                        $btn .= "<a onclick='return confirm(\" Konfirmasi Data? \"' href='$url_accepted' class = 'btn btn-success btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Diterima</a>";
+                        $btn .= "<a onclick='return confirm(\" Konfirmasi Data? \"' href='$url_rejected' class = 'btn btn-danger btn-sm text-nowrap'><i class='fas fa-xmark mr-2'></i> Ditolak</a>";
+                    }
                 }
+
+                if (Auth::user()->hasRole('Admin')) {
+                    if ($data['status'] == ApprentinceRequest::STATUS_ACCEPTED_EMAIL) {
+                        $btn .= "<a onclick='return confirm(\" Konfirmasi Data? \"' href='$url_accepted_email' class = 'btn btn-primary btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Surat Balasan Diterima</a>";
+                    } elseif ($data['status'] == ApprentinceRequest::STATUS_REJECTED_EMAIL) {
+                        $btn .= "<a onclick='return confirm(\" Konfirmasi Data? \"' href='$url_rejected_email' class = 'btn btn-primary btn-sm text-nowrap'><i class='fas fa-check mr-2'></i> Surat Balasan Ditolak</a>";
+                    }
+                }
+
                 $btn .= "</div>";
 
                 return $btn;
@@ -295,7 +329,6 @@ class ApprentinceController extends Controller
     public function create()
     {
         return view('apprentinces.add');
-
     }
 
     public function create_request()
