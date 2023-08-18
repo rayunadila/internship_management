@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('apprentince_requests', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('name');
             $table->string('school');
             $table->string('email');

@@ -231,7 +231,12 @@ class ApprentinceController extends Controller
 
     public function datatable_request()
     {
-        $model = ApprentinceRequest::query();
+        if (Auth::user()->hasRole('Calon Magang')) {
+            ApprentinceRequest::where('user_id', Auth::user()->id);
+        } else {
+            $model = ApprentinceRequest::query();
+        }
+
         return DataTables::of($model)
             ->editColumn('status', function ($data) {
                 if ($data['status'] == ApprentinceRequest::STATUS_NOT_CONFIRMED) {
