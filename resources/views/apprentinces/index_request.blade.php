@@ -4,12 +4,13 @@
 @endsection
 
 @section('content')
+@hasrole('Calon Magang'      )
     <div class="row">
         <div class="col-sm-12">
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Data Pengajuan</h4>
+                        <h4 class="card-title">Data Pengajuan PKL</h4>
                     </div>
                     <a class="text-end btn btn-sm btn-outline-info" href="{{ route('apprentince.create_request') }}"><i
                             class="fa fa-plus"></i> Tambah Data</a>
@@ -22,7 +23,7 @@
                                 <th>Aksi</th>
                                 <th>Nama</th>
                                 <th>Email</th>
-                                <th>Asal Instansi</th>
+                                <th>Asal Sekolah/Perguruan Tinggi</th>
                                 <th>Surat Pengajuan</th>
                                 <th>Diinputkan Pada</th>
                                 <th>Status</th>
@@ -35,6 +36,71 @@
             </div>
         </div>
     </div>
+@endrole
+
+@hasrole('Admin')
+  <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Data Pengajuan</h4>
+                    </div>
+                </div>
+                <div class="iq-card-body">
+                    <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Aksi</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Asal Sekolah/Perguruan Tinggi</th>
+                                <th>Surat Pengajuan</th>
+                                <th>Diinputkan Pada</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+@endrole
+
+@hasrole('Sekretaris')
+  <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Data Pengajuan</h4>
+                    </div>
+                </div>
+                <div class="iq-card-body">
+                    <table id="data-table" class="table table-bordered table-responsive-md table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Aksi</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Asal Sekolah/Perguruan Tinggi</th>
+                                <th>Surat Pengajuan</th>
+                                <th>Diinputkan Pada</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+@endrole
 @endsection
 
 @section('js_after')

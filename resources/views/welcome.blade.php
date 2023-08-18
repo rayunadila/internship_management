@@ -79,7 +79,7 @@
                             <a class="nav-link link text-primary display-4" href="index.html#image2-8">Tentang</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link text-primary display-4" href="{{ route('register') }}">Daftar Akun</a>
+                            <a class="nav-link link text-primary display-4" href="{{ route('register') }}">Buat Akun</a>
                         </li>
                     </ul>
 
@@ -119,7 +119,7 @@
 
                             <div class="mbr-section-btn mt-3">
                                 <a class="btn btn-warning display-4" href="{{ route('login') }}">Masuk</a>
-                                <a class="btn btn-info display-4" href="{{ route('register') }}">Daftar Akun</a>
+                                <a class="btn btn-info display-4" href="{{ route('register') }}">Buat Akun</a>
                             </div>
                         </div>
                     </div>

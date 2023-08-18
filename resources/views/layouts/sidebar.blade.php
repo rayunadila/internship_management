@@ -13,7 +13,7 @@
 
     </div>
 
-    @role('Mahasiswa')
+    @role('Peserta Magang')
         <div id="sidebar-scrollbar">
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
@@ -25,7 +25,7 @@
                     <li>
                         <a href="#userinfo2" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span
                                 class="ripple rippleEffect"></span><i class="las la-user-tie iq-arrow-left"></i><span>
-                                Kelola Peserta PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                                Isi Peserta PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="userinfo2" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
                             <li><a href="{{ route('apprentince.index') }}"><i class="las la-id-card-alt"></i> Isi Data
                                     Peserta
@@ -34,7 +34,7 @@
                     </li>
                     <li>
                         <a href="#wizard-form" class="iq-waves-effect collapsed" data-toggle="collapse"
-                            aria-expanded="false"><i class="ri-archive-drawer-line iq-arrow-left"></i><span>Kelola Presensi
+                            aria-expanded="false"><i class="ri-archive-drawer-line iq-arrow-left"></i><span>Isi Presensi
                             </span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="wizard-form" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li><a href="{{ route('attendance.index') }}"><i class="ri-clockwise-line"></i>Isi Presensi
@@ -43,7 +43,7 @@
                     </li>
                     <li>
                         <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i
-                                class="ri-table-line iq-arrow-left"></i><span>Kelola Aktivitas Harian </span><i
+                                class="ri-table-line iq-arrow-left"></i><span>Isi Aktivitas Harian </span><i
                                 class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="tables" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li><a href="{{ route('daily_activity.index') }}"><i class="ri-table-line"></i>Isi Aktivitas
@@ -52,7 +52,7 @@
                     </li>
                     <li>
                         <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse"
-                            aria-expanded="false"><i class="ri-pantone-line iq-arrow-left"></i><span>Kelola Laporan
+                            aria-expanded="false"><i class="ri-pantone-line iq-arrow-left"></i><span>Isi Laporan
                                 PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="extra-pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li><a href="{{ route('apprentince_file.index') }}"><i class="ri-archive-line"></i>Isi
@@ -61,7 +61,7 @@
                     </li>
                     <li>
                         <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse"
-                            aria-expanded="false"><i class="ri-pages-line iq-arrow-left"></i><span>Kelola Sertifikat
+                            aria-expanded="false"><i class="ri-pages-line iq-arrow-left"></i><span>Isi Sertifikat
                                 PKL</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="authentication" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li><a href="{{ route('apprentince.index_sertificate') }}"><i
@@ -156,4 +156,57 @@
             <div class="p-3"></div>
         </div>
     @endrole
+
+    @role('Calon Magang')
+        <div id="sidebar-scrollbar">
+            <nav class="iq-sidebar-menu">
+                <ul id="iq-sidebar-toggle" class="iq-menu">
+                    <li class="">
+                        <a href="{{ route('home') }}" class="iq-waves-effect"><span class="ripple rippleEffect"></span><i
+                                class="las la-home iq-arrow-left"></i><span>Beranda</span></a>
+                    </li>
+                    <li>
+                        <a href="#forms" class="iq-waves-effect collapsed" data-toggle="collapse"
+                            aria-expanded="false"><i class="lab la-wpforms iq-arrow-left"></i><span>Buat Pengajuan
+                            </span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="forms" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                            <li><a href="{{ route('apprentince.index_request') }}"><i class="las la-book"></i>Data
+                                    Pengajuan
+                                    PKL
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+            </nav>
+            <div class="p-3"></div>
+        </div>
+    @endrole
+
+     @role('Sekretaris')
+        <div id="sidebar-scrollbar">
+            <nav class="iq-sidebar-menu">
+                <ul id="iq-sidebar-toggle" class="iq-menu">
+                    <li class="">
+                        <a href="{{ route('home') }}" class="iq-waves-effect"><span class="ripple rippleEffect"></span><i
+                                class="las la-home iq-arrow-left"></i><span>Beranda</span></a>
+                    </li>
+                    <li>
+                        <a href="#forms" class="iq-waves-effect collapsed" data-toggle="collapse"
+                            aria-expanded="false"><i class="lab la-wpforms iq-arrow-left"></i><span>Kelola Pengajuan
+                            </span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="forms" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                            <li><a href="{{ route('apprentince.index_request') }}"><i class="las la-book"></i>Data
+                                    Pengajuan
+                                    PKL
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+            </nav>
+            <div class="p-3"></div>
+        </div>
+    @endrole
+
 </div>

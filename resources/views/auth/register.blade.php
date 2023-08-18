@@ -40,7 +40,7 @@
                     <div class="row m-0">
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
-                                <h2 class="mb-0 text-center">Buat Pengajuan PKL</h2>
+                                <h2 class="mb-0 text-center">Buat Akun</h2>
                                 <form action="{{ route('register') }}" method="POST" class="mt-4">
                                     @csrf
 
@@ -58,7 +58,7 @@
                                         <label for="exampleInputEmail1">Email Aktif</label>
                                         <input type="email" class="form-control mb-0" id="exampleInputEmail1"
                                             name="email" value="{{ old('email') }}"
-                                            placeholder="Masukan Asal Instansi/Sekolah">
+                                            placeholder="Masukan Email Aktif">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
@@ -68,7 +68,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Konfirmasi Password</label>
                                         <input type="password" class="form-control form-control-xl"
-                                            placeholder="Password" name="password_confirmation"
+                                            placeholder="Konfirmasi Password" name="password_confirmation"
                                             value="{{ old('password_confirmation') }}">
                                     </div>
                                     <div class="sign-info text-center">

@@ -65,6 +65,9 @@
                                     <div class="sign-info text-center">
                                         <button type="submit" class="btn btn-primary d-block w-100 mb-2">Masuk</button>
                                     </div>
+
+                                      <p class="text-gray-600" align="center"><a href="{{ route('register') }}"
+                                            class="font-bold">Belum punya akun? Klik disini</a></p>
                                 </form>
                             </div>
                         </div>
