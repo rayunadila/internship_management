@@ -227,7 +227,7 @@
         </section>
     @endhasrole
 
-    @hasrole('Mahasiswa')
+    @hasrole('Peserta Magang')
         <section class="section">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">

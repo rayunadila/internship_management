@@ -44,7 +44,7 @@
     @endrole
 
 
-    @hasrole('Mahasiswa')
+    @hasrole('Peserta Magang')
          <div class="row">
         <div class="col-sm-12">
             <div class="iq-card">
