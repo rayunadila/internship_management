@@ -232,7 +232,7 @@ class ApprentinceController extends Controller
     public function datatable_request()
     {
         if (Auth::user()->hasRole('Calon Magang')) {
-            ApprentinceRequest::where('user_id', Auth::user()->id);
+            $model = ApprentinceRequest::where('user_id', Auth::user()->id);
         } else {
             $model = ApprentinceRequest::query();
         }
