@@ -85,6 +85,10 @@ class ApprentinceController extends Controller
         $data->update([
             'status' => ApprentinceRequest::STATUS_ACCEPTED_EMAIL
         ]);
+
+        // Alert & Redirect
+        Alert::toast('Data Berhasil Diperbarui', 'success');
+        return redirect()->route('apprentince.index_request');
     }
 
     public function reject($id)
@@ -96,6 +100,10 @@ class ApprentinceController extends Controller
         $data->update([
             'status' => ApprentinceRequest::STATUS_REJECTED_EMAIL
         ]);
+
+        // Alert & Redirect
+        Alert::toast('Data Berhasil Diperbarui', 'success');
+        return redirect()->route('apprentince.index_request');
     }
 
     public function accepted(Request $request, $id)
