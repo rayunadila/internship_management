@@ -238,9 +238,14 @@ class ApprentinceController extends Controller
                     $badge  = "<span class='badge bg-warning'>" . $data['status'] . "</span>";
                 } elseif ($data['status'] == ApprentinceRequest::STATUS_ACCEPTED) {
                     $badge  = "<span class='badge bg-success'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceRequest::STATUS_ACCEPTED_EMAIL) {
+                    $badge  = "<span class='badge bg-primary'>" . $data['status'] . "</span>";
                 } elseif ($data['status'] == ApprentinceRequest::STATUS_REJECTED) {
                     $badge  = "<span class='badge bg-danger'>" . $data['status'] . "</span>";
+                } elseif ($data['status'] == ApprentinceRequest::STATUS_REJECTED_EMAIL) {
+                    $badge  = "<span class='badge bg-danger'>" . $data['status'] . "</span>";
                 }
+
                 return $badge;
             })
             ->editColumn('created_at', function ($data) {

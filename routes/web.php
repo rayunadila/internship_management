@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ApprentinceController;
 use App\Http\Controllers\DailyActivityController;
 use App\Http\Controllers\ApprentinceFileController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Auth::routes();
 
 // Dashboard
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/is_full', [RegisterController::class, 'is_full'])->name('is_full');
 
 // apprentince
 Route::group(['controller' => ApprentinceController::class, 'prefix' => 'apprentince', 'as' => 'apprentince.'], function () {

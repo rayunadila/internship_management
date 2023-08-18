@@ -41,9 +41,9 @@
                         <div class="col-md-5 bg-white sign-in-page-data">
                             <div class="sign-in-from">
                                 <h2 class="mb-0 text-center">Buat Akun</h2>
+                                {{-- Kuota Tidak Penuh --}}
                                 <form action="{{ route('register') }}" method="POST" class="mt-4">
                                     @csrf
-
                                     @if (session('error'))
                                         <p class="text-dark">{{ session('error') }}</p>
                                     @endif
@@ -71,6 +71,7 @@
                                             placeholder="Konfirmasi Password" name="password_confirmation"
                                             value="{{ old('password_confirmation') }}">
                                     </div>
+
                                     <div class="sign-info text-center">
                                         <a href="{{ url('/') }}"
                                             class="btn btn-primary d-block w-100 mb-2">Kembali</a>
@@ -81,12 +82,54 @@
                                     <p class="text-gray-600" align="center"><a href="{{ route('login') }}"
                                             class="font-bold">Sudah punya akun? Login</a></p>
                                 </form>
+
+                                {{-- Kuota Penuh --}}
+                                {{-- <form action="{{ route('is_full') }}" method="POST" class="mt-4">
+                                    @csrf
+                                    @if (session('error'))
+                                        <p class="text-dark">{{ session('error') }}</p>
+                                    @endif
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Nama Lengkap</label>
+                                        <input type="text" class="form-control mb-0" id="exampleInputEmail1"
+                                            name="name" value="{{ old('name') }}"
+                                            placeholder="Masukan Nama Lengkap">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email Aktif</label>
+                                        <input type="email" class="form-control mb-0" id="exampleInputEmail1"
+                                            name="email" value="{{ old('email') }}"
+                                            placeholder="Masukan Email Aktif">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control form-control-xl"
+                                            placeholder="Password" name="password" value="{{ old('password') }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Konfirmasi Password</label>
+                                        <input type="password" class="form-control form-control-xl"
+                                            placeholder="Konfirmasi Password" name="password_confirmation"
+                                            value="{{ old('password_confirmation') }}">
+                                    </div>
+
+                                    <div class="sign-info text-center">
+                                        <a href="{{ url('/') }}"
+                                            class="btn btn-primary d-block w-100 mb-2">Kembali</a>
+                                        <button type="submit" class="btn btn-warning d-block w-100 mb-2">Buat
+                                            Akun</button>
+                                    </div>
+
+                                    <p class="text-gray-600" align="center"><a href="{{ route('login') }}"
+                                            class="font-bold">Sudah punya akun? Login</a></p>
+                                </form> --}}
                             </div>
                         </div>
                         <div class="col-md-7 text-center sign-in-page-image">
                             <div class="sign-in-detail text-white">
-                                <a class="sign-in-logo mb-5" href="#"><img src="{{ asset('images/LOGO.png') }}"
-                                        class="img-fluid" alt="logo"></a>
+                                <a class="sign-in-logo mb-5" href="#"><img
+                                        src="{{ asset('images/LOGO.png') }}" class="img-fluid" alt="logo"></a>
                                 <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false"
                                     data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1"
                                     data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
