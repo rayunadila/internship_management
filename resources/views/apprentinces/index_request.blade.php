@@ -10,7 +10,7 @@
             <div class="iq-card">
                 <div class="iq-card-header d-flex justify-content-between">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Data Pengajuan PKL</h4>
+                        <h4 class="card-title">Data Pengajuan PKL </h4>
                     </div>
                     <a class="text-end btn btn-sm btn-outline-info" href="{{ route('apprentince.create_request') }}"><i
                             class="fa fa-plus"></i> Tambah Data</a>
